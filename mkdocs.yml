@@ -1,0 +1,22 @@
+site_name: NG-CFFDRS
+nav:
+    - Home: home.md
+    - Code: code.md
+    - Tutorials: tutorials.md
+    - Resources: resources.md
+    - Contact: contact.md
+    - Français: []
+not_in_nav: |
+    index.md
+    contact/*
+    code/*
+theme:
+    name: mkdocs
+    custom_dir: custom_theme/
+    locale: en
+    color_mode: dark
+    nav_style: dark
+    user_color_mode_toggle: false
+extra_css: [style.css]
+plugins:
+    - search
