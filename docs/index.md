@@ -6,7 +6,7 @@
            margin-right: auto;
            width: 500px;
            border-radius: 14px;"
-    src="/img/CFFDRS_banner.png" 
+    src="/website_en/img/CFFDRS_banner.png" 
     alt="CFFDRS logo">
 </img>
 
