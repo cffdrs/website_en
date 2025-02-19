@@ -1,0 +1,139 @@
+/* CFFDRS Brand Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+/* @font-face {
+    font-family: "Mono45 Headline Bold";
+    src: url("Mono45Headline-Bold.ttf");
+} */
+
+/* Homepage (removing sidebar, top navbar, and footer) */
+
+body.homepage>div.container>div.row>div.col-md-3, body.homepage>footer {
+    display: none;
+}
+
+body.homepage ul.nav.navbar-nav {
+    display: none;
+}
+
+body.homepage>div.container>div.row>div.col-md-9 {
+    margin-left: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Theming */
+
+div {
+    font-family: "Roboto Mono", monospace;
+}
+
+p, li {
+    font-size: 18px;
+    color: #E3D6C9;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body {
+    background-color: #2E3329;
+}
+
+img {
+    background-color: transparent!important;
+    border: none!important;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+/* Page Header (Site Navigation) */
+
+.navbar {
+    background-color: #010101!important;
+    border-style: solid;
+    border-width: 0px 2px 2px 2px;
+    border-color: #ff5e17;
+    border-radius: 7px;
+}
+
+.navbar-brand {
+    font-family: "Mono45 Headline Bold", monospace;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ff5e17!important;
+    line-height: 100%;
+}
+
+.navbar a.nav-link {
+    font-family: "Mono45 Headline Bold", monospace;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 16px!important;
+}
+
+/* Remove <-Previous Next-> */
+
+/* ul.nav.navbar-nav.ms-md-auto li:nth-child(n+2) {
+  display: none;
+} */
+
+/* Links */
+
+a {
+    color: #ff5e17;
+}
+    /* font-size: 0.93em;
+    font-weight: bold; */
+
+.navbar a, .bs-sidebar a {
+    color: #E3D6C9;
+}
+
+.navbar a.nav-link.active {
+    color: red;
+}
+
+div.col-md-3 a.nav-link {
+    font-weight:normal!important;
+}
+
+a:hover {
+    color: red!important;
+  }
+
+/* Sidebar (Table of Contents) */
+
+.bs-sidebar .nav {
+    background-color: #010101;
+}
+
+.bs-sidebar {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff5e17;
+    border-radius: 7px;
+}
+
+/* Markdown Separator (---) */
+
+hr {
+    border-color: #ff5e17!important;
+}
+
+/* Buttons */
+
+button.btn, button.btn:hover {
+    color: #dfd7ca;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff5e17;
+}
