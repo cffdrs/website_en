@@ -8,7 +8,10 @@ This website is intended to:
 - centralize access to the code and documentation
 - host tutorials for new users
 
-For those unfamiliar with the CFFDRS, read more about the system at the [Government of Canada CFFDRS page](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/canadian-forest-fire-danger-rating-system/14470). For official information regarding wildfires in Canada, visit the [Government of Canada wildfire pages](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/17598). More information and publications regarding current and historical CFFDRS documentation can be found on the [NRCan Open S&T Repository (OSTR)](https://ostrnrcan-dostrncan.canada.ca/home). The previous CFFDRS1992 code can be found on the [CFFDRS GitHub](https://github.com/cffdrs), while the R documentation can be found on the [CFFDRS CRAN page](https://cran.r-project.org/web/packages/cffdrs/).
+For those unfamiliar with the CFFDRS, or for official information regarding wildfires in Canada, read more on official Government of Canada pages under 
+<a href="../resources/#overview" target="_self">Resources#Overview</a>.
+
+The previous CFFDRS1992 code can be found on the [CFFDRS GitHub](https://github.com/cffdrs), while the R documentation can be found on the [CFFDRS CRAN page](https://cran.r-project.org/web/packages/cffdrs/).
 
 ## Announcements
 
