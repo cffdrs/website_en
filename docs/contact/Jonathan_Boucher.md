@@ -5,7 +5,7 @@
            margin: auto;
            float: left;
            margin-right: 25px"
-    src="/contact/jboucher.jpg" 
+    src="/website_en/contact/jboucher.jpg" 
     alt="Jonathan Boucher">
 </img>
 

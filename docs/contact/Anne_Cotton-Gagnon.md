@@ -4,7 +4,7 @@
            border-radius: 10px;
            float: left;
            margin: 20px 25px 0px 0px;"
-    src="/contact/acotton-gagnon.jpg" 
+    src="/website_en/contact/acotton-gagnon.jpg" 
     alt="Anne Cotton-Gagnon">
 </img>
 
