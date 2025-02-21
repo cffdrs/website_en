@@ -2,10 +2,9 @@
 <img 
     style="height: 200px;
            border-radius: 10px;
-           margin: auto;
            float: left;
-           margin-right: 25px"
-    src="/website_en/contact/pdeane.jpg" 
+           margin: 20px 25px 0px 0px;"
+    src="/contact/pdeane.jpg" 
     alt="Patrick Deane">
 </img>
 
@@ -15,6 +14,7 @@ Forest Fire Research Specialist
 Great Lakes Forestry Centre  
 [patrick.deane@nrcan-rncan.gc.ca](mailto:Patrick.Deane@NRCan-RNCan.gc.ca)  
 [NRCan](https://cfs.nrcan.gc.ca/employees/read/pdeane)  
+<br>
 
 ---
 

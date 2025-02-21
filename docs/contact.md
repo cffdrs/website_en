@@ -8,7 +8,8 @@ Research Mobilization Analyst
 [gabrielle.ayres@nrcan-rncan.gc.ca](mailto:gabrielle.ayres@nrcan-rncan.gc.ca)  
 
 **Jonathan Boucher**  
-Forests Fire Researcher  
+Wildland Fire Research Scientist  
+[Bio](contact/Jonathan_Boucher.md)  
 [jonathan.boucher@nrcan-rncan.gc.ca](mailto:jonathan.boucher@NRCan-RNCan.gc.ca)  
 
 **Luke Collins**  
@@ -16,24 +17,22 @@ Research Scientist
 [luke.collins@nrcan-rncan.gc.ca](mailto:Luke.Collins@NRCan-RNCan.gc.ca)  
 
 **Anne Cotton-Gagnon** (elle, elle | she, her)  
-Forestry Research Officer  
+Vegetation Fires Research Officer  
+[Bio](contact/Anne_Cotton-Gagnon.md)  
 [anne.cotton-gagnon@nrcan-rncan.gc.ca](mailto:anne.cotton-gagnon@NRCan-RNCan.gc.ca)  
 
 **Patrick Deane** (he, him | il, lui)  
-Forest Fire Research Specialist  
-Great Lakes Forestry Centre  
-[Bio](contact/pdeane.md)  
+Forest Fire Research Specialist   
+[Bio](contact/Patrick_Deane.md)  
 [patrick.deane@nrcan-rncan.gc.ca](mailto:Patrick.Deane@NRCan-RNCan.gc.ca)  
 
 **Chelene Hanes**  
 Wildland Fire Research Scientist  
-Great Lakes Forestry Centre  
-[Bio](contact/chanes.md)  
+[Bio](contact/Chelene_Hanes.md)  
 [chelene.hanes@nrcan-rncan.gc.ca](mailto:chelene.hanes@nrcan-rncan.gc.ca)  
 
 **Natasha Jurko**  
 Physical Fire Scientist  
-Great Lakes Forestry Centre  
 [natasha.jurko@nrcan-rncan.gc.ca](mailto:natasha.jurko@NRCan-RNCan.gc.ca)  
 
 **Samuel Lacarte** (he, him | il, lui)  
@@ -46,13 +45,11 @@ Research Scientist
 
 **Mackenzie Simpson**  
 IT Analyst  
-Great Lakes Forestry Centre  
 [mackenzie.simpson@nrcan-rncan.gc.ca](mailto:mackenzie.simpson@NRCan-RNCan.gc.ca)  
 
 **Kevin Siu** (he, him | il, lui)  
-Wildfire Analyst Programmer  
+Fire Analyst Programmer  
 *Website Overseer*  
-Great Lakes Forestry Centre  
 [kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)
 
 **Steve Taylor**  
