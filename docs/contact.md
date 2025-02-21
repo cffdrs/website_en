@@ -1,8 +1,8 @@
 ## Newsletter Sign-up
 
-Want to stay updated on the latest developments with CFFDRS2025? Enter your contact information below, and we'll send updates directly to your inbox. We will not share your data and will only send you information related to CFFDRS.
+Want to stay updated on the latest developments with CFFDRS2025? Enter your contact information in the form, and we'll send updates directly to your inbox. We will not share your data and will only send you information related to CFFDRS.
 
-[Microsoft Forms](https://forms.office.com/r/jmT8HVrsK8)
+[Newsletter Form (Microsoft Forms)](https://forms.office.com/r/jmT8HVrsK8)
 
 ## Fire Danger Group
 
@@ -21,7 +21,7 @@ Research Scientist
 [luke.collins@nrcan-rncan.gc.ca](mailto:Luke.Collins@NRCan-RNCan.gc.ca)  
 
 **Anne Cotton-Gagnon** (elle, elle | she, her)  
-Vegetation Fires Research Officer  
+Forest Fire Research Officer  
 [Bio](contact/Anne_Cotton-Gagnon.md)  
 [anne.cotton-gagnon@nrcan-rncan.gc.ca](mailto:anne.cotton-gagnon@NRCan-RNCan.gc.ca)  
 
@@ -70,4 +70,5 @@ Research Scientist
 
 **Mike Wotton**  
 Forest Fire Research Scientist  
+[Bio (Firelab)](http://www.firelab.utoronto.ca/people/bmw/)  
 [mike.wotton@daniels.utoronto.ca](mailto:mike.wotton@daniels.utoronto.ca)  
