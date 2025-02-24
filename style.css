@@ -116,6 +116,10 @@ a:hover {
     background-color: #010101;
 }
 
+.bg-body-tertiary {
+    border-width: 0px;
+}
+
 .bs-sidebar {
     border-style: solid;
     border-width: 2px;
@@ -136,4 +140,34 @@ button.btn, button.btn:hover {
     border-style: solid;
     border-width: 2px;
     border-color: #ff5e17;
+}
+
+/* Tables */
+
+th, td {
+    border: 2px solid;
+    border-color: #ff5e17;
+    color: #E3D6C9!important;
+    background-color: #2E3329!important;
+}
+
+table {
+    border: 2px solid;
+    border-color: #ff5e17!important;
+}
+
+/* Code */
+code {
+    background-color: #010101!important;
+}
+
+.hljs {
+    border: 2px solid #ff5e17!important;
+    color: #E3D6C9;
+    border-radius: 7px;
+}
+
+pre {
+    border: 0px;
+    border-radius: 7px;
 }
