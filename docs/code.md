@@ -28,7 +28,9 @@ Python : datetime, logging, math, numpy, pandas, os.path, sys
 C : stdlib.h, stdbool.h, string.h
 
 ### Get Started
-The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) also includes a tutorial script and test data. See the [Tutorial page](../tutorials/#how-to-calculate-hourly-fwi-the-new-fwi2025) for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.
+The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) also includes a tutorial script and test data. See the
+<a href="../tutorials/#how-to-calculate-hourly-fwi-the-new-fwi2025" target="_self">Tutorials#How to calculate hourly FWI</a>
+for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.
 
 ## FWI2025 Documentation
 FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Outputs are then also of the same form.  Users can configure the input and output file types to fit their individual data streams.
