@@ -95,12 +95,12 @@ The C version can be run from command line with the following arguments in order
 
 | Parameter | Description |
 | --- | --- |
-| local GMToffset | timezone in which the weather station is located |
-| starting FFMC | the startup value of the fine fuel moisture code (e.g. 85) |
-| starting DMC | the start-up value of the duff moisture code (e.g. 6) |
-| starting DC | the start-up value of the drought code (e.g. 15) |
-| input file | name of .csv file containing data for a single station over the course of a year |
-| output file | name of the file to output results into |
+| `local GMToffset` | timezone in which the weather station is located |
+| `starting FFMC` | the startup value of the fine fuel moisture code (e.g. 85) |
+| `starting DMC` | the start-up value of the duff moisture code (e.g. 6) |
+| `starting DC` | the start-up value of the drought code (e.g. 15) |
+| `input file` | name of .csv file containing data for a single station over the course of a year |
+| `output file` | name of the file to output results into |
 
 #### Output Description
 The output is also the same format as the input data, with the following columns appended: 
