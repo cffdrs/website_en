@@ -35,8 +35,6 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 ## FWI2025 Documentation
 FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Outputs are then also of the same form.  Users can configure the input and output file types to fit their individual data streams.
 
-See the [How to calculate hourly FWI](../tutorials/#how-to-calculate-hourly-fwi-the-new-fwi2025) tutorial for an example that applies the FWI2025 code on a publicly available dataset.
-
 ### Hourly Fire Weather Index
 The `hFWI()` function in the "NG_FWI" file is built to generate FWI System outputs one station at a time. The R and Python versions can also output multiple stations with a properly formatted input. The C version can only handle inputs of a single year for a given station.
 
