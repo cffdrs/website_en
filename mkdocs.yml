@@ -5,7 +5,7 @@ nav:
     - Tutorials: tutorials.md
     - Resources: resources.md
     - Contact: contact.md
-    - Français: []
+    - Français: https://cffdrs.github.io/website_fr/accueil
 not_in_nav: |
     index.md
     contact/*
