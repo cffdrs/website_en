@@ -36,6 +36,24 @@
 {%- block next_prev %} {%- endblock %}
 
 {%- block content %}
+    <!-- Construction Sign -->
+    <style>
+        div.construction p {
+            text-align: center;
+            font-family: Times;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fbff00;
+        }
+    </style>
+
+    <div class="construction">
+        <p>website is still in development. problems or feedback can be sent to <a href="mailto:kevin.siu@nrcan-rncan.gc.ca" target="_self">kevin.siu@nrcan-rncan.gc.ca</a></p>
+    </div>
+
     <div class="col-md-3">{% include "toc_self.html" %}</div>
     <div class="col-md-9" role="main">{% include "content.html" %}</div>
 {%- endblock %}
