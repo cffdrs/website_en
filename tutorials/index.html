@@ -71,7 +71,7 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
@@ -82,14 +82,14 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#how-to-calculate-hourly-fwi-the-new-fwi2025" class="nav-link">How to calculate hourly FWI – the new FWI2025</a>
+            <li class="nav-item" data-bs-level="2"><a href="#how-to-calculate-hourly-fwi-the-new-fwi2025" class="nav-link" target="_self">How to calculate hourly FWI – the new FWI2025</a>
               <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
     </div>
 </div></div>
-                    <div class="col-md-9" role="main">
+    <div class="col-md-9" role="main">
 
 <h2 id="how-to-calculate-hourly-fwi-the-new-fwi2025">How to calculate hourly FWI – the new FWI2025</h2>
 <p>This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.  The data has been formatted for correct column names and is in a sequential hourly format. The data has been pre-formatted for correct column names, and is in a sequential hourly format.  </p>
@@ -103,12 +103,12 @@
 <li><strong>Tutorial_NGFWI.r</strong>, OR <strong>Tutorial_NGFWI.py</strong></li>
 </ul>
 <p>Prior to running this tutorial, the user should ensure they have the necessary packages and libraries installed.  Each programming language references different packages or libraries, see 
-<a href="../code/#documentation" target="_self">Code#Documentation</a>
+<a href="../code/#fwi2025-documentation" target="_self">Code#FWI2025 Documentation</a>
 for more details, or look in the code files.</p>
 <h4 id="step-1">Step 1:</h4>
 <p>Open the data file: <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv">wx_prf.csv</a></p>
 <p>About the file: This file contains hourly weather recorded from weather station at the Petawawa Research Forest, during a field season in 2007. The data is sorted into ascending order and has not gaps. The column headers are formatted with the expected inputs, details on the input requirements can be found in 
-<a href="../code/#documentation" target="_self">Code#Documentation</a>. 
+<a href="../code/#fwi2025-documentation" target="_self">Code#FWI2025 Documentation</a>. 
 Notice there is no input for solar radiation (<em>sol_rad</em>) or curing faction (<em>percent_cure</em>), these are optional inputs and if they are not in the input file, they will be automatically estimated.</p>
 <p>Open the <strong>Tutorial_NGFWI.xx</strong> code file.  This file contains the step by step process for running NG_FWI.</p>
 <h4 id="step-2">Step 2:</h4>

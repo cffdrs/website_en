@@ -71,7 +71,7 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
@@ -82,29 +82,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#repository" class="nav-link">Repository</a>
+            <li class="nav-item" data-bs-level="2"><a href="#repository" class="nav-link" target="_self">Repository</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="2"><a href="#fwi2025-code" class="nav-link">FWI2025 Code</a>
+            <li class="nav-item" data-bs-level="2"><a href="#fwi2025-code" class="nav-link" target="_self">FWI2025 Code</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="2"><a href="#fwi2025-documentation" class="nav-link">FWI2025 Documentation</a>
+            <li class="nav-item" data-bs-level="2"><a href="#fwi2025-documentation" class="nav-link" target="_self">FWI2025 Documentation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="2"><a href="#license" class="nav-link">License</a>
+            <li class="nav-item" data-bs-level="2"><a href="#license" class="nav-link" target="_self">License</a>
               <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
     </div>
 </div></div>
-                    <div class="col-md-9" role="main">
+    <div class="col-md-9" role="main">
 
 <h2 id="repository">Repository</h2>
 <p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> contains the up-to-date code for the CFFDRS2025 modules in three programming languages: R, C, and Python. All three languages contain the same equations and perform the same tasks, the choice is yours depending on your system requirement.</p>
@@ -132,7 +132,9 @@ C : <strong>util.c</strong>, <strong>util.h</strong></p>
 Python : datetime, logging, math, numpy, pandas, os.path, sys<br />
 C : stdlib.h, stdbool.h, string.h</p>
 <h3 id="get-started">Get Started</h3>
-<p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> also includes a tutorial script and test data. See the <a href="../tutorials/#how-to-calculate-hourly-fwi-the-new-fwi2025">Tutorial page</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
+<p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> also includes a tutorial script and test data. See the
+<a href="../tutorials/#how-to-calculate-hourly-fwi-the-new-fwi2025" target="_self">Tutorials#How to calculate hourly FWI</a>
+for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
 <h2 id="fwi2025-documentation">FWI2025 Documentation</h2>
 <p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Outputs are then also of the same form.  Users can configure the input and output file types to fit their individual data streams.</p>
 <p>See the <a href="../tutorials/#how-to-calculate-hourly-fwi-the-new-fwi2025">How to calculate hourly FWI</a> tutorial for an example that applies the FWI2025 code on a publicly available dataset.</p>
