@@ -54,6 +54,7 @@ IT Analyst
 **Kevin Siu** (he, him | il, lui)  
 Fire Analyst Programmer  
 *Website Overseer*  
+[Bio](contact/Kevin_Siu.md)  
 [kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)
 
 **Steve Taylor**  

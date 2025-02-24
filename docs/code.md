@@ -93,7 +93,7 @@ C :
 
 The C version can be run from command line with the following arguments in order:
 
-| Parameter | Description |
+| Code | Description |
 | --- | --- |
 | `local GMToffset` | timezone in which the weather station is located |
 | `starting FFMC` | the startup value of the fine fuel moisture code (e.g. 85) |
@@ -105,7 +105,7 @@ The C version can be run from command line with the following arguments in order
 #### Output Description
 The output is also the same format as the input data, with the following columns appended: 
 
-| Parameter | Description |
+| Column | Description |
 | --- | --- |
 | `timestamp` | date and time of weather and FWI variable. Timestamp YYYY-MM-DD HH:MM:SS. (not in C) |
 | `date` | YYYY-MM-DD Date type (without hh:mm:ss). (not in C) |
