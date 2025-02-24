@@ -144,27 +144,22 @@ button.btn, button.btn:hover {
 
 /* Tables */
 
-th, td {
-    border: 2px solid;
-    border-color: #ff5e17;
-    color: #E3D6C9!important;
-    background-color: #2E3329!important;
-}
-
 table {
     border: 2px solid;
-    border-color: #ff5e17!important;
+    border-color: #010101!important;
+
+}
+
+th, td {
+    border: 1px solid;
+    border-color: #010101;
+    color: #E3D6C9!important;
+    background-color: #2E3329!important;
 }
 
 /* Code */
 code {
     background-color: #010101!important;
-}
-
-.hljs {
-    border: 2px solid #ff5e17!important;
-    color: #E3D6C9;
-    border-radius: 7px;
 }
 
 pre {

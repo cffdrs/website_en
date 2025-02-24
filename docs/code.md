@@ -56,7 +56,7 @@ The rows of the dataframe should correspond to consecutive hourly data. The colu
 | `rh` | Relative humidity in percent, number (0-100) |
 | `ws` | Wind speed in km/hr, number |
 | `prec` | Precipitation (rain) measured in millimeters (mm), number |
-| `solrad` | Solar Radiation measured in kw/m2 (kilowatts per meter squared) for grassland codes, number.  OPTIONAL input, FWI2025 will generate based on default method. ([read more about solar radiation sensors and minimum requirements]()) |
+| `solrad` | Solar Radiation measured in kw/m2 (kilowatts per meter squared) for grassland codes, number.  OPTIONAL input, FWI2025 will generate based on default method. (<a href="" target="_self">read more about solar radiation sensors and minimum requirements</a>) |
 | `percent_cured` | Percent Cured of grasses in open grassland, measured in percent for grassland codes, number (0-100). OPTIONAL input, FWI2025 will generate based on default method |
 
 The column headers can be lower case or upper case, the output format is set to upper case.
