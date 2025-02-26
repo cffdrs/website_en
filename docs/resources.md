@@ -6,8 +6,6 @@
 
 CFFDRS1992
 
-- [CFFDRS GitHub](https://github.com/cffdrs)
-- [CFFDRS R Package (CRAN)](https://cran.r-project.org/web/packages/cffdrs/)
 - [FWI1987 Development and Structure](https://ostrnrcan-dostrncan.canada.ca/handle/1845/228434)
 - [FBP1992 Development and Structure (ST-X-3)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/235421)
 - [FBP1992 Updates and Revisions (GLC-X-10)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/247839)
