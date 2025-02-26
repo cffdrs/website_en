@@ -7,10 +7,10 @@ This tutorial is designed to be an example of how to calculate FWI2025 with tabu
 
 Go to the [CFFDRS-NG repo](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) and fork/clone/download the following in the language of your choice: 
 
-- **NG_FWI.r** 
-- **util.r**
-- [**/data/wx_prf.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv) (the data file we will work with)
-- [**Tutorial_NGFWI.r**](tutorials/Tutorial_NGFWI.R) (download link)
+- [**NG_FWI.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/NG_FWI.r)
+- [**util.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/util.r)
+- [**wx_prf.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv)
+- [**Tutorial_NGFWI.r**](tutorials/Tutorial_NGFWI.R)📥
 
 Prior to running this tutorial, the user should ensure they have the necessary packages and libraries installed.  Each programming language references different packages or libraries, see 
 <a href="../code/#packages" target="_self">Code#Packages</a>

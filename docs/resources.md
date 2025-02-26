@@ -1,7 +1,7 @@
 ## Reports
-[Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)  
+[Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 
-- [CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)
+- [CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥
 
 More current and historical CFFDRS documentation can be found on the  
 [NRCan Open S&T Repository (OSTR)](https://ostrnrcan-dostrncan.canada.ca/home).
