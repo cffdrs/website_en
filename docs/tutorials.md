@@ -19,7 +19,7 @@ for more details, or look in the code files.
 ### Data
 **wx_prf.csv** contains hourly weather recorded from the Petawawa Research Forest weather station during the 2007 field season. The data is sorted by ascending order and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
-There is no input for solar radiation (*sol_rad*) or curing faction (*percent_cure*) because these are optional inputs and they will be automatically estimated if they are not given.
+There is no input for solar radiation (*sol_rad*) or curing fraction (*percent_cure*) because these are optional inputs and they will be automatically estimated if they are not given.
 
 ### Code
 Open the **Tutorial_NGFWI.r** code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).
