@@ -9,7 +9,7 @@ This website is intended to:
 - host tutorials for new users
 
 For those unfamiliar with the CFFDRS, or for official information regarding wildfires in Canada, read more on official Government of Canada pages under 
-<a href="resources/#overview" target="_self">Resources#Overview</a>.
+<a href="../resources/#overview" target="_self">Resources#Overview</a>.
 
 <img 
     style="display: block;
@@ -18,7 +18,7 @@ For those unfamiliar with the CFFDRS, or for official information regarding wild
            margin: 0px 25px 0px 0px;
            float: left;
            border-radius: 5px;"
-    src="/website_en/img/CFFDRS1992.png" 
+    src="../img/CFFDRS1992.png" 
     alt="CFFDRS1992 logo">
 </img>
 
@@ -27,6 +27,6 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 ## Announcements
 
 If you want to get email updates about the latest developments with CFFDRS2025, join our 
-<a href="contact/#newsletter-sign-up" target="_self">newsletter</a>.
+<a href="../contact/#newsletter-sign-up" target="_self">newsletter</a>.
 ### January 2025
 The NG-CFFDRS Fire Weather Index (FWI) System module is available for users to test. Release of the other modules of the CFFDRS (e.g. FBP System, FMS, and FOP System) is ongoing.
