@@ -13,7 +13,7 @@ Research Mobilization Analyst
 
 **Jonathan Boucher**  
 Wildland Fire Research Scientist  
-[Bio](contact/Jonathan_Boucher.md)  
+<a href="../contact/Jonathan_Boucher" target="_self">Bio</a>  
 [jonathan.boucher@nrcan-rncan.gc.ca](mailto:jonathan.boucher@NRCan-RNCan.gc.ca)  
 
 **Luke Collins**  
@@ -22,17 +22,17 @@ Research Scientist
 
 **Anne Cotton-Gagnon** (elle, elle | she, her)  
 Forest Fire Research Officer  
-[Bio](contact/Anne_Cotton-Gagnon.md)  
+<a href="../contact/Anne_Cotton-Gagnon" target="_self">Bio</a>  
 [anne.cotton-gagnon@nrcan-rncan.gc.ca](mailto:anne.cotton-gagnon@NRCan-RNCan.gc.ca)  
 
 **Patrick Deane** (he, him | il, lui)  
 Forest Fire Research Specialist   
-[Bio](contact/Patrick_Deane.md)  
+<a href="../contact/Patrick_Deane" target="_self">Bio</a>  
 [patrick.deane@nrcan-rncan.gc.ca](mailto:Patrick.Deane@NRCan-RNCan.gc.ca)  
 
 **Chelene Hanes**  
 Wildland Fire Research Scientist  
-[Bio](contact/Chelene_Hanes.md)  
+<a href="../contact/Chelene_Hanes" target="_self">Bio</a>  
 [chelene.hanes@nrcan-rncan.gc.ca](mailto:chelene.hanes@nrcan-rncan.gc.ca)  
 
 **Natasha Jurko**  
@@ -54,7 +54,7 @@ IT Analyst
 **Kevin Siu** (he, him | il, lui)  
 Fire Analyst Programmer  
 *Website Overseer*  
-[Bio](contact/Kevin_Siu.md)  
+<a href="../contact/Kevin_Siu" target="_self">Bio</a>  
 [kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)
 
 **Steve Taylor**  
