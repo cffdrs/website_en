@@ -82,7 +82,7 @@ data_fwi <- hFWI(data, utc)
 write.csv(data_fwi, 'wx_prf_fwi.csv')
 
 # View a simple summary of the FWI outputs.
-View(summary(data_fwi[, c(20:29)]))
+View(summary(data_fwi[, 20:29]))
 
 # Create a daily summary to determine the time of peak burn and
 # the number of hours of spread potential.
@@ -93,7 +93,7 @@ report <- generate_daily_summaries(data_fwi)
 # peak_isi_smoothed, ffmc, dmc, dc, isi, bui, fwi, dsr, sunrise, sunset
 
 # View a simple summary of the daily report.
-View(summary(report[, c(5:15)]))
+View(summary(report[, 5:15]))
 
 # From here, a user can convert the output data to a datatype of their choice or
 # continue with further visualizations within R.

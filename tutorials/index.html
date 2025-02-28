@@ -204,7 +204,7 @@ It is able to iterate over multiple stations and years/fire seasons (not used he
 2: 82.17590 11.10672 220.0533 2.146157 19.72455 3.345161 0.2305616
 </code></pre>
 <p>View a simple summary of the FWI outputs (columns 20-29).</p>
-<pre><code class="language-r">View(summary(data_fwi[, c(20:29)]))
+<pre><code class="language-r">View(summary(data_fwi[, 20:29]))
 </code></pre>
 <h4 id="calculate-daily-summaries">Calculate daily summaries</h4>
 <p>Create a daily summary to determine the time of peak burn and the number of hours of spread potential. Details about the daily summaries function can be found at 
@@ -221,7 +221,7 @@ It is able to iterate over multiple stations and years/fire seasons (not used he
 [16] &quot;sunrise&quot;             &quot;sunset&quot;
 </code></pre>
 <p>View a simple summary of the daily report.</p>
-<pre><code class="language-r">View(summary(report[, c(5:15)]))
+<pre><code class="language-r">View(summary(report[, 5:15]))
 </code></pre>
 <p>From here, a user can convert the output data to a datatype of their choice or continue with further visualizations within R.</p></div>
             </div>
