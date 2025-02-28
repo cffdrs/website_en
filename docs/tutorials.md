@@ -139,7 +139,7 @@ The last two columns of `ffmc`, `dmc`, `dc`, `isi`, `bui`, `fwi`, and `dsr` are:
 View a simple summary of the FWI outputs (columns 20-29).
 
 ```r
-View(summary(data_fwi[, c(20:29)]))
+View(summary(data_fwi[, 20:29]))
 ```
 
 #### Calculate daily summaries
@@ -165,7 +165,7 @@ Daily report is a data frame with columns:
 View a simple summary of the daily report.
 
 ```r
-View(summary(report[, c(5:15)]))
+View(summary(report[, 5:15]))
 ```
 
 From here, a user can convert the output data to a datatype of their choice or continue with further visualizations within R.
