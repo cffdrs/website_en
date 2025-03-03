@@ -27,6 +27,10 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 ## Announcements
 
 If you want to get email updates about the latest developments with CFFDRS2025, join our 
-<a href="../contact/#newsletter-sign-up" target="_self">newsletter</a>.
+<a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>.
+
+### March 2025
+The [first newsletter](../documents/Newsletter1_FWI2025_final.pdf)📥 is available now. It goes over the new features of the Fire Weather Index (FWI2025) including the ability to use hourly data and the introduction of outputs for grasslands.
+
 ### January 2025
 The NG-CFFDRS Fire Weather Index (FWI) System module is available for users to test. Release of the other modules of the CFFDRS (e.g. FBP System, FMS, and FOP System) is ongoing.
