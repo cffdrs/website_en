@@ -46,17 +46,17 @@ The rows of the dataframe should correspond to consecutive hourly data. The colu
 | Column | Description |
 | --- | --- |
 | `id` | Weather station identifier, a unique number for the station, text or number |
-| `lat` | Latitude. Location of weather station, decimal degrees (double precision) |
-| `long` | Longitude. Location of weather station, decimal degrees (double precision) |
+| `lat` | Latitude of weather station, decimal degrees (°) (double precision) |
+| `long` | Longitude of weather station, decimal degrees (°) (double precision) |
 | `yr` | Year of weather station reading, number YYYY |
 | `mon` | Month of weather station reading, number M or MM (must be consistent throughout the dataset) |
 | `day` | Day of weather station reading, number DD or D (must be consistent throughout the dataset) |
 | `hr` | Hour of weather station reading, number in military time (0-23) |
-| `temp` | Temperature in °Celsius, number |
-| `rh` | Relative humidity in percent, number (0-100) |
-| `ws` | Wind speed in km/hr, number |
-| `prec` | Precipitation (rain) measured in millimeters (mm), number |
-| `solrad` | Solar Radiation measured in kw/m2 (kilowatts per meter squared) for grassland codes, number.  OPTIONAL input, FWI2025 will generate based on default method. (<a href="" target="_self">read more about solar radiation sensors and minimum requirements</a>) |
+| `temp` | Temperature in degrees Celsius (°C), number |
+| `rh` | Relative humidity in percent (%), number (0-100) |
+| `ws` | Wind speed in kilometres per hour (km/hr), number |
+| `prec` | Precipitation (rain) measured in millimetres (mm), number |
+| `solrad` | Solar Radiation measured in kilowatts per square metre (kW/m^2) for grassland codes, number.  OPTIONAL input, FWI2025 will generate based on default method. ([CFFDRS2025 Solar Radiation Input (Draft)](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥) |
 | `percent_cured` | Percent Cured of grasses in open grassland, measured in percent for grassland codes, number (0-100). OPTIONAL input, FWI2025 will generate based on default method |
 
 The column headers can be lower case or upper case, the output format is set to upper case.
@@ -70,11 +70,11 @@ hFWI(df_wx, timezone, ffmc_old = 85, dmc_old = 6, dc_old = 15)
 ```
 | Parameter | Description |
 | --- | --- |
-| `df_wx` | data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year) |
-| `timezone` | timezone in which the weather station is located as the number of offset hours from UTC (e.g. for stations in Central Standard time the timezone is set to -6) |
+| `df_wx` | Data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year) |
+| `timezone` | Timezone in which the weather station is located as the number of offset hours from UTC (e.g. for stations in Central Standard time the timezone is set to -6) |
 | `ffmc_old` |  |
-| `dmc_old` | the start-up value of the duff moisture code (e.g. 6, this is the default) |
-| `dc_old` | the start-up value of the drought code (e.g. 15, this is the default) |
+| `dmc_old` | The start-up value of the duff moisture code (e.g. 6, this is the default) |
+| `dc_old` | The start-up value of the drought code (e.g. 15, this is the default) |
 
 Python :
 ```python
@@ -82,12 +82,12 @@ hFWI(df_wx, ffmc_old = 85, dmc_old = 6, dc_old = 15, silent = False)
 ```
 | Parameter | Description |
 | --- | --- |
-| `df_wx` | data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year) |
-| `timezone` | timezone in which the weather station is located |
-| `ffmc_old` | the startup value of the fine fuel moisture code (e.g. 85, this is the default)  |
-| `dmc_old` | the start-up value of the duff moisture code (e.g. 6, this is the default) |
-| `dc_old` | the start-up value of the drought code (e.g. 15, this is the default) |
-| `silent` | print progress messages to monitor script. True or False, False by default |
+| `df_wx` | Data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year) |
+| `timezone` | Timezone in which the weather station is located |
+| `ffmc_old` | The startup value of the fine fuel moisture code (e.g. 85, this is the default)  |
+| `dmc_old` | The start-up value of the duff moisture code (e.g. 6, this is the default) |
+| `dc_old` | The start-up value of the drought code (e.g. 15, this is the default) |
+| `silent` | Print progress messages to monitor script. True or False, False by default |
 
 C :
 
@@ -95,25 +95,25 @@ The C version can be run from command line with the following arguments in order
 
 | Code | Description |
 | --- | --- |
-| `local GMToffset` | timezone in which the weather station is located |
-| `starting FFMC` | the startup value of the fine fuel moisture code (e.g. 85) |
-| `starting DMC` | the start-up value of the duff moisture code (e.g. 6) |
-| `starting DC` | the start-up value of the drought code (e.g. 15) |
-| `input file` | name of .csv file containing data for a single station over the course of a year |
-| `output file` | name of the file to output results into |
+| `local GMToffset` | Timezone in which the weather station is located |
+| `starting FFMC` | The startup value of the fine fuel moisture code (e.g. 85) |
+| `starting DMC` | The start-up value of the duff moisture code (e.g. 6) |
+| `starting DC` | The start-up value of the drought code (e.g. 15) |
+| `input file` | Name of .csv file containing data for a single station over the course of a year |
+| `output file` | Name of the file to output results into |
 
 #### Output Description
 The output is also the same format as the input data, with the following columns appended: 
 
 | Column | Description |
 | --- | --- |
-| `timestamp` | date and time of weather and FWI variable. Timestamp YYYY-MM-DD HH:MM:SS. (not in C) |
+| `timestamp` | Date and time of weather and FWI variable. Timestamp YYYY-MM-DD HH:MM:SS. (not in C) |
 | `date` | YYYY-MM-DD Date type (without hh:mm:ss). (not in C) |
-| `sunrise` | Time of sunrise based on the latitude, longitude, and date (decimal time). (not in C) |
-| `sunset` | Time of sunset based on the latitude, longitude, and date (decimal time). (not in C) |
-| `sunlight_hours` | Number of hours between sunrise and sunset (decimal time). (not in C) |
-| `solrad` | Solar Radiation measured in kw/m2 (kilowatts per meter squared) for grassland codes, generated automatically if missing from input (number). (needs to be calculated using make_inputs.c if not given) |
-| `percent_cured` | percent of cured (dead) grass fuels in grasslands, generated automatically if missing from input.  Used exclusively in the Grassland calculations.  Percentage as number (0-100). (needs to be calculated using make_inputs.c if not given) |
+| `sunrise` | Time of sunrise based on the latitude, longitude, and date in military time (decimal time). (not in C) |
+| `sunset` | Time of sunset based on the latitude, longitude, and date in military time (decimal time). (not in C) |
+| `sunlight_hours` | Number of hours (hr) between sunrise and sunset (decimal time). (not in C) |
+| `solrad` | Solar Radiation measured in kilowatts per square metre (kW/m^2) for grassland codes, generated automatically if missing from input (number). (needs to be calculated using **make_inputs.c** if not given) |
+| `percent_cured` | Percent of cured (dead) grass fuels in grasslands, generated automatically if missing from input.  Used exclusively in the Grassland calculations.  Percentage as number (0-100). (needs to be calculated using make_inputs.c if not given) |
 | `grass_fuel_load` | The standard grass fuel load is built into the Python and R code, 0.35kg/m2.  (needs to be calculated using make_inputs.c if not given, generates a column with the standard value) |
 | `ffmc` | Fine Fuel Moisture Code (number) |
 | `dmc` | Duff Moisture Code (number) |
@@ -153,15 +153,15 @@ hourly_data = the output dataframe generated by NG_FWI
 ### Output Description
 | Parameter | Description |
 | --- | --- |
-| `wstnid` | weather station id, or unique identifier for the weather station |
+| `wstnid` | Weather station ID, or unique identifier for the weather station |
 | `year` | Year, YYYY, number (e.g. 2024) |
-| `mon` | month, M, number (e.g. 3) |
-| `day` | day, D number (e.g. 8) |
+| `mon` | Month, M, number (e.g. 3) |
+| `day` | Day, D number (e.g. 8) |
 | `sunrise` | Time of sunrise. HH:MM:SS timestamp format in military time (e.g. 06:30:55) |
 | `sunset` | Time of sunset. HH:MM:SS timestamp format in military time (e.g. 19:45:05) |
-| `peak_time` | The hour, H in military time (0-23),  number format. The hour where one might expect maximum fire behaviour as expressed by a modified ISI (see definitions of wind_speed_smoothed and peak_isi_smoothed below).  If the peak ISI (from peak_isi_smoothed field) is less than five, the peak_time is set to 17:00 hours |
-| `duration` | number of hours, number format.  Can also be called duration of a burning window, number of hours in the day where one could expect an active fire (where a modified ISI is equal or greater than five).  If the ISI did not reach 5 or greater, the duration is zero |
-| `wind_speed_smoothed` | Wind Speed (km/hr), double precision. Hourly wind speed recorded based on a 10 min average can be noisy hour-to-hour, this makes it difficult to estimate the duration of a burning window.  To estimate the duration of a burning window and peak time, the hourly windspeed is smoothed and the ISI is recalculated based on the smoothed wind speed and FFMC |
+| `peak_time` | The hour (hr) in military time (0-23),  number format. The hour where one might expect maximum fire behaviour as expressed by a modified ISI (see definitions of wind_speed_smoothed and peak_isi_smoothed below).  If the peak ISI (from peak_isi_smoothed field) is less than five, the peak_time is set to 17:00 hours |
+| `duration` | Number of hours (hr), number format.  Can also be called duration of a burning window, number of hours in the day where one could expect an active fire (where a modified ISI is equal or greater than five).  If the ISI did not reach 5 or greater, the duration is zero |
+| `wind_speed_smoothed` | Wind Speed in kilometres per hour (km/hr), double precision. Hourly wind speed recorded based on a 10 min average can be noisy hour-to-hour, this makes it difficult to estimate the duration of a burning window.  To estimate the duration of a burning window and peak time, the hourly windspeed is smoothed and the ISI is recalculated based on the smoothed wind speed and FFMC |
 | `peak_isi_smoothed` | Maximum Initial Spread Index (ISI) recalculated based on FFMC and smoothed wind speed from ‘wind_speed_smoothed’, double precision number.  Number, double precision |
 | `ffmc` | Fine Fuel Moisture Code corresponding to the FFMC at the hour of peak time. Number, double precision |
 | `dmc` | Duff Moisture Code corresponding to the DMC at the hour of peak. Number, double precision |
