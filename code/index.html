@@ -173,11 +173,11 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>lat</code></td>
-<td>Latitude. Location of weather station, decimal degrees (double precision)</td>
+<td>Latitude of weather station, decimal degrees (°) (double precision)</td>
 </tr>
 <tr>
 <td><code>long</code></td>
-<td>Longitude. Location of weather station, decimal degrees (double precision)</td>
+<td>Longitude of weather station, decimal degrees (°) (double precision)</td>
 </tr>
 <tr>
 <td><code>yr</code></td>
@@ -197,23 +197,23 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>temp</code></td>
-<td>Temperature in °Celsius, number</td>
+<td>Temperature in degrees Celsius (°C), number</td>
 </tr>
 <tr>
 <td><code>rh</code></td>
-<td>Relative humidity in percent, number (0-100)</td>
+<td>Relative humidity in percent (%), number (0-100)</td>
 </tr>
 <tr>
 <td><code>ws</code></td>
-<td>Wind speed in km/hr, number</td>
+<td>Wind speed in kilometres per hour (km/hr), number</td>
 </tr>
 <tr>
 <td><code>prec</code></td>
-<td>Precipitation (rain) measured in millimeters (mm), number</td>
+<td>Precipitation (rain) measured in millimetres (mm), number</td>
 </tr>
 <tr>
 <td><code>solrad</code></td>
-<td>Solar Radiation measured in kw/m2 (kilowatts per meter squared) for grassland codes, number.  OPTIONAL input, FWI2025 will generate based on default method. (<a href="" target="_self">read more about solar radiation sensors and minimum requirements</a>)</td>
+<td>Solar Radiation measured in kilowatts per square metre (kW/m^2) for grassland codes, number.  OPTIONAL input, FWI2025 will generate based on default method. (<a href="../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf">CFFDRS2025 Solar Radiation Input (Draft)</a>📥)</td>
 </tr>
 <tr>
 <td><code>percent_cured</code></td>
@@ -237,11 +237,11 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <tbody>
 <tr>
 <td><code>df_wx</code></td>
-<td>data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year)</td>
+<td>Data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year)</td>
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>timezone in which the weather station is located as the number of offset hours from UTC (e.g. for stations in Central Standard time the timezone is set to -6)</td>
+<td>Timezone in which the weather station is located as the number of offset hours from UTC (e.g. for stations in Central Standard time the timezone is set to -6)</td>
 </tr>
 <tr>
 <td><code>ffmc_old</code></td>
@@ -249,11 +249,11 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>dmc_old</code></td>
-<td>the start-up value of the duff moisture code (e.g. 6, this is the default)</td>
+<td>The start-up value of the duff moisture code (e.g. 6, this is the default)</td>
 </tr>
 <tr>
 <td><code>dc_old</code></td>
-<td>the start-up value of the drought code (e.g. 15, this is the default)</td>
+<td>The start-up value of the drought code (e.g. 15, this is the default)</td>
 </tr>
 </tbody>
 </table>
@@ -270,27 +270,27 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <tbody>
 <tr>
 <td><code>df_wx</code></td>
-<td>data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year)</td>
+<td>Data frame or formatted table (can have multiple years and stations, needs to be temporally sequential during a given year)</td>
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>timezone in which the weather station is located</td>
+<td>Timezone in which the weather station is located</td>
 </tr>
 <tr>
 <td><code>ffmc_old</code></td>
-<td>the startup value of the fine fuel moisture code (e.g. 85, this is the default)</td>
+<td>The startup value of the fine fuel moisture code (e.g. 85, this is the default)</td>
 </tr>
 <tr>
 <td><code>dmc_old</code></td>
-<td>the start-up value of the duff moisture code (e.g. 6, this is the default)</td>
+<td>The start-up value of the duff moisture code (e.g. 6, this is the default)</td>
 </tr>
 <tr>
 <td><code>dc_old</code></td>
-<td>the start-up value of the drought code (e.g. 15, this is the default)</td>
+<td>The start-up value of the drought code (e.g. 15, this is the default)</td>
 </tr>
 <tr>
 <td><code>silent</code></td>
-<td>print progress messages to monitor script. True or False, False by default</td>
+<td>Print progress messages to monitor script. True or False, False by default</td>
 </tr>
 </tbody>
 </table>
@@ -306,27 +306,27 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <tbody>
 <tr>
 <td><code>local GMToffset</code></td>
-<td>timezone in which the weather station is located</td>
+<td>Timezone in which the weather station is located</td>
 </tr>
 <tr>
 <td><code>starting FFMC</code></td>
-<td>the startup value of the fine fuel moisture code (e.g. 85)</td>
+<td>The startup value of the fine fuel moisture code (e.g. 85)</td>
 </tr>
 <tr>
 <td><code>starting DMC</code></td>
-<td>the start-up value of the duff moisture code (e.g. 6)</td>
+<td>The start-up value of the duff moisture code (e.g. 6)</td>
 </tr>
 <tr>
 <td><code>starting DC</code></td>
-<td>the start-up value of the drought code (e.g. 15)</td>
+<td>The start-up value of the drought code (e.g. 15)</td>
 </tr>
 <tr>
 <td><code>input file</code></td>
-<td>name of .csv file containing data for a single station over the course of a year</td>
+<td>Name of .csv file containing data for a single station over the course of a year</td>
 </tr>
 <tr>
 <td><code>output file</code></td>
-<td>name of the file to output results into</td>
+<td>Name of the file to output results into</td>
 </tr>
 </tbody>
 </table>
@@ -342,7 +342,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <tbody>
 <tr>
 <td><code>timestamp</code></td>
-<td>date and time of weather and FWI variable. Timestamp YYYY-MM-DD HH:MM:SS. (not in C)</td>
+<td>Date and time of weather and FWI variable. Timestamp YYYY-MM-DD HH:MM:SS. (not in C)</td>
 </tr>
 <tr>
 <td><code>date</code></td>
@@ -350,23 +350,23 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>sunrise</code></td>
-<td>Time of sunrise based on the latitude, longitude, and date (decimal time). (not in C)</td>
+<td>Time of sunrise based on the latitude, longitude, and date in military time (decimal time). (not in C)</td>
 </tr>
 <tr>
 <td><code>sunset</code></td>
-<td>Time of sunset based on the latitude, longitude, and date (decimal time). (not in C)</td>
+<td>Time of sunset based on the latitude, longitude, and date in military time (decimal time). (not in C)</td>
 </tr>
 <tr>
 <td><code>sunlight_hours</code></td>
-<td>Number of hours between sunrise and sunset (decimal time). (not in C)</td>
+<td>Number of hours (hr) between sunrise and sunset (decimal time). (not in C)</td>
 </tr>
 <tr>
 <td><code>solrad</code></td>
-<td>Solar Radiation measured in kw/m2 (kilowatts per meter squared) for grassland codes, generated automatically if missing from input (number). (needs to be calculated using make_inputs.c if not given)</td>
+<td>Solar Radiation measured in kilowatts per square metre (kW/m^2) for grassland codes, generated automatically if missing from input (number). (needs to be calculated using <strong>make_inputs.c</strong> if not given)</td>
 </tr>
 <tr>
 <td><code>percent_cured</code></td>
-<td>percent of cured (dead) grass fuels in grasslands, generated automatically if missing from input.  Used exclusively in the Grassland calculations.  Percentage as number (0-100). (needs to be calculated using make_inputs.c if not given)</td>
+<td>Percent of cured (dead) grass fuels in grasslands, generated automatically if missing from input.  Used exclusively in the Grassland calculations.  Percentage as number (0-100). (needs to be calculated using make_inputs.c if not given)</td>
 </tr>
 <tr>
 <td><code>grass_fuel_load</code></td>
@@ -439,7 +439,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <tbody>
 <tr>
 <td><code>wstnid</code></td>
-<td>weather station id, or unique identifier for the weather station</td>
+<td>Weather station ID, or unique identifier for the weather station</td>
 </tr>
 <tr>
 <td><code>year</code></td>
@@ -447,11 +447,11 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>mon</code></td>
-<td>month, M, number (e.g. 3)</td>
+<td>Month, M, number (e.g. 3)</td>
 </tr>
 <tr>
 <td><code>day</code></td>
-<td>day, D number (e.g. 8)</td>
+<td>Day, D number (e.g. 8)</td>
 </tr>
 <tr>
 <td><code>sunrise</code></td>
@@ -463,15 +463,15 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>peak_time</code></td>
-<td>The hour, H in military time (0-23),  number format. The hour where one might expect maximum fire behaviour as expressed by a modified ISI (see definitions of wind_speed_smoothed and peak_isi_smoothed below).  If the peak ISI (from peak_isi_smoothed field) is less than five, the peak_time is set to 17:00 hours</td>
+<td>The hour (hr) in military time (0-23),  number format. The hour where one might expect maximum fire behaviour as expressed by a modified ISI (see definitions of wind_speed_smoothed and peak_isi_smoothed below).  If the peak ISI (from peak_isi_smoothed field) is less than five, the peak_time is set to 17:00 hours</td>
 </tr>
 <tr>
 <td><code>duration</code></td>
-<td>number of hours, number format.  Can also be called duration of a burning window, number of hours in the day where one could expect an active fire (where a modified ISI is equal or greater than five).  If the ISI did not reach 5 or greater, the duration is zero</td>
+<td>Number of hours (hr), number format.  Can also be called duration of a burning window, number of hours in the day where one could expect an active fire (where a modified ISI is equal or greater than five).  If the ISI did not reach 5 or greater, the duration is zero</td>
 </tr>
 <tr>
 <td><code>wind_speed_smoothed</code></td>
-<td>Wind Speed (km/hr), double precision. Hourly wind speed recorded based on a 10 min average can be noisy hour-to-hour, this makes it difficult to estimate the duration of a burning window.  To estimate the duration of a burning window and peak time, the hourly windspeed is smoothed and the ISI is recalculated based on the smoothed wind speed and FFMC</td>
+<td>Wind Speed in kilometres per hour (km/hr), double precision. Hourly wind speed recorded based on a 10 min average can be noisy hour-to-hour, this makes it difficult to estimate the duration of a burning window.  To estimate the duration of a burning window and peak time, the hourly windspeed is smoothed and the ISI is recalculated based on the smoothed wind speed and FFMC</td>
 </tr>
 <tr>
 <td><code>peak_isi_smoothed</code></td>
