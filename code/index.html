@@ -52,9 +52,6 @@
             <li class="nav-item">
                 <a href="../contact/" class="nav-link" target="_self">Contact</a>
             </li>
-            <li class="nav-item">
-                <a href="https://cffdrs.github.io/website_fr/accueil" class="nav-link" target="_self">Français</a>
-            </li>
         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -84,9 +81,9 @@
         }
     </style>
 
-    <div class="construction">
+    <!-- <div class="construction">
         <p>website is still in development. problems or feedback can be sent to <a href="mailto:kevin.siu@nrcan-rncan.gc.ca" target="_self">kevin.siu@nrcan-rncan.gc.ca</a></p>
-    </div>
+    </div> -->
 
     <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
@@ -123,9 +120,10 @@
 </div></div>
     <div class="col-md-9" role="main">
 
+<p><a href="https://cffdrs.github.io/website_fr/code/" target="_self" style="float: right;"> Français </a></p>
 <h2 id="repository">Repository</h2>
 <p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> contains the up-to-date code for the CFFDRS2025 modules in three programming languages: R, C, and Python. All three languages contain the same equations and perform the same tasks, the choice is yours depending on your system requirement.</p>
-<p>The <a href="https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi">Canadian Forest Fire Weather Index (FWI)</a> is a major subsystem of the CFFDRS. FWI2025 is the next generation FWI system corresponding to the CFFDRS2025. Below describes the files, data inputs, parameters, and outputs in a general way for all three languages, any deviations for a specific language will be noted. </p>
+<p>The <a href="https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi">Canadian Forest Fire Weather Index (FWI)</a> is a major subsystem of the CFFDRS. FWI2025 is the next generation FWI system corresponding to the CFFDRS2025. The following describes the files, data inputs, parameters, and outputs in a general way for all three languages, noting the variations for specific languages. </p>
 <h2 id="fwi2025-code">FWI2025 Code</h2>
 <h3 id="scripts">Scripts</h3>
 <p>Each programming language has two scripts that are required to generate FWI2025 outputs:</p>
@@ -370,7 +368,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>grass_fuel_load</code></td>
-<td>The standard grass fuel load is built into the Python and R code, 0.35kg/m2.  (needs to be calculated using make_inputs.c if not given, generates a column with the standard value)</td>
+<td>The standard grass fuel load is built into the Python and R code, 0.35 kg/m^2.  (needs to be calculated using make_inputs.c if not given, generates a column with the standard value)</td>
 </tr>
 <tr>
 <td><code>ffmc</code></td>
