@@ -1,3 +1,5 @@
+<link rel="icon" href="/website_en/img/favicon.ico">
+
 <br>
 
 <img 

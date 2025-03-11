@@ -1,3 +1,4 @@
+<a href="https://cffdrs.github.io/website_fr/contacter/Anne_Cotton-Gagnon/" target="_self" style="float: right;"> Français </a>
 
 <img 
     style="height: 200px;

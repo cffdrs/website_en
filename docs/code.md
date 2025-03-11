@@ -1,8 +1,10 @@
+<a href="https://cffdrs.github.io/website_fr/code/" target="_self" style="float: right;"> Français </a>
+
 ## Repository
 
 The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) contains the up-to-date code for the CFFDRS2025 modules in three programming languages: R, C, and Python. All three languages contain the same equations and perform the same tasks, the choice is yours depending on your system requirement.
 
-The [Canadian Forest Fire Weather Index (FWI)](https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi) is a major subsystem of the CFFDRS. FWI2025 is the next generation FWI system corresponding to the CFFDRS2025. Below describes the files, data inputs, parameters, and outputs in a general way for all three languages, any deviations for a specific language will be noted. 
+The [Canadian Forest Fire Weather Index (FWI)](https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi) is a major subsystem of the CFFDRS. FWI2025 is the next generation FWI system corresponding to the CFFDRS2025. The following describes the files, data inputs, parameters, and outputs in a general way for all three languages, noting the variations for specific languages. 
 
 ## FWI2025 Code
 ### Scripts
@@ -114,7 +116,7 @@ The output is also the same format as the input data, with the following columns
 | `sunlight_hours` | Number of hours (hr) between sunrise and sunset (decimal time). (not in C) |
 | `solrad` | Solar Radiation measured in kilowatts per square metre (kW/m^2) for grassland codes, generated automatically if missing from input (number). (needs to be calculated using **make_inputs.c** if not given) |
 | `percent_cured` | Percent of cured (dead) grass fuels in grasslands, generated automatically if missing from input.  Used exclusively in the Grassland calculations.  Percentage as number (0-100). (needs to be calculated using make_inputs.c if not given) |
-| `grass_fuel_load` | The standard grass fuel load is built into the Python and R code, 0.35kg/m2.  (needs to be calculated using make_inputs.c if not given, generates a column with the standard value) |
+| `grass_fuel_load` | The standard grass fuel load is built into the Python and R code, 0.35 kg/m^2.  (needs to be calculated using make_inputs.c if not given, generates a column with the standard value) |
 | `ffmc` | Fine Fuel Moisture Code (number) |
 | `dmc` | Duff Moisture Code (number) |
 | `dc` | Drought Code (number) |

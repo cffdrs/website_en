@@ -1,3 +1,5 @@
+<a href="https://cffdrs.github.io/website_fr/contacter/Chelene_Hanes/" target="_self" style="float: right;"> Français </a>
+
 ## Chelene Hanes
 Wildland Fire Research Scientist  
 Great Lakes Forestry Centre  

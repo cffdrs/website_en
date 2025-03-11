@@ -1,3 +1,5 @@
+<a href="https://cffdrs.github.io/website_fr/tutoriels/" target="_self" style="float: right;"> Français </a>
+
 ## How to calculate hourly FWI – the new FWI2025
 This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.  The data provided in **wx_prf.csv** is already formatted with the required column names and is in a sequential hourly format.  
 

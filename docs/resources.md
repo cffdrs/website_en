@@ -1,3 +1,5 @@
+<a href="https://cffdrs.github.io/website_fr/ressources/" target="_self" style="float: right;"> Français </a>
+
 ## Reports
 [Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 
