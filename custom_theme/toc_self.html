@@ -8,7 +8,9 @@
     {% macro toc_item(item) %}
         {%- if item.level <= config.theme.navigation_depth %}
             <li class="nav-item" data-bs-level="{{ item.level }}">
-                {%- if item.level != 1 %}
+                {%- if item.level == 1 %}
+                    <a href="{{ item.url }}" class="nav-link" target="_self"> (Top) </a>
+                {%- else %}
                     <a href="{{ item.url }}" class="nav-link" target="_self">{{ item.title }}</a>
                 {%- endif %}
                 <ul class="nav flex-column">
