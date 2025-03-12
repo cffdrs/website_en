@@ -21,6 +21,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
     <base target="_blank">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Roboto+Mono&display=swap');
+    </style>
     </head>
 
     <body>
@@ -96,24 +99,49 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#repository" class="nav-link" target="_self">Repository</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="nav-item" data-bs-level="1">
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#repository" class="nav-link" target="_self">Repository</a>
+                <ul class="nav flex-column">
+                </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="2"><a href="#fwi2025-code" class="nav-link" target="_self">FWI2025 Code</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#fire-weather-index-2025" class="nav-link" target="_self">Fire Weather Index 2025</a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#scripts" class="nav-link" target="_self">Scripts</a>
+                <ul class="nav flex-column">
+                </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="2"><a href="#fwi2025-documentation" class="nav-link" target="_self">FWI2025 Documentation</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#packages" class="nav-link" target="_self">Packages</a>
+                <ul class="nav flex-column">
+                </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="2"><a href="#license" class="nav-link" target="_self">License</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#get-started" class="nav-link" target="_self">Get Started</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#format" class="nav-link" target="_self">Format</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#documentation" class="nav-link" target="_self">Documentation</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#license" class="nav-link" target="_self">License</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
             </li>
         </ul>
     </div>
@@ -121,10 +149,11 @@
     <div class="col-md-9" role="main">
 
 <p><a href="https://cffdrs.github.io/website_fr/code/" target="_self" style="float: right;"> Français </a></p>
+<h1 id="code">Code</h1>
 <h2 id="repository">Repository</h2>
 <p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> contains the up-to-date code for the CFFDRS2025 modules in three programming languages: R, C, and Python. All three languages contain the same equations and perform the same tasks, the choice is yours depending on your system requirement.</p>
 <p>The <a href="https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi">Canadian Forest Fire Weather Index (FWI)</a> is a major subsystem of the CFFDRS. FWI2025 is the next generation FWI system corresponding to the CFFDRS2025. The following describes the files, data inputs, parameters, and outputs in a general way for all three languages, noting the variations for specific languages. </p>
-<h2 id="fwi2025-code">FWI2025 Code</h2>
+<h2 id="fire-weather-index-2025">Fire Weather Index 2025</h2>
 <h3 id="scripts">Scripts</h3>
 <p>Each programming language has two scripts that are required to generate FWI2025 outputs:</p>
 <ol>
@@ -148,13 +177,14 @@ Python : datetime, logging, math, numpy, pandas, os.path, sys<br />
 C : stdlib.h, stdbool.h, string.h</p>
 <h3 id="get-started">Get Started</h3>
 <p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> also includes a tutorial script and test data. See the
-<a href="../tutorials/#how-to-calculate-hourly-fwi-the-new-fwi2025" target="_self">Tutorials#How to calculate hourly FWI</a>
+<a href="../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a>
 for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
-<h2 id="fwi2025-documentation">FWI2025 Documentation</h2>
+<h3 id="format">Format</h3>
 <p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Outputs are then also of the same form.  Users can configure the input and output file types to fit their individual data streams.</p>
-<h3 id="hourly-fire-weather-index">Hourly Fire Weather Index</h3>
+<h3 id="documentation">Documentation</h3>
+<h4 id="hourly-fire-weather-index">Hourly Fire Weather Index</h4>
 <p>The <code>hFWI()</code> function in the "NG_FWI" file is built to generate FWI System outputs one station at a time. The R and Python versions can also output multiple stations with a properly formatted input. The C version can only handle inputs of a single year for a given station.</p>
-<h4 id="input-data">Input Data</h4>
+<h5 id="input-data">Input Data</h5>
 <p>The Fire Weather Index System was originally designed to be calculated using data recorded at local <em>weather stations</em>.  As a result, descriptions below reference weather station data as input.  In reality, any collected or calculated weather data (e.g. gridded data, forecast data, etc.) that includes the standard variables required as input to the FWI System can be used. See the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">Weather Guide</a> for a description of weather data input standards for the FWI System.</p>
 <p>The rows of the dataframe should correspond to consecutive hourly data. The columns and data types of the input dataframe are as follows:</p>
 <table>
@@ -221,7 +251,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </table>
 <p>The column headers can be lower case or upper case, the output format is set to upper case.</p>
 <p>In addition to the weather variables, the function to generate hourly FWI2025 outputs requires the timezone where the weather station is located and the start-up value for the moisture codes (e.g. FFMC of 85, DMC of 6 and DC of 15). See the next section below to see where it is specified.</p>
-<h4 id="function-parameters">Function Parameters</h4>
+<h5 id="function-parameters">Function Parameters</h5>
 <p>R :</p>
 <pre><code class="language-r">hFWI(df_wx, timezone, ffmc_old = 85, dmc_old = 6, dc_old = 15)
 </code></pre>
@@ -328,7 +358,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 </tbody>
 </table>
-<h4 id="output-description">Output Description</h4>
+<h5 id="output-description">Output Description</h5>
 <p>The output is also the same format as the input data, with the following columns appended: </p>
 <table>
 <thead>
@@ -412,11 +442,11 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 </tbody>
 </table>
-<h3 id="daily-summaries">Daily Summaries</h3>
+<h4 id="daily-summaries">Daily Summaries</h4>
 <p>The hourly FWI output can be summarized in a variety of ways depending on usage and requirements. These can be found within the ‘util’ file. <code>generate_daily_summaries()</code> boils down the hourly data into some daily metrics. </p>
-<h4 id="input-data_1">Input Data</h4>
+<h5 id="input-data_1">Input Data</h5>
 <p>The only input to <code>generate_daily_summaries()</code> is the output from <code>hFWI()</code>.</p>
-<h4 id="function-parameters_1">Function Parameters</h4>
+<h5 id="function-parameters_1">Function Parameters</h5>
 <p>R :  </p>
 <pre><code class="language-r">generate_daily_summaries &lt;- function(hourly_data) {}
 </code></pre>
@@ -426,7 +456,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <p>C : </p>
 <pre><code class="language-c">hourly_data = the output dataframe generated by NG_FWI
 </code></pre>
-<h3 id="output-description_1">Output Description</h3>
+<h5 id="output-description_1">Output Description</h5>
 <table>
 <thead>
 <tr>

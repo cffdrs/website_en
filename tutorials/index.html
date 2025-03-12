@@ -21,6 +21,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
     <base target="_blank">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Roboto+Mono&display=swap');
+    </style>
     </head>
 
     <body>
@@ -96,9 +99,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#how-to-calculate-hourly-fwi-the-new-fwi2025" class="nav-link" target="_self">How to calculate hourly FWI – the new FWI2025</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="nav-item" data-bs-level="1">
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#hourly-fwi" class="nav-link" target="_self">Hourly FWI</a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#what-youll-need" class="nav-link" target="_self">What you'll need</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#data" class="nav-link" target="_self">Data</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#steps" class="nav-link" target="_self">Steps</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
+            </li>
+                </ul>
             </li>
         </ul>
     </div>
@@ -106,7 +129,8 @@
     <div class="col-md-9" role="main">
 
 <p><a href="https://cffdrs.github.io/website_fr/tutoriels/" target="_self" style="float: right;"> Français </a></p>
-<h2 id="how-to-calculate-hourly-fwi-the-new-fwi2025">How to calculate hourly FWI – the new FWI2025</h2>
+<h1 id="tutorials">Tutorials</h1>
+<h2 id="hourly-fwi">Hourly FWI</h2>
 <p>This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.  The data provided in <strong>wx_prf.csv</strong> is already formatted with the required column names and is in a sequential hourly format.  </p>
 <p>*only R version is currently available</p>
 <h3 id="what-youll-need">What you'll need</h3>
@@ -124,7 +148,7 @@ for more details, or look in the code files.</p>
 <p><strong>wx_prf.csv</strong> contains hourly weather recorded from the Petawawa Research Forest weather station during the 2007 field season. The data is sorted by ascending order and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
 There is no input for solar radiation (<em>sol_rad</em>) or curing fraction (<em>percent_cure</em>) because these are optional inputs and they will be automatically estimated if they are not given.</p>
-<h3 id="code">Code</h3>
+<h3 id="steps">Steps</h3>
 <p>Open the <strong>Tutorial_NGFWI.r</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
 <h4 id="load-libraries">Load libraries</h4>
 <p>Ensure you have the necessary libraries installed. Run <code>install.packages()</code> to install any you are missing.</p>
