@@ -16,6 +16,7 @@ theme:
     color_mode: dark
     nav_style: dark
     user_color_mode_toggle: false
+    navigation_depth: 3
 extra_css: [style.css]
 plugins:
     - search

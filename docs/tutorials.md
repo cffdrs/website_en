@@ -1,6 +1,8 @@
 <a href="https://cffdrs.github.io/website_fr/tutoriels/" target="_self" style="float: right;"> Français </a>
 
-## How to calculate hourly FWI – the new FWI2025
+# Tutorials
+
+## Hourly FWI
 This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.  The data provided in **wx_prf.csv** is already formatted with the required column names and is in a sequential hourly format.  
 
 \*only R version is currently available
@@ -23,7 +25,7 @@ for more details, or look in the code files.
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
 There is no input for solar radiation (*sol_rad*) or curing fraction (*percent_cure*) because these are optional inputs and they will be automatically estimated if they are not given.
 
-### Code
+### Steps
 Open the **Tutorial_NGFWI.r** code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).
 
 #### Load libraries

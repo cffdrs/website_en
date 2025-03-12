@@ -1,5 +1,7 @@
 <a href="https://cffdrs.github.io/website_fr/ressources/" target="_self" style="float: right;"> Français </a>
 
+# Resources
+
 ## Reports
 [Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 
@@ -24,7 +26,7 @@ More current and historical CFFDRS documentation can be found on the
 
 ## Overview
 [Forest fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/forest-fires/13143)  
-[Fire Management](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/forest-fires/fire-management/13157)
+[Fire management](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/forest-fires/fire-management/13157)
 
 Canadian Forest Fire Danger Rating System (CFFDRS)
 
@@ -33,5 +35,5 @@ Canadian Forest Fire Danger Rating System (CFFDRS)
 
 Link Hubs
 
-- [Wildland Fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/17598)  
+- [Wildland fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/17598)  
 - [Wildfires](https://www.canada.ca/en/public-safety-canada/campaigns/wildfires.html)

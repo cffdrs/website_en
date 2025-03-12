@@ -1,5 +1,7 @@
 <a href="https://cffdrs.github.io/website_fr/contacter/" target="_self" style="float: right;"> Français </a>
 
+# Contact
+
 ## Newsletter Sign-up
 
 Want to stay updated on the latest developments with CFFDRS2025? Enter your contact information in the form, and we'll send updates directly to your inbox. We will not share your data and will only send you information related to CFFDRS.
