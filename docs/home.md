@@ -12,6 +12,9 @@ This website is intended to:
 - centralize access to the code and documentation
 - host tutorials for new users
 
+If you want to get email updates about the latest developments with CFFDRS2025, join our 
+<a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>.
+
 For those unfamiliar with the CFFDRS, or for official information regarding wildfires in Canada, read more on official Government of Canada pages under 
 <a href="../resources/#overview" target="_self">Resources#Overview</a>.
 
@@ -30,11 +33,10 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 
 ## Announcements
 
-If you want to get email updates about the latest developments with CFFDRS2025, join our 
-<a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>.
-
 ### March 2025
-The [first newsletter](../documents/Newsletter1_FWI2025_final.pdf)📥 is available now. It goes over the new features of the Fire Weather Index (FWI2025) including the ability to use hourly data and the introduction of outputs for grasslands.
+The first edition of the newsletter is available now under
+<a href="../resources/#newsletter-archive" target="_self"> Resources#Newsletter</a>.
+It goes over the new features of the Fire Weather Index (FWI2025) including the ability to use hourly data and the introduction of outputs for grasslands.
 
 ### January 2025
 The NG-CFFDRS Fire Weather Index (FWI) System module is available for users to test. Release of the other modules of the CFFDRS (e.g. FBP System, FMS, and FOP System) is ongoing.

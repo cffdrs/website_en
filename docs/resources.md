@@ -2,6 +2,13 @@
 
 # Resources
 
+## Newsletter Archive
+- [March 2025](../documents/Newsletter1_FWI2025_final.pdf)📥
+
+Join our 
+<a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>
+for future updates.
+
 ## Reports
 [Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 
