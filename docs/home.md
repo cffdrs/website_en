@@ -35,7 +35,7 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 
 ### March 2025
 The first edition of the newsletter is available now under
-<a href="../resources/#newsletter-archive" target="_self"> Resources#Newsletter</a>.
+<a href="../resources/#newsletter" target="_self"> Resources#Newsletter</a>.
 It goes over the new features of the Fire Weather Index (FWI2025) including the ability to use hourly data and the introduction of outputs for grasslands.
 
 ### January 2025

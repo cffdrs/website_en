@@ -2,7 +2,7 @@
 
 # Resources
 
-## Newsletter Archive
+## Newsletter
 - [March 2025](../documents/Newsletter1_FWI2025_final.pdf)📥
 
 Join our 
