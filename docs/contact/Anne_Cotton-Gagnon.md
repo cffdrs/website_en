@@ -1,10 +1,11 @@
 <a href="https://cffdrs.github.io/website_fr/contacter/Anne_Cotton-Gagnon/" target="_self" style="float: right;"> Français </a>
 
 <img 
-    style="height: 200px;
+    style="height: 225px;
            border-radius: 10px;
+           margin: auto;
            float: left;
-           margin: 20px 25px 0px 0px;"
+           margin-right: 25px"
     src="../acotton-gagnon.jpg" 
     alt="Anne Cotton-Gagnon">
 </img>

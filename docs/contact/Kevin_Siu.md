@@ -1,5 +1,15 @@
 <a href="https://cffdrs.github.io/website_fr/contacter/Kevin_Siu/" target="_self" style="float: right;"> Français </a>
 
+<img 
+    style="height: 225px;
+           border-radius: 10px;
+           margin: auto;
+           float: left;
+           margin-right: 25px"
+    src="../ksiu.jpg" 
+    alt="Kevin Siu">
+</img>
+
 ## Kevin Siu
 (he, him | il, lui)  
 Fire Analyst Programmer  

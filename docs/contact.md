@@ -41,6 +41,7 @@ Wildland Fire Research Scientist
 
 **Natasha Jurko**  
 Physical Fire Scientist  
+*Main Contact*  
 [natasha.jurko@nrcan-rncan.gc.ca](mailto:natasha.jurko@NRCan-RNCan.gc.ca)  
 
 **Samuel Lacarte** (he, him | il, lui)  
