@@ -172,7 +172,7 @@ data &lt;- read.csv('wx_prf.csv')
 [11] &quot;prec&quot;
 </code></pre>
 <h4 id="find-the-timezone-and-utc-offset">Find the timezone and UTC offset</h4>
-<p>Date and Time are important to calculate the time of sunrise and sunset. The UTC timezone offset is a required input for the FWI2025 function. The 'lutz' library has functions to get the timezone of the weather station, based on Latitude and Longitude. First, make a dataframe with all the unique stations including ID, Latitude and Longitude.</p>
+<p>Date and Time are important to calculate the time of sunrise and sunset. The UTC timezone offset is a required input for the FWI2025 function. The 'lutz' library has functions to get the timezone of the weather station, based on latitude and longitude. First, make a dataframe with all the unique stations including ID, latitude and longitude.</p>
 <pre><code class="language-r">stations &lt;- cbind(data$id, data$lat, data$long)
 colnames(stations) &lt;- c(&quot;id&quot;, &quot;lat&quot;, &quot;long&quot;)
 stations &lt;- as.data.frame(stations)
@@ -180,12 +180,12 @@ stations &lt;- unique(stations)
 stations$lat &lt;- as.numeric(stations$lat)
 stations$long &lt;- as.numeric(stations$long)
 </code></pre>
-<p>If you print the unique stations, you should see only one for Petawawa Research Forest:</p>
+<p>If you print the unique stations, you should see only one in this dataset, for Petawawa Research Forest (PRF):</p>
 <pre><code class="language-r">&gt; stations
    id      lat      long
 1 PRF 46.01393 -77.41804
 </code></pre>
-<p>Next, find the location for each unique ID based on Latitude and Longitude. <code>tz_lookup_coords()</code> can take some time. You may need to download the package 'sf' for method = "accurate".</p>
+<p>Next, find the location for each unique ID based on latitude and longitude. <code>tz_lookup_coords()</code> can take some time. You may need to download the package 'sf' for method = "accurate".</p>
 <pre><code class="language-r">tz_loc &lt;- tz_lookup_coords(stations$lat, stations$long, method = &quot;accurate&quot;)
 </code></pre>
 <p>Petawawa Research Forest is in the same timezone as Toronto:</p>
@@ -219,7 +219,7 @@ It is able to iterate over multiple stations and years/fire seasons (not used he
 <p>Save the output as a .csv file (overrides any data in any preexisting file)</p>
 <pre><code class="language-r">write.csv(data_fwi, 'wx_prf_fwi.csv')
 </code></pre>
-<p>The last two columns of <code>ffmc</code>, <code>dmc</code>, <code>dc</code>, <code>isi</code>, <code>bui</code>, <code>fwi</code>, and <code>dsr</code> are:</p>
+<p>The last two rows of <code>ffmc</code>, <code>dmc</code>, <code>dc</code>, <code>isi</code>, <code>bui</code>, <code>fwi</code>, and <code>dsr</code> are:</p>
 <pre><code class="language-r">&gt; tail(data_fwi[, 20:26], 2)
        ffmc      dmc       dc      isi      bui      fwi       dsr  
       &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;     &lt;num&gt;  
