@@ -57,7 +57,7 @@ If you print the column names, data should contain 11 columns:
 ```
 
 #### Find the timezone and UTC offset
-Date and Time are important to calculate the time of sunrise and sunset. The UTC timezone offset is a required input for the FWI2025 function. The 'lutz' library has functions to get the timezone of the weather station, based on Latitude and Longitude. First, make a dataframe with all the unique stations including ID, Latitude and Longitude.
+Date and Time are important to calculate the time of sunrise and sunset. The UTC timezone offset is a required input for the FWI2025 function. The 'lutz' library has functions to get the timezone of the weather station, based on latitude and longitude. First, make a dataframe with all the unique stations including ID, latitude and longitude.
 
 ```r
 stations <- cbind(data$id, data$lat, data$long)
@@ -67,7 +67,7 @@ stations <- unique(stations)
 stations$lat <- as.numeric(stations$lat)
 stations$long <- as.numeric(stations$long)
 ```
-If you print the unique stations, you should see only one for Petawawa Research Forest:
+If you print the unique stations, you should see only one in this dataset, for Petawawa Research Forest (PRF):
 
 ```r
 > stations
@@ -75,7 +75,7 @@ If you print the unique stations, you should see only one for Petawawa Research 
 1 PRF 46.01393 -77.41804
 ```
 
-Next, find the location for each unique ID based on Latitude and Longitude. `tz_lookup_coords()` can take some time. You may need to download the package 'sf' for method = "accurate".
+Next, find the location for each unique ID based on latitude and longitude. `tz_lookup_coords()` can take some time. You may need to download the package 'sf' for method = "accurate".
 
 ```r
 tz_loc <- tz_lookup_coords(stations$lat, stations$long, method = "accurate")
@@ -130,7 +130,7 @@ Save the output as a .csv file (overrides any data in any preexisting file)
 write.csv(data_fwi, 'wx_prf_fwi.csv')
 ```
 
-The last two columns of `ffmc`, `dmc`, `dc`, `isi`, `bui`, `fwi`, and `dsr` are:
+The last two rows of `ffmc`, `dmc`, `dc`, `isi`, `bui`, `fwi`, and `dsr` are:
 
 ```r
 > tail(data_fwi[, 20:26], 2)

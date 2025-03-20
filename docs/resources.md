@@ -13,7 +13,12 @@ for future updates.
 [Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 
 - [CFFDRS2025 Solar Radiation Input (Draft)](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥
-- [NG-CFFDRS Fuel Sampling Field Protocol](https://ca.nfis.org/fss/fss?command=retrieveByName&fileName=Field_Guide_of_NG_Protocol.pdf&fileNameSpace=docs/nfi&format=xml&promptToSave=true)📥
+
+Field Guides
+
+- [Field Guide: Sampling Fuels in the Context of the NG-CFFDRS](https://ca.nfis.org/fss/fss?command=retrieveByName&fileName=Field_Guide_of_NG_Protocol.pdf&fileNameSpace=docs/nfi&format=xml&promptToSave=true)📥
+- [Field Guide to the Canadian FBP System 3rd edition (Red Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/223682)
+- [Field Guide for Predicting Fire Behaviour in Ontario's Tallgrass Prairie (Yellow Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/246080)
 
 CFFDRS1992
 
@@ -23,8 +28,6 @@ CFFDRS1992
 
 More current and historical CFFDRS documentation can be found on the  
 [NRCan Open S&T Repository (OSTR)](https://ostrnrcan-dostrncan.canada.ca/home).
-
-[Canadian Association of Fire Chiefs (CAFC) Red Book](https://cafc.ca/page/redbook2021)
 
 ## Maps
 [Canadian Wildland Fire Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/home)  
