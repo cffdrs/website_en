@@ -32,7 +32,7 @@ More current and historical CFFDRS documentation can be found on the
 ## Maps
 [Canadian Wildland Fire Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/home)  
 [Canadian Interagency Forest Fire Centre (CIFFC)](https://ciffc.ca)  
-[National Forest Information System (NFIS) Forest Atlas](https://ca.nfis.org/map/atlas.html)
+[National Forest Information System (NFIS) Forest Atlas](https://ca.nfis.org/map/atlas.html)  
 [Global Wildfire Information System (GWIS)](https://gwis.jrc.ec.europa.eu/)
 
 ## Overview
