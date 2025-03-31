@@ -3,7 +3,7 @@
 # Resources
 
 ## Newsletter
-- [March 2025](../documents/Newsletter1_FWI2025_final.pdf)📥
+- [Volume 1, Issue 1 (March 2025)](../documents/Newsletter1_FWI2025_final.pdf)📥
 
 Join our 
 <a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>
@@ -33,6 +33,7 @@ More current and historical CFFDRS documentation can be found on the
 [Canadian Wildland Fire Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/home)  
 [Canadian Interagency Forest Fire Centre (CIFFC)](https://ciffc.ca)  
 [National Forest Information System (NFIS) Forest Atlas](https://ca.nfis.org/map/atlas.html)
+[Global Wildfire Information System (GWIS)](https://gwis.jrc.ec.europa.eu/)
 
 ## Overview
 [Forest fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/forest-fires/13143)  
