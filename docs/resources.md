@@ -19,6 +19,7 @@ Field Guides
 - [Field Guide: Sampling Fuels in the Context of the NG-CFFDRS](https://ca.nfis.org/fss/fss?command=retrieveByName&fileName=Field_Guide_of_NG_Protocol.pdf&fileNameSpace=docs/nfi&format=xml&promptToSave=true)📥
 - [Field Guide to the Canadian FBP System 3rd edition (Red Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/223682)
 - [Field Guide for Predicting Fire Behaviour in Ontario's Tallgrass Prairie (Yellow Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/246080)
+- [Weather Guide for the CFFDRS](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568)
 
 CFFDRS1992
 
