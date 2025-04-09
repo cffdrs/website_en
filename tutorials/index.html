@@ -106,17 +106,7 @@
                     <a href="#hourly-fwi" class="nav-link" target="_self">Hourly FWI</a>
                 <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="3">
-                    <a href="#what-youll-need" class="nav-link" target="_self">What you'll need</a>
-                <ul class="nav flex-column">
-                </ul>
-            </li>
-            <li class="nav-item" data-bs-level="3">
-                    <a href="#data" class="nav-link" target="_self">Data</a>
-                <ul class="nav flex-column">
-                </ul>
-            </li>
-            <li class="nav-item" data-bs-level="3">
-                    <a href="#steps" class="nav-link" target="_self">Steps</a>
+                    <a href="#r" class="nav-link" target="_self">R</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
@@ -134,119 +124,107 @@
 <h2 id="hourly-fwi">Hourly FWI</h2>
 <p>This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.  The data provided in <strong>wx_prf.csv</strong> is already formatted with the required column names and is in a sequential hourly format.  </p>
 <p>*only R version is currently available</p>
-<h3 id="what-youll-need">What you'll need</h3>
-<p>Go to the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">CFFDRS-NG repo</a> and fork/clone/download the following in the language of your choice: </p>
+<h3 id="r">R</h3>
+<h4 id="what-youll-need">What you'll need</h4>
+<p>Go to the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">CFFDRS-NG repo</a> and download/clone/fork the following: </p>
 <ul>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/NG_FWI.r"><strong>NG_FWI.r</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/util.r"><strong>util.r</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/daily_summaries.R"><strong>daily_summaries.r</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv"><strong>wx_prf.csv</strong></a></li>
 <li><a href="Tutorial_NGFWI.R"><strong>Tutorial_NGFWI.r</strong></a>📥</li>
 </ul>
 <p>Prior to running this tutorial, the user should ensure they have the necessary packages and libraries installed.  Each programming language references different packages or libraries, see 
 <a href="../code/#packages" target="_self">Code#Packages</a>
 for more details, or look in the code files.</p>
-<h3 id="data">Data</h3>
+<h4 id="data">Data</h4>
 <p><strong>wx_prf.csv</strong> contains hourly weather recorded from the Petawawa Research Forest weather station during the 2007 field season. The data is sorted by ascending order and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
 There is no input for solar radiation (<em>sol_rad</em>) or curing fraction (<em>percent_cure</em>) because these are optional inputs and they will be automatically estimated if they are not given.</p>
-<h3 id="steps">Steps</h3>
+<h4 id="steps">Steps</h4>
 <p>Open the <strong>Tutorial_NGFWI.r</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
-<h4 id="load-libraries">Load libraries</h4>
+<h5 id="load-libraries">Load libraries</h5>
 <p>Ensure you have the necessary libraries installed. Run <code>install.packages()</code> to install any you are missing.</p>
 <pre><code class="language-r">library(lubridate)
 library(data.table)
 library(lutz)
 </code></pre>
-<h4 id="check-your-current-working-directory">Check your current working directory</h4>
+<h5 id="check-your-current-working-directory">Check your current working directory</h5>
 <pre><code class="language-r">getwd()
 </code></pre>
-<p>If the working directory is different from where you saved <strong>NG_FWI.r</strong>, <strong>util.r</strong>, and <strong>wx_prf.csv</strong>, change the working directory with <code>setwd()</code> to the folder containing these files.</p>
-<h4 id="load-fwi2025-functions-and-weather-station-data">Load FWI2025 functions and weather station data</h4>
+<p>If the working directory is different from where you saved the NG-CFFDRS scripts, change the working directory with <code>setwd()</code> to that folder.</p>
+<h5 id="load-fwi2025-functions-and-weather-station-data">Load FWI2025 functions and weather station data</h5>
 <pre><code class="language-r">source(&quot;NG_FWI.r&quot;)
 source(&quot;util.r&quot;)
+source(&quot;daily_summaries.r&quot;)
 data &lt;- read.csv('wx_prf.csv')
 </code></pre>
-<p>If you print the column names, data should contain 11 columns:</p>
+<p>If you print the column names, data should contain the following 11 columns:</p>
 <pre><code class="language-r">&gt; names(data)
  [1] &quot;id&quot;   &quot;lat&quot;  &quot;long&quot; &quot;yr&quot;   &quot;mon&quot;  &quot;day&quot;  &quot;hr&quot;   &quot;temp&quot; &quot;rh&quot;   &quot;ws&quot; 
 [11] &quot;prec&quot;
 </code></pre>
-<h4 id="find-the-timezone-and-utc-offset">Find the timezone and UTC offset</h4>
-<p>Date and Time are important to calculate the time of sunrise and sunset. The UTC timezone offset is a required input for the FWI2025 function. The 'lutz' library has functions to get the timezone of the weather station, based on latitude and longitude. First, make a dataframe with all the unique stations including ID, latitude and longitude.</p>
-<pre><code class="language-r">stations &lt;- cbind(data$id, data$lat, data$long)
-colnames(stations) &lt;- c(&quot;id&quot;, &quot;lat&quot;, &quot;long&quot;)
-stations &lt;- as.data.frame(stations)
-stations &lt;- unique(stations)
-stations$lat &lt;- as.numeric(stations$lat)
-stations$long &lt;- as.numeric(stations$long)
+<h5 id="find-the-timezone">Find the timezone</h5>
+<p>The 'lutz' library has functions to get the timezone of the weather station based on latitude and longitude. First, make a dataframe of stations with unique ID, latitude, and longitude.</p>
+<pre><code class="language-r">stations &lt;- unique(data[c(&quot;id&quot;, &quot;lat&quot;, &quot;long&quot;)])
 </code></pre>
-<p>If you print the unique stations, you should see only one in this dataset, for Petawawa Research Forest (PRF):</p>
+<p>Printing the dataframe, the only station is at Petawawa Research Forest (PRF):</p>
 <pre><code class="language-r">&gt; stations
    id      lat      long
 1 PRF 46.01393 -77.41804
 </code></pre>
-<p>Next, find the location for each unique ID based on latitude and longitude. <code>tz_lookup_coords()</code> can take some time. You may need to download the package 'sf' for method = "accurate".</p>
+<p>Next, find the timezone for each unique ID based on latitude and longitude. <code>tz_lookup_coords()</code> can take some time. You may need to download the package 'sf' for method = "accurate".</p>
 <pre><code class="language-r">tz_loc &lt;- tz_lookup_coords(stations$lat, stations$long, method = &quot;accurate&quot;)
 </code></pre>
-<p>Petawawa Research Forest is in the same timezone as Toronto:</p>
+<p>PRF is in the same timezone as Toronto:</p>
 <pre><code class="language-r">&gt; tz_loc
 [1] &quot;America/Toronto&quot;
 </code></pre>
-<p>Find the UTC offset, using the first day in the PRF dataset.</p>
-<pre><code class="language-r">utc &lt;- tz_offset(&quot;2007-05-10&quot;, tz_loc)[[5]]
+<h5 id="find-the-utc-offset">Find the UTC offset</h5>
+<p>The UTC timezone offset is a required input for the FWI2025 function. Since weather data is normally collected using standard time (not daylight time), the date is set to January 1. Using dates from the dataset (during the summer fire season) gives the UTC offset for daylight time which is off by 1.</p>
+<pre><code class="language-r">utc &lt;- tz_offset(&quot;2007-01-01&quot;, tz_loc)[[5]]
 </code></pre>
-<p>Printing the UTC offset for this tutorial, PRF from May-August 2007 is all in Eastern Daylight Time (EDT), which is UTC -4:</p>
+<p>Print the UTC offset, for this tutorial PRF is in Eastern Time (EST) so UTC -5:</p>
 <pre><code class="language-r">&gt; utc
-[1] -4
+[1] -5
 </code></pre>
-<h4 id="calculate-hourly-fwi-system-outputs-with-fwi2025">Calculate hourly FWI System outputs with FWI2025</h4>
+<h5 id="calculate-hourly-fwi-system-outputs-with-fwi2025">Calculate hourly FWI System outputs with FWI2025</h5>
 <p><code>hFWI()</code> is the function that calculates hourly FWI codes in FWI2025. Details about the hourly FWI function can be found at
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>.
-It is able to iterate over multiple stations and years/fire seasons (not used here). Make sure to specify the corresponding utc offsets for different stations or times. Default starting FWI codes are: ffmc_old = 85, dmc_old = 6, and dc_old = 15.</p>
+It can handle multiple stations and years/fire seasons (not shown in this tutorial). Make sure to specify the corresponding UTC offsets for different stations or times. Default starting FWI codes are: ffmc_old = 85, dmc_old = 6, and dc_old = 15.</p>
 <pre><code class="language-r">data_fwi &lt;- hFWI(data, utc)
 </code></pre>
-<p>Output is a data TABLE, with first 11 columns being the same as input, with another 18 output columns appended:</p>
-<pre><code class="language-r">&gt; names(data_fwi)
- [1] &quot;id&quot;             &quot;lat&quot;            &quot;long&quot;           &quot;yr&quot;
- [5] &quot;mon&quot;            &quot;day&quot;            &quot;hr&quot;             &quot;temp&quot;
- [9] &quot;rh&quot;             &quot;ws&quot;             &quot;prec&quot;           &quot;percent_cured&quot;  
-[13] &quot;date&quot;           &quot;timestamp&quot;      &quot;timezone&quot;       &quot;solrad&quot;
-[17] &quot;sunrise&quot;        &quot;sunset&quot;         &quot;sunlight_hours&quot; &quot;ffmc&quot;
-[21] &quot;dmc&quot;            &quot;dc&quot;             &quot;isi&quot;            &quot;bui&quot;
-[25] &quot;fwi&quot;            &quot;dsr&quot;            &quot;gfmc&quot;           &quot;gsi&quot;
-[29] &quot;gfwi&quot;
-</code></pre>
-<p>Save the output as a .csv file (overrides any data in any preexisting file)</p>
+<p>Output is a data <em>table</em>, with FWI calculations appended after the input columns. Save the output as a .csv file (overrides any data in any preexisting file)</p>
 <pre><code class="language-r">write.csv(data_fwi, 'wx_prf_fwi.csv')
 </code></pre>
-<p>The last two rows of <code>ffmc</code>, <code>dmc</code>, <code>dc</code>, <code>isi</code>, <code>bui</code>, <code>fwi</code>, and <code>dsr</code> are:</p>
-<pre><code class="language-r">&gt; tail(data_fwi[, 20:26], 2)
-       ffmc      dmc       dc      isi      bui      fwi       dsr  
-      &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;     &lt;num&gt;  
-1: 80.26688 10.84884 219.5169 1.642292 19.31166 2.320059 0.1206430  
-2: 82.17590 11.10672 220.0533 2.146157 19.72455 3.345161 0.2305616
+<p>The last two rows of <code>ffmc</code>, <code>dmc</code>, <code>dc</code>, <code>isi</code>, <code>bui</code>, and <code>fwi</code> are:</p>
+<pre><code class="language-r">&gt; tail(data_fwi[, c('ffmc', 'dmc', 'dc', 'isi', 'bui', 'fwi')], 2)
+       ffmc      dmc       dc      isi      bui      fwi
+      &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;
+1: 80.26688 10.05399 212.8417 1.642292 17.98419 2.172703
+2: 82.17590 10.31187 213.3781 2.146157 18.40063 3.174787
 </code></pre>
-<p>View a simple summary of the FWI outputs (columns 20-29).</p>
-<pre><code class="language-r">View(summary(data_fwi[, 20:29]))
+<p>View a simple summary of the standard FWI components.</p>
+<pre><code class="language-r">standard_components &lt;- c('ffmc', 'dmc', 'dc', 'isi', 'bui', 'fwi')
+View(summary(data_fwi[, ..standard_components]))
 </code></pre>
-<h4 id="calculate-daily-summaries">Calculate daily summaries</h4>
-<p>Create a daily summary to determine the time of peak burn and the number of hours of spread potential. Details about the daily summaries function can be found at 
+<h5 id="calculate-daily-summaries">Calculate daily summaries</h5>
+<p>Calculate outputs like peak burn time and number of hours of spread potential. Details about the daily summaries function can be found at 
 <a href="../code/#daily-summaries" target="_self">Code#Daily Summaries</a>.</p>
 <pre><code class="language-r">report &lt;- generate_daily_summaries(data_fwi)
 </code></pre>
-<p>Daily report is a data frame with columns:</p>
-<pre><code class="language-r">&gt; names(report)
- [1] &quot;wstind&quot;              &quot;year&quot;                &quot;mon&quot;              
- [4] &quot;day&quot;                 &quot;peak_time&quot;           &quot;duration&quot;         
- [7] &quot;wind_speed_smoothed&quot; &quot;peak_isi_smoothed&quot;   &quot;ffmc&quot;             
-[10] &quot;dmc&quot;                 &quot;dc&quot;                  &quot;isi&quot;              
-[13] &quot;bui&quot;                 &quot;fwi&quot;                 &quot;dsr&quot;              
-[16] &quot;sunrise&quot;             &quot;sunset&quot;
+<p>Compare a simple summary of some daily outputs (convert values to numeric class first).</p>
+<pre><code class="language-r">&gt; daily_components &lt;- c('peak_time', 'duration', 'peak_isi_smoothed', 'dsr')
+&gt; summary(apply(report[daily_components], 2, as.numeric))
+   peak_time        duration      peak_isi_smoothed        dsr
+ Min.   :13.00   Min.   : 0.000   Min.   : 0.000001   Min.   :0.00000    
+ 1st Qu.:17.00   1st Qu.: 0.000   1st Qu.: 2.039376   1st Qu.:0.07124    
+ Median :17.00   Median : 0.000   Median : 4.031968   Median :1.17984    
+ Mean   :17.29   Mean   : 2.697   Mean   : 4.527904   Mean   :1.67124    
+ 3rd Qu.:18.00   3rd Qu.: 5.000   3rd Qu.: 6.495304   3rd Qu.:2.90284    
+ Max.   :23.00   Max.   :14.000   Max.   :15.770692   Max.   :7.11425
 </code></pre>
-<p>View a simple summary of the daily report.</p>
-<pre><code class="language-r">View(summary(report[, 5:15]))
-</code></pre>
-<p>From here, a user can convert the output data to a datatype of their choice or continue with further visualizations within R.</p></div>
+<p>From here, the outputs can be converted to any datatype for further analysis or plotted for visualization.</p></div>
             </div>
         </div>
 

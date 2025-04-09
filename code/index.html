@@ -152,36 +152,42 @@
 <p><a href="https://cffdrs.github.io/website_fr/code/" target="_self" style="float: right;"> Français </a></p>
 <h1 id="code">Code</h1>
 <h2 id="repository">Repository</h2>
-<p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> contains the up-to-date code for the CFFDRS2025 modules in three programming languages: R, C, and Python. All three languages contain the same equations and perform the same tasks, the choice is yours depending on your system requirement.</p>
+<p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> contains the up-to-date code for the CFFDRS2025 modules in three programming languages: R, C, and Python. All three languages contain the same equations and perform the same tasks, the choice is yours depending on your system requirements.</p>
 <h2 id="fire-weather-index-2025">Fire Weather Index 2025</h2>
 <p>The <a href="https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi">Canadian Forest Fire Weather Index (FWI)</a> is a major subsystem of the CFFDRS. FWI2025 is the next generation FWI system corresponding to the CFFDRS2025. The following describes the files, data inputs, parameters, and outputs in a general way for all three languages, noting the variations for specific languages.</p>
 <h3 id="scripts">Scripts</h3>
-<p>Each programming language has two scripts that are required to generate FWI2025 outputs:</p>
+<p>Each programming language has three scripts that are required to generate FWI2025 outputs:</p>
 <ol>
 <li>
 <p>"NG_FWI" holds the functions and equations for generating FWI2025 outputs.</p>
-<p>R : <strong>NG_FWI.r</strong><br />
-Python : <strong>NG_FWI.py</strong><br />
-C : <strong>NG_FWI.c</strong></p>
+<p>R: <strong>NG_FWI.r</strong><br />
+Python: <strong>NG_FWI.py</strong><br />
+C: <strong>NG_FWI.c</strong></p>
 </li>
 <li>
-<p>"util" includes basic functions that are not part of FWI2025 equations, but generate intermediate information for the calculation of the FWI2025 components (e.g. time of sunrise and sunset, number of sunlight hours).  This script also includes the process to generate the daily summary output.</p>
-<p>R : <strong>util.r</strong><br />
-Python : <strong>util.py</strong><br />
-C : <strong>util.c</strong>, <strong>util.h</strong></p>
+<p>"util" includes basic functions that are not part of FWI2025 equations, but generate intermediate information for the calculation of the FWI2025 components (e.g. time of sunrise and sunset, number of sunlight hours).</p>
+<p>R: <strong>util.r</strong><br />
+Python: <strong>util.py</strong><br />
+C: <strong>util.c</strong>, <strong>util.h</strong></p>
+</li>
+<li>
+<p>"daily_summaries" includes the process to generate the daily summary output.</p>
+<p>R: <strong>daily_summaries.r</strong><br />
+Python: <strong>daily_summaries.py</strong><br />
+C: (<em>in development</em>)</p>
 </li>
 </ol>
 <h3 id="packages">Packages</h3>
 <p>The FWI2025 scripts require different sets of language-specific libraries or packages.  These must be installed prior to running "NG_FWI".</p>
-<p>R : lubridate and data.table<br />
-Python : datetime, logging, math, numpy, pandas, os.path, sys<br />
-C : stdlib.h, stdbool.h, string.h</p>
+<p>R: lubridate and data.table<br />
+Python: datetime, logging, math, numpy, pandas, os.path, sys<br />
+C: stdlib.h, stdbool.h, string.h</p>
 <h3 id="get-started">Get Started</h3>
 <p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> also includes a tutorial script and test data. See the
 <a href="../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a>
 for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
 <h3 id="format">Format</h3>
-<p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Outputs are then also of the same form.  Users can configure the input and output file types to fit their individual data streams.</p>
+<p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Outputs are then also of the same table/array form.  Users can configure the input and output file types to fit their individual data streams.</p>
 <h3 id="documentation">Documentation</h3>
 <h4 id="hourly-fire-weather-index">Hourly Fire Weather Index</h4>
 <p>The <code>hFWI()</code> function in the "NG_FWI" file is built to generate FWI System outputs one station at a time. The R and Python versions can also output multiple stations with a properly formatted input. The C version can only handle inputs of a single year for a given station.</p>
@@ -253,7 +259,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <p>The column headers can be lower case or upper case, the output format is set to upper case.</p>
 <p>In addition to the weather variables, the function to generate hourly FWI2025 outputs requires the timezone where the weather station is located and the start-up value for the moisture codes (e.g. FFMC of 85, DMC of 6 and DC of 15). See the next section below to see where it is specified.</p>
 <h5 id="function-parameters">Function Parameters</h5>
-<p>R :</p>
+<p>R:</p>
 <pre><code class="language-r">hFWI(df_wx, timezone, ffmc_old = 85, dmc_old = 6, dc_old = 15)
 </code></pre>
 <table>
@@ -286,7 +292,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 </tbody>
 </table>
-<p>Python :</p>
+<p>Python:</p>
 <pre><code class="language-python">hFWI(df_wx, ffmc_old = 85, dmc_old = 6, dc_old = 15, silent = False)
 </code></pre>
 <table>
@@ -323,7 +329,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 </tbody>
 </table>
-<p>C :</p>
+<p>C:</p>
 <p>The C version can be run from command line with the following arguments in order:</p>
 <table>
 <thead>
@@ -444,17 +450,17 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tbody>
 </table>
 <h4 id="daily-summaries">Daily Summaries</h4>
-<p>The hourly FWI output can be summarized in a variety of ways depending on usage and requirements. These can be found within the ‘util’ file. <code>generate_daily_summaries()</code> boils down the hourly data into some daily metrics. </p>
+<p>The hourly FWI output can be summarized in a variety of ways depending on usage and requirements. These can be found within the "daily_summaries" script. <code>generate_daily_summaries()</code> boils down the hourly data into some daily metrics. </p>
 <h5 id="input-data_1">Input Data</h5>
 <p>The only input to <code>generate_daily_summaries()</code> is the output from <code>hFWI()</code>.</p>
 <h5 id="function-parameters_1">Function Parameters</h5>
-<p>R :  </p>
+<p>R:  </p>
 <pre><code class="language-r">generate_daily_summaries &lt;- function(hourly_data) {}
 </code></pre>
-<p>Python : </p>
+<p>Python: </p>
 <pre><code class="language-python">def generate_daily_summaries(hourly_data): 
 </code></pre>
-<p>C : </p>
+<p>C: </p>
 <pre><code class="language-c">hourly_data = the output dataframe generated by NG_FWI
 </code></pre>
 <h5 id="output-description_1">Output Description</h5>
