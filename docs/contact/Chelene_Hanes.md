@@ -4,7 +4,7 @@
 Wildland Fire Research Scientist  
 Great Lakes Forestry Centre  
 [chelene.hanes@nrcan-rncan.gc.ca](mailto:chelene.hanes@nrcan-rncan.gc.ca)  
-[Firelab](http://www.firelab.utoronto.ca/people/ch/), [NRCan](https://cfs.nrcan.gc.ca/employees/read/ckrezek)  
+[Firelab](http://www.firelab.utoronto.ca/people/ch/), [ResearchGate](https://www.researchgate.net/profile/Chelene-Hanes), [NRCan](https://cfs.nrcan.gc.ca/employees/read/ckrezek)  
 
 ---
 

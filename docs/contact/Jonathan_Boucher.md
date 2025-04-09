@@ -16,7 +16,7 @@ Ph.D
 Wildland Fire Research Scientist  
 Laurentian Forestry Centre  
 [jonathan.boucher@nrcan-rncan.gc.ca](mailto:jonathan.boucher@NRCan-RNCan.gc.ca)  
-[Research Gate](https://www.researchgate.net/profile/Jonathan-Boucher-3)  
+[ResearchGate](https://www.researchgate.net/profile/Jonathan-Boucher-3)  
 
 ---
 
