@@ -3,12 +3,10 @@
 # Tutorials
 
 ## Hourly FWI
-This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.  The data provided in **wx_prf.csv** is already formatted with the required column names and is in a sequential hourly format.  
-
-\*only R version is currently available
+This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.
 
 ### Data
-**wx_prf.csv** contains hourly weather recorded from the Petawawa Research Forest weather station during the 2007 field season. The data is sorted by time and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
+**wx_prf.csv** contains hourly weather recorded from the Petawawa Research Forest (PRF) weather station during the 2007 field season. The data is sorted by time and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
 There is no input for solar radiation (*sol_rad*) or curing fraction (*percent_cure*) because these are optional inputs and they will be automatically estimated if they are not given.
 
@@ -66,7 +64,7 @@ The 'lutz' library has functions to get the timezone of the weather station base
 ```r
 stations <- unique(data[c("id", "lat", "long")])
 ```
-Printing the dataframe, the only station is at Petawawa Research Forest (PRF):
+Printing the dataframe, the only station is at PRF:
 
 ```r
 > stations
@@ -211,7 +209,7 @@ First, make a dataframe of stations with unique ID, latitude, and longitude.
 stations = data.loc[:, ['id', 'lat', 'long']].drop_duplicates()
 ```
 
-Printing the dataframe, the only station is at Petawawa Research Forest (PRF):
+Printing the dataframe, the only station is at PRF:
 ```py
 >>> stations
     id        lat       long
