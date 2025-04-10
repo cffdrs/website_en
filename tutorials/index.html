@@ -106,7 +106,17 @@
                     <a href="#hourly-fwi" class="nav-link" target="_self">Hourly FWI</a>
                 <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="3">
+                    <a href="#data" class="nav-link" target="_self">Data</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
                     <a href="#r" class="nav-link" target="_self">R</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#python" class="nav-link" target="_self">Python</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
@@ -124,6 +134,10 @@
 <h2 id="hourly-fwi">Hourly FWI</h2>
 <p>This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.  The data provided in <strong>wx_prf.csv</strong> is already formatted with the required column names and is in a sequential hourly format.  </p>
 <p>*only R version is currently available</p>
+<h3 id="data">Data</h3>
+<p><strong>wx_prf.csv</strong> contains hourly weather recorded from the Petawawa Research Forest weather station during the 2007 field season. The data is sorted by time and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
+<a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
+There is no input for solar radiation (<em>sol_rad</em>) or curing fraction (<em>percent_cure</em>) because these are optional inputs and they will be automatically estimated if they are not given.</p>
 <h3 id="r">R</h3>
 <h4 id="what-youll-need">What you'll need</h4>
 <p>Go to the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">CFFDRS-NG repo</a> and download/clone/fork the following: </p>
@@ -137,10 +151,6 @@
 <p>Prior to running this tutorial, the user should ensure they have the necessary packages and libraries installed.  Each programming language references different packages or libraries, see 
 <a href="../code/#packages" target="_self">Code#Packages</a>
 for more details, or look in the code files.</p>
-<h4 id="data">Data</h4>
-<p><strong>wx_prf.csv</strong> contains hourly weather recorded from the Petawawa Research Forest weather station during the 2007 field season. The data is sorted by ascending order and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
-<a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
-There is no input for solar radiation (<em>sol_rad</em>) or curing fraction (<em>percent_cure</em>) because these are optional inputs and they will be automatically estimated if they are not given.</p>
 <h4 id="steps">Steps</h4>
 <p>Open the <strong>Tutorial_NGFWI.r</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
 <h5 id="load-libraries">Load libraries</h5>
@@ -191,21 +201,21 @@ data &lt;- read.csv('wx_prf.csv')
 <h5 id="calculate-hourly-fwi-system-outputs-with-fwi2025">Calculate hourly FWI System outputs with FWI2025</h5>
 <p><code>hFWI()</code> is the function that calculates hourly FWI codes in FWI2025. Details about the hourly FWI function can be found at
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>.
-It can handle multiple stations and years/fire seasons (not shown in this tutorial). Make sure to specify the corresponding UTC offsets for different stations or times. Default starting FWI codes are: ffmc_old = 85, dmc_old = 6, and dc_old = 15.</p>
+It can handle multiple stations and years/fire seasons (not shown in this tutorial). Make sure to specify the corresponding UTC offsets for different stations. Default starting FWI codes are: ffmc_old = 85, dmc_old = 6, and dc_old = 15.</p>
 <pre><code class="language-r">data_fwi &lt;- hFWI(data, utc)
 </code></pre>
 <p>Output is a data <em>table</em>, with FWI calculations appended after the input columns. Save the output as a .csv file (overrides any data in any preexisting file)</p>
-<pre><code class="language-r">write.csv(data_fwi, 'wx_prf_fwi.csv')
+<pre><code class="language-r">write.csv(data_fwi, &quot;wx_prf_fwi.csv&quot;)
 </code></pre>
 <p>The last two rows of <code>ffmc</code>, <code>dmc</code>, <code>dc</code>, <code>isi</code>, <code>bui</code>, and <code>fwi</code> are:</p>
-<pre><code class="language-r">&gt; tail(data_fwi[, c('ffmc', 'dmc', 'dc', 'isi', 'bui', 'fwi')], 2)
+<pre><code class="language-r">&gt; tail(data_fwi[, c(&quot;ffmc&quot;, &quot;dmc&quot;, &quot;dc&quot;, &quot;isi&quot;, &quot;bui&quot;, &quot;fwi&quot;)], 2)
        ffmc      dmc       dc      isi      bui      fwi
       &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;    &lt;num&gt;
 1: 80.26688 10.05399 212.8417 1.642292 17.98419 2.172703
 2: 82.17590 10.31187 213.3781 2.146157 18.40063 3.174787
 </code></pre>
 <p>View a simple summary of the standard FWI components.</p>
-<pre><code class="language-r">standard_components &lt;- c('ffmc', 'dmc', 'dc', 'isi', 'bui', 'fwi')
+<pre><code class="language-r">standard_components &lt;- c(&quot;ffmc&quot;, &quot;dmc&quot;, &quot;dc&quot;, &quot;isi&quot;, &quot;bui&quot;, &quot;fwi&quot;)
 View(summary(data_fwi[, ..standard_components]))
 </code></pre>
 <h5 id="calculate-daily-summaries">Calculate daily summaries</h5>
@@ -214,7 +224,7 @@ View(summary(data_fwi[, ..standard_components]))
 <pre><code class="language-r">report &lt;- generate_daily_summaries(data_fwi)
 </code></pre>
 <p>Compare a simple summary of some daily outputs (convert values to numeric class first).</p>
-<pre><code class="language-r">&gt; daily_components &lt;- c('peak_time', 'duration', 'peak_isi_smoothed', 'dsr')
+<pre><code class="language-r">&gt; daily_components &lt;- c(&quot;peak_time&quot;, &quot;duration&quot;, &quot;peak_isi_smoothed&quot;, &quot;dsr&quot;)
 &gt; summary(apply(report[daily_components], 2, as.numeric))
    peak_time        duration      peak_isi_smoothed        dsr
  Min.   :13.00   Min.   : 0.000   Min.   : 0.000001   Min.   :0.00000    
@@ -223,6 +233,110 @@ View(summary(data_fwi[, ..standard_components]))
  Mean   :17.29   Mean   : 2.697   Mean   : 4.527904   Mean   :1.67124    
  3rd Qu.:18.00   3rd Qu.: 5.000   3rd Qu.: 6.495304   3rd Qu.:2.90284    
  Max.   :23.00   Max.   :14.000   Max.   :15.770692   Max.   :7.11425
+</code></pre>
+<p>From here, the outputs can be converted to any datatype for further analysis or plotted for visualization.</p>
+<h3 id="python">Python</h3>
+<h4 id="what-youll-need_1">What you'll need</h4>
+<p>Go to the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">CFFDRS-NG repo</a> and download/clone/fork the following: </p>
+<ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/NG_FWI.py"><strong>NG_FWI.py</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/util.py"><strong>util.py</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/daily_summaries.py"><strong>daily_summaries.py</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv"><strong>wx_prf.csv</strong></a></li>
+<li><a href="Tutorial_NGFWI.py"><strong>Tutorial_NGFWI.py</strong></a>📥</li>
+</ul>
+<p>Prior to running this tutorial, the user should ensure they have the necessary packages installed. Each programming language references different packages or libraries, see 
+<a href="../code/#packages" target="_self">Code#Packages</a>
+for more details, or look in the code files.</p>
+<h4 id="steps_1">Steps</h4>
+<p>Open the <strong>Tutorial_NGFWI.py</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
+<h5 id="load-packages">Load packages</h5>
+<p>Ensure you have the necessary packages installed. Run <code>pip install</code> to install any you are missing.</p>
+<pre><code class="language-py">import pandas as pd
+from datetime import datetime
+from timezonefinder import TimezoneFinder
+from pytz import timezone
+</code></pre>
+<h5 id="load-fwi2025-functions-and-weather-station-data_1">Load FWI2025 functions and weather station data</h5>
+<p>For the import to work, the working directory must match the file location where <strong>NG_FWI.py</strong>, <strong>util.py</strong>, and <strong>daily_summaries.py</strong> are stored.</p>
+<pre><code class="language-py">from NG_FWI import hFWI
+from daily_summaries import generate_daily_summaries
+data = pd.read_csv('wx_prf.csv')
+</code></pre>
+<p>If you print the first 5 columns, it should look like this:</p>
+<pre><code class="language-py">&gt;&gt;&gt; data.head()
+    id        lat       long    yr  mon  day  hr   temp     rh      ws  prec   
+0  PRF  46.013925 -77.418044  2007    5   10   8  14.78  94.90  2.7324   0.0   
+1  PRF  46.013925 -77.418044  2007    5   10   9  17.44  79.11  3.6663   0.0   
+2  PRF  46.013925 -77.418044  2007    5   10  10  21.21  62.95  4.3590   0.0   
+3  PRF  46.013925 -77.418044  2007    5   10  11  23.60  46.17  8.2100   0.0   
+4  PRF  46.013925 -77.418044  2007    5   10  12  24.55  41.53  9.4200   0.0
+</code></pre>
+<h5 id="find-the-timezone_1">Find the timezone</h5>
+<p>First, make a dataframe of stations with unique ID, latitude, and longitude.</p>
+<pre><code class="language-py">stations = data.loc[:, ['id', 'lat', 'long']].drop_duplicates()
+</code></pre>
+<p>Printing the dataframe, the only station is at Petawawa Research Forest (PRF):</p>
+<pre><code class="language-py">&gt;&gt;&gt; stations
+    id        lat       long
+0  PRF  46.013925 -77.418044
+</code></pre>
+<p>Next, find the timezone for each unique ID based on latitude and longitude.</p>
+<pre><code class="language-py">tf = TimezoneFinder()
+tz_loc = tf.timezone_at(lat = stations.at[0, 'lat'], lng = stations.at[0, 'long'])
+</code></pre>
+<p>PRF is in the same timezone as Toronto:</p>
+<pre><code class="language-r">&gt;&gt;&gt; tz_loc
+'America/Toronto'
+</code></pre>
+<h5 id="find-the-utc-offset_1">Find the UTC offset</h5>
+<p>The UTC timezone offset is a required input for the FWI2025 function. Since weather data is normally collected using standard time (not daylight time), the date is set to January 1. Using dates from the dataset (during the summer fire season) gives the UTC offset for daylight time which is off by 1.</p>
+<pre><code class="language-py">utc = timezone(tz_loc).localize(datetime(2007, 1, 1)).strftime('%z')
+</code></pre>
+<p>Print the UTC offset, for this tutorial PRF is in Eastern Time (EST) so UTC is '-0500':</p>
+<pre><code class="language-py">&gt;&gt;&gt; utc
+'-0500'
+</code></pre>
+<p>The UTC offset input is expected as integer hours, so we can set it to -5.</p>
+<pre><code class="language-py">utc = -5
+</code></pre>
+<h5 id="calculate-hourly-fwi-system-outputs-with-fwi2025_1">Calculate hourly FWI System outputs with FWI2025</h5>
+<p><code>hFWI()</code> is the function that calculates hourly FWI codes in FWI2025. Details about the hourly FWI function can be found at
+<a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>.
+It can handle multiple stations and years/fire seasons (not shown in this tutorial). Make sure to specify the corresponding UTC offsets for different stations. Default starting FWI codes are: ffmc_old = 85, dmc_old = 6, and dc_old = 15.</p>
+<pre><code class="language-py">data_fwi = hFWI(data, utc)
+</code></pre>
+<p>Output is a dataframe, with FWI calculations appended after the input columns. Save the output as a .csv file (overrides any data in any preexisting file).</p>
+<pre><code class="language-py">data_fwi.to_csv('wx_prf_fwi_py.csv')
+</code></pre>
+<p>The last two rows of <code>ffmc</code>, <code>dmc</code>, <code>dc</code>, <code>isi</code>, <code>bui</code>, and <code>fwi</code> are:</p>
+<pre><code class="language-py">&gt;&gt;&gt; standard_components = ['ffmc', 'dmc', 'dc', 'isi', 'bui', 'fwi']
+&gt;&gt;&gt; data_fwi.loc[:, standard_components].tail(2)
+           ffmc        dmc          dc       isi        bui       fwi
+2621  80.266881  10.053992  212.841711  1.642292  17.984189  2.172703
+2622  82.175898  10.311868  213.378111  2.146157  18.400630  3.174787
+</code></pre>
+<p>You can print a simple summary of the standard FWI components.</p>
+<pre><code class="language-py">data_fwi.loc[:, standard_components].describe()
+</code></pre>
+<h5 id="calculate-daily-summaries_1">Calculate daily summaries</h5>
+<p>Calculate outputs like peak burn time and number of hours of spread potential. Details about the daily summaries function can be found at 
+<a href="../code/#daily-summaries" target="_self">Code#Daily Summaries</a>.</p>
+<pre><code class="language-py">report = generate_daily_summaries(data_fwi)
+</code></pre>
+<p>View a distribution of the hour of daily peak burn, which looks like this:</p>
+<pre><code class="language-py">&gt;&gt;&gt; report['peak_time'].value_counts().sort_index()
+peak_time
+13     1
+14     2
+15     4
+16    10
+17    53
+18    23
+19    14
+20     1
+23     1
+Name: count, dtype: int64
 </code></pre>
 <p>From here, the outputs can be converted to any datatype for further analysis or plotted for visualization.</p></div>
             </div>
