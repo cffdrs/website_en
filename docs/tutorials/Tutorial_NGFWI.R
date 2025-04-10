@@ -26,7 +26,7 @@ library(lutz)
 getwd()
 # If the working directory is different from where you saved the NG-CFFDRS scripts,
 # change the working directory with setwd() to that folder.
-setwd('\\')
+setwd("\\")
 
 # Load the source files containing the variables and functions to calculate FWI2025.
 source("NG_FWI.r")
@@ -69,16 +69,16 @@ utc
 ### Calculate hourly FWI System outputs with FWI2025 ###
 # hFWI() is the function that calculates hourly FWI codes in FWI2025. It can
 # handle multiple stations and years/fire seasons (not shown in this tutorial).
-# Make sure to specify the corresponding utc offsets for different stations
+# Make sure to specify the corresponding UTC offsets for different stations.
 # Default starting FWI codes are: ffmc_old = 85, dmc_old = 6, dc_old = 15
 data_fwi <- hFWI(data, utc)
 
 # Output is a data TABLE, with FWI calculations appended after the input columns.
 # Save the output as a .csv file (overrides any data in any preexisting file).
-write.csv(data_fwi, 'wx_prf_fwi.csv')
+write.csv(data_fwi, "wx_prf_fwi.csv")
 
 # View a simple summary of the standard FWI components.
-standard_components <- c('ffmc', 'dmc', 'dc', 'isi', 'bui', 'fwi')
+standard_components <- c("ffmc", "dmc", "dc", "isi", "bui", "fwi")
 View(summary(data_fwi[, ..standard_components]))
 
 ### Calculate daily summaries ###
@@ -86,7 +86,7 @@ View(summary(data_fwi[, ..standard_components]))
 report <- generate_daily_summaries(data_fwi)
 
 # View a simple summary of the daily report (convert values to numeric class first).
-daily_components <- c('peak_time', 'duration', 'peak_isi_smoothed', 'dsr')
+daily_components <- c("peak_time", "duration", "peak_isi_smoothed", "dsr")
 View(summary(apply(report[daily_components], 2, as.numeric)))
 
 # From here, the outputs can be converted to any datatype for further analysis or
