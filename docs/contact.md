@@ -13,6 +13,7 @@ Want to stay updated on the latest developments with CFFDRS2025? Enter your cont
 ### Members
 **Gabrielle Ayres** (she, her | elle, elle)  
 Research Mobilization Analyst  
+<a href="../contact/Gabrielle_Ayres" target="_self">Bio</a>  
 [gabrielle.ayres@nrcan-rncan.gc.ca](mailto:gabrielle.ayres@nrcan-rncan.gc.ca)  
 
 **Jonathan Boucher**  
