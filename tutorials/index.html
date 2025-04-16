@@ -132,7 +132,13 @@
 <p><a href="https://cffdrs.github.io/website_fr/tutoriels/" target="_self" style="float: right;"> Français </a></p>
 <h1 id="tutorials">Tutorials</h1>
 <h2 id="hourly-fwi">Hourly FWI</h2>
-<p>This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.</p>
+<p>This tutorial is designed to be an example of how to calculate FWI2025 with tabular data. The same 
+<a href="#data" target="_self">example dataset</a> 
+is used in both 
+<a href="#r" target="_self">R</a> 
+and 
+<a href="#python" target="_self">Python</a> 
+tutorials.</p>
 <h3 id="data">Data</h3>
 <p><strong>wx_prf.csv</strong> contains hourly weather recorded from the Petawawa Research Forest (PRF) weather station during the 2007 field season. The data is sorted by time and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
 <a href="../code/#hourly-fire-weather-index" target="_self">Code#Hourly Fire Weather Index</a>. 
@@ -141,10 +147,10 @@ There is no input for solar radiation (<em>sol_rad</em>) or curing fraction (<em
 <h4 id="what-youll-need">What you'll need</h4>
 <p>Go to the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">CFFDRS-NG repo</a> and download/clone/fork the following: </p>
 <ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv"><strong>wx_prf.csv</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/NG_FWI.r"><strong>NG_FWI.r</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/util.r"><strong>util.r</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/daily_summaries.R"><strong>daily_summaries.r</strong></a></li>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv"><strong>wx_prf.csv</strong></a></li>
 <li><a href="Tutorial_NGFWI.R"><strong>Tutorial_NGFWI.r</strong></a>📥</li>
 </ul>
 <p>Prior to running this tutorial, the user should ensure they have the necessary packages and libraries installed.  Each programming language references different packages or libraries, see 
@@ -238,10 +244,10 @@ View(summary(data_fwi[, ..standard_components]))
 <h4 id="what-youll-need_1">What you'll need</h4>
 <p>Go to the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">CFFDRS-NG repo</a> and download/clone/fork the following: </p>
 <ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv"><strong>wx_prf.csv</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/NG_FWI.py"><strong>NG_FWI.py</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/util.py"><strong>util.py</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/daily_summaries.py"><strong>daily_summaries.py</strong></a></li>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv"><strong>wx_prf.csv</strong></a></li>
 <li><a href="Tutorial_NGFWI.py"><strong>Tutorial_NGFWI.py</strong></a>📥</li>
 </ul>
 <p>Prior to running this tutorial, the user should ensure they have the necessary packages installed. Each programming language references different packages or libraries, see 
