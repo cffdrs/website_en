@@ -3,7 +3,13 @@
 # Tutorials
 
 ## Hourly FWI
-This tutorial is designed to be an example of how to calculate FWI2025 with tabular data.
+This tutorial is designed to be an example of how to calculate FWI2025 with tabular data. The same 
+<a href="#data" target="_self">example dataset</a> 
+is used in both 
+<a href="#r" target="_self">R</a> 
+and 
+<a href="#python" target="_self">Python</a> 
+tutorials.
 
 ### Data
 **wx_prf.csv** contains hourly weather recorded from the Petawawa Research Forest (PRF) weather station during the 2007 field season. The data is sorted by time and has no gaps. The column headers are those required for hourly FWI calculations, details can be found at 
@@ -16,10 +22,10 @@ There is no input for solar radiation (*sol_rad*) or curing fraction (*percent_c
 
 Go to the [CFFDRS-NG repo](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) and download/clone/fork the following: 
 
+- [**wx_prf.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv)
 - [**NG_FWI.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/NG_FWI.r)
 - [**util.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/util.r)
 - [**daily_summaries.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/daily_summaries.R)
-- [**wx_prf.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv)
 - [**Tutorial_NGFWI.r**](tutorials/Tutorial_NGFWI.R)📥
 
 Prior to running this tutorial, the user should ensure they have the necessary packages and libraries installed.  Each programming language references different packages or libraries, see 
@@ -161,10 +167,10 @@ From here, the outputs can be converted to any datatype for further analysis or 
 
 Go to the [CFFDRS-NG repo](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) and download/clone/fork the following: 
 
+- [**wx_prf.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv)
 - [**NG_FWI.py**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/NG_FWI.py)
 - [**util.py**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/util.py)
 - [**daily_summaries.py**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/daily_summaries.py)
-- [**wx_prf.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/wx_prf.csv)
 - [**Tutorial_NGFWI.py**](tutorials/Tutorial_NGFWI.py)📥
 
 Prior to running this tutorial, the user should ensure they have the necessary packages installed. Each programming language references different packages or libraries, see 

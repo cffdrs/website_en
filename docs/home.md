@@ -10,7 +10,7 @@ This website is intended to:
 
 - inform users about the ongoing changes to the CFFDRS
 - centralize access to the code and documentation
-- host tutorials for new users
+- host tutorials for new users in multiple coding languages
 
 If you want to get email updates about the latest developments with CFFDRS2025, join our 
 <a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>.
