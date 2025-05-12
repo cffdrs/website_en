@@ -12,8 +12,8 @@ This website is intended to:
 - centralize access to the code and documentation
 - host tutorials for new users in multiple coding languages
 
-If you want to get email updates about the latest developments with CFFDRS2025, join our 
-<a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>.
+Join our 
+<a href="../resources/#sign-up" target="_self">newsletter mailing list</a> to get email updates about the latest developments with CFFDRS2025.
 
 For those unfamiliar with the CFFDRS, or for official information regarding wildfires in Canada, read more on official Government of Canada pages under 
 <a href="../resources/#overview" target="_self">Resources#Overview</a>.

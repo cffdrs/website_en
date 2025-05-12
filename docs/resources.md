@@ -5,9 +5,10 @@
 ## Newsletter
 - [Volume 1, Issue 1 (March 2025)](../documents/Newsletter1_FWI2025_final.pdf)📥
 
-Join our 
-<a href="../contact/#newsletter-sign-up" target="_self">mailing list</a>
-for future updates.
+### Sign-up
+To receive our newsletters directly to your inbox, fill out the form at the link below. We will not share your data and will only send you information related to CFFDRS.
+
+[Newsletter Sign-up Form (Microsoft Forms)](https://forms.office.com/r/jmT8HVrsK8)
 
 ## Reports
 [Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
