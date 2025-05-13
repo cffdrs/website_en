@@ -1,7 +1,7 @@
 <a href="https://cffdrs.github.io/website_fr/contacter/" target="_self" style="float: right;"> Français </a>
 
 # Contact
-NG-CFFDRS is being updated by the [Canadian Forest Service](https://natural-resources.canada.ca/corporate/corporate-overview/canadian-forest-service) Fire Danger Group. For code issues, refer to the *Feedback and Bug Reports* section of the [repository README file](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme). For scientific and general inquiries, please contact Natasha Jurko ([natasha.jurko@nrcan-rncan.gc.ca](mailto:natasha.jurko@NRCan-RNCan.gc.ca)). For website feedback and issues, please contact Kevin Siu ([kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)).
+NG-CFFDRS is being updated by the [Canadian Forest Service](https://natural-resources.canada.ca/corporate/corporate-overview/canadian-forest-service) Fire Danger Group. For code issues, refer to the *Feedback and Bug Reports* section of the [repository README file](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme). For scientific and general inquiries, please contact Natasha Jurko ([natasha.jurko@nrcan-rncan.gc.ca](mailto:natasha.jurko@NRCan-RNCan.gc.ca)). For website feedback and issues, please contact Kevin Siu ([kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)). Any feedback to help make this a better resource is greatly appreciated!
 
 ## Fire Danger Group Members
 **Gabrielle Ayres** (she, her | elle, elle)  
