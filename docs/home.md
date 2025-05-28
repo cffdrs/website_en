@@ -33,6 +33,11 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 
 ## Announcements
 
+### May 2025
+Natasha Jurko and Sam LaCarte hosted a webinar introducing the grassland components of the NG-FWI (FWI2025) on May 22nd. This was the first of a series of webinars designed to facilitate discussions with the Fire Danger Group. The recording will be made publicly available on this website at the beginning of June. In the meantime, you can <a href="../contact" target="_self">email us</a> if you would like to have access to the recording.
+
+## Past Announcements
+
 ### March 2025
 The first edition of the newsletter is available now under
 <a href="../resources/#newsletter" target="_self"> Resources#Newsletter</a>.
