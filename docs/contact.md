@@ -1,7 +1,13 @@
 <a href="https://cffdrs.github.io/website_fr/contacter/" target="_self" style="float: right;"> Français </a>
 
 # Contact
-NG-CFFDRS is being updated by the [Canadian Forest Service](https://natural-resources.canada.ca/corporate/corporate-overview/canadian-forest-service) Fire Danger Group. For code issues, refer to the *Feedback and Bug Reports* section of the [repository README file](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme). For all other inquiries, scientific or general, or website feedback, please send an email to  ([firedanger-dangerincendie@nrcan-rncan.gc.ca](mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca)). Any feedback to help make this a better resource is greatly appreciated!
+NG-CFFDRS is being updated by the [Canadian Forest Service](https://natural-resources.canada.ca/corporate/corporate-overview/canadian-forest-service) Fire Danger Group. For code issues, refer to the *Feedback and Bug Reports* section of the [repository README file](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme). 
+
+For all other inquiries, scientific or general, or website feedback, please send an email to: 
+
+[firedanger-dangerincendie@nrcan-rncan.gc.ca](mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca)
+
+Any feedback to help make this a better resource is greatly appreciated!
 
 ## Fire Danger Group Members
 **Gabrielle Ayres** (she, her | elle, elle)  
@@ -35,7 +41,6 @@ Wildland Fire Research Scientist
 
 **Natasha Jurko**  
 Physical Fire Scientist  
-*Main Contact*  
 [natasha.jurko@nrcan-rncan.gc.ca](mailto:natasha.jurko@NRCan-RNCan.gc.ca)  
 
 **Samuel Lacarte** (he, him | il, lui)  
@@ -52,7 +57,6 @@ IT Analyst
 
 **Kevin Siu** (he, him | il, lui)  
 Fire Analyst Programmer  
-*Website Overseer*  
 <a href="../contact/Kevin_Siu" target="_self">Bio</a>  
 [kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)
 
