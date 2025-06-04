@@ -13,7 +13,6 @@
 ## Kevin Siu
 (he, him | il, lui)  
 Fire Analyst Programmer  
-*Website Overseer*  
 Great Lakes Forestry Centre  
 [kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)  
 [NRCan](https://cfs.nrcan.gc.ca/employees/read/ksiu)
