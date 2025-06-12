@@ -35,11 +35,15 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 <br>
 
 ## Announcements
+### June 2025
+We have recently updated the cffdrs-ng GitHub repository [README](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main?tab=readme-ov-file#readme) description and [contributing guidelines](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CONTRIBUTING.md) (how to provide code feedback and bug reports). Coming soon, we will be releasing our list of capabilities, FAQ, and roadmap detailing our code updating process for CFFDRS2025. And as always, you can contact us with your ideas and general inquiries at our team email:
+ 
+[firedanger-dangerincendie@nrcan-rncan.gc.ca](mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca)
+
+## Past Announcements
 
 ### May 2025
 Natasha Jurko and Sam LaCarte hosted a webinar introducing the grassland components of the NG-FWI (FWI2025) on May 22nd. This was the first of a series of webinars designed to facilitate discussions with the Fire Danger Group. The recording will be made publicly available on this website at the beginning of June. In the meantime, you can <a href="../contact" target="_self">email us</a> if you would like to have access to the recording.
-
-## Past Announcements
 
 ### March 2025
 The first edition of the newsletter is available now under
