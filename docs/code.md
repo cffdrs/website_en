@@ -3,8 +3,17 @@
 # Code
 
 ## Repository
+The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) contains the up-to-date code for the CFFDRS2025 modules in three programming languages: *R*, *Python*, and *C* (**all C code is still under development**). These three versions are written to produce the same results so users can choose the version that fits their own software systems.
 
-The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) contains the up-to-date code for the CFFDRS2025 modules in three programming languages: R, Python, and C. All three languages contain the same equations and perform the same tasks, the choice is yours depending on your system requirements.
+See the [repository README](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme) for more information about how to provide bug reports, the structure of the repository, and our updating process. For email notifications about code updates, you can specify the type of updates to receive when you <a href="../resources/#sign-up" target="_self">join our mailing list</a>.
+
+## Capabilities
+- Calculate hourly FWI codes and indices
+- Calculate daily summaries of FWI metrics at peak burn time
+- Calculate hourly grassland code and indices
+- Calculate sunrise, sunset from date and location, and additionally solar radiation from local weather data
+- Convert traditional daily noon weather data into daily minimum/maximum weather data
+- Convert daily minimum/maximum weather data into hourly weather data
 
 ## Fire Weather Index 2025
 The [Canadian Forest Fire Weather Index (FWI)](https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi) is a major subsystem of the CFFDRS. FWI2025 is the next generation FWI system corresponding to the CFFDRS2025. The following describes the files, data inputs, parameters, and outputs in a general way for all three languages, noting the variations for specific languages.

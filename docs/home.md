@@ -10,7 +10,7 @@ This website is intended to:
 
 - inform users about the ongoing changes to the CFFDRS
 - centralize access to the code and documentation
-- host tutorials for new users in multiple coding languages
+- host tutorials for new users in multiple programming languages
 
 Join our 
 <a href="../resources/#sign-up" target="_self">newsletter mailing list</a> to get email updates about the latest developments with CFFDRS2025.
@@ -35,20 +35,26 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 <br>
 
 ## Announcements
-### June 2025
+
+### August 2025
+A minor update has been released to the cffdrs-ng GitHub repository. The specific changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md), which also includes extra details about the next (to be released) update. A running <a href="../code/#capabilities" target="_self">list of capabilities</a> is now available.
+
+Natasha Jurko and Gabrielle Ayres hosted the second Fire Danger Group webinar about the new FWI2025 changes in comparison to the FWI1987 version. The recording is available on the <a href="../resources/#seminar-series" target="_self">Resources page</a>.
+
+### Past Announcements
+
+#### June 2025
 We have recently updated the cffdrs-ng GitHub repository [README](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main?tab=readme-ov-file#readme) description and [contributing guidelines](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CONTRIBUTING.md) (how to provide code feedback and bug reports). Coming soon, we will be releasing our list of capabilities, FAQ, and roadmap detailing our code updating process for CFFDRS2025. And as always, you can contact us with your ideas and general inquiries at our team email:
  
 [firedanger-dangerincendie@nrcan-rncan.gc.ca](mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca)
 
-## Past Announcements
+#### May 2025
+Natasha Jurko and Sam LaCarte hosted a webinar introducing the grassland components of the NG-FWI (FWI2025) on May 22nd. This was the first of a series of webinars designed to facilitate discussions with the Fire Danger Group. The recording will be made publicly available <a href="../resources/#seminar-series" target="_self">on this website</a> at the beginning of June. In the meantime, you can <a href="../contact" target="_self">email us</a> if you would like to have access to the recording.
 
-### May 2025
-Natasha Jurko and Sam LaCarte hosted a webinar introducing the grassland components of the NG-FWI (FWI2025) on May 22nd. This was the first of a series of webinars designed to facilitate discussions with the Fire Danger Group. The recording will be made publicly available on this website at the beginning of June. In the meantime, you can <a href="../contact" target="_self">email us</a> if you would like to have access to the recording.
-
-### March 2025
+#### March 2025
 The first edition of the newsletter is available now under
 <a href="../resources/#newsletter" target="_self"> Resources#Newsletter</a>.
 It goes over the new features of the Fire Weather Index (FWI2025) including the ability to use hourly data and the introduction of outputs for grasslands.
 
-### January 2025
+#### January 2025
 The NG-CFFDRS Fire Weather Index (FWI) System module is available for users to test. Release of the other modules of the CFFDRS (e.g. FBP System, FMS, and FOP System) is ongoing.
