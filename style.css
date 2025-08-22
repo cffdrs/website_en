@@ -193,3 +193,13 @@ pre {
     border: 0px;
     border-radius: 7px;
 }
+
+/* Videos */
+iframe {
+    margin: 0 auto;
+    display: block;
+    border-style: solid;
+    border-color: #ff5e17;
+    border-width: 2px;
+    border-radius: 7px;
+}
