@@ -4,6 +4,7 @@
 
 ## Newsletter
 - [Volume 1, Issue 1 (March 2025)](../documents/Newsletter1_FWI2025_final.pdf)📥
+- [Volume 1, Issue 2 - Grasslands (August 2025)](../documents/NextGenerationBrief_2_Grasslands.pdf)📥
 
 ### Sign-up
 To receive our newsletters directly to your inbox, fill out the form at the link below. We will not share your data and will only send you information related to CFFDRS.
