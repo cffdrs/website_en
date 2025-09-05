@@ -162,9 +162,7 @@ hr {
 /* Buttons */
 
 button.btn, button.btn:hover {
-    font-size: 18px;
     color: #dfd7ca;
-    padding: 12px;
     border-style: solid;
     border-width: 2px;
     border-color: #ff5e17;
