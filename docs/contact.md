@@ -1,4 +1,4 @@
-<a href="https://cffdrs.github.io/website_fr/contacter/" target="_self" style="float: right;"> Français </a>
+<a href="https://cffdrs.github.io/website_fr/contact/" target="_self" style="float: right;"> Français </a>
 
 # Contact
 NG-CFFDRS is being updated by the [Canadian Forest Service](https://natural-resources.canada.ca/corporate/corporate-overview/canadian-forest-service) Fire Danger Group. For code feedback and bug reports refer to the [**CONTRIBUTING.md** file on the GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CONTRIBUTING.md).  

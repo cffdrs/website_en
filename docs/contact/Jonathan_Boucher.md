@@ -1,5 +1,5 @@
 <a href="../../contact" target="_self" style="float: left;"> back to Contact </a>
-<a href="https://cffdrs.github.io/website_fr/contacter/Jonathan_Boucher/" target="_self" style="float: right;"> Français </a>
+<a href="https://cffdrs.github.io/website_fr/contact/Jonathan_Boucher/" target="_self" style="float: right;"> Français </a>
 <br>
 
 <img 
