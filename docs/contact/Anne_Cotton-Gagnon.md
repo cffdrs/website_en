@@ -1,4 +1,6 @@
+<a href="../../contact" target="_self" style="float: left;"> back to Contact </a>
 <a href="https://cffdrs.github.io/website_fr/contacter/Anne_Cotton-Gagnon/" target="_self" style="float: right;"> Français </a>
+<br>
 
 <img 
     style="height: 225px;
