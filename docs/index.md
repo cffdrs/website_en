@@ -13,9 +13,9 @@
 </img>
 
 <div class="text-center">
-	<button class="btn btn-dark" onclick="location.href='home'">English</button>
+	<button class="btn btn-dark" onclick="location.href='home'" style="width: 120px; height: 50px;">English</button>
 	&emsp;
-	<button class="btn btn-dark" onclick="location.href='https://cffdrs.github.io/website_fr/accueil'">Français</button>
+	<button class="btn btn-dark" onclick="location.href='https://cffdrs.github.io/website_fr/accueil'" style="width: 120px; height: 50px;">Français</button>
 </div>
 
 <br>
