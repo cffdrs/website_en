@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>hourly FWI r - NG-CFFDRS</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" >
+        <link href="../../style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    <base target="_blank">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Roboto+Mono&display=swap');
+    </style>
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+    <a class="navbar-brand" href="../.." target="_self">NG-CFFDRS</a>
+    <a class="navbar-brand" href="../.." target="_self"> <img style="height: 40px; margin: 0px; padding: 0px;" src="/website_en/img/CFFDRS_Black_4.png" alt="CFFDRS logo"> </img> </a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a href="../../home/" class="nav-link" target="_self">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="../../code/" class="nav-link" target="_self">Code</a>
+            </li>
+            <li class="nav-item">
+                <a href="../" class="nav-link" target="_self">Tutorials</a>
+            </li>
+            <li class="nav-item">
+                <a href="../../resources/" class="nav-link" target="_self">Resources</a>
+            </li>
+            <li class="nav-item">
+                <a href="../../contact/" class="nav-link" target="_self">Contact</a>
+            </li>
+        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+    <!-- Construction Sign -->
+    <style>
+        div.construction p {
+            text-align: center;
+            font-family: Times;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <!-- <div class="construction">
+        <p>website is still in development. problems or feedback can be sent to <a href="mailto:kevin.siu@nrcan-rncan.gc.ca" target="_self">kevin.siu@nrcan-rncan.gc.ca</a></p>
+    </div> -->
+
+    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1">
+                    <a href="#hourly-fwi-tutorial-r" class="nav-link" target="_self"> (Top) </a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#what-youll-need" class="nav-link" target="_self">What you'll need</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#data" class="nav-link" target="_self">Data</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#steps" class="nav-link" target="_self">Steps</a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#load-libraries" class="nav-link" target="_self">Load libraries</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#load-functions-and-data" class="nav-link" target="_self">Load functions and data</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#run-fwi2025" class="nav-link" target="_self">Run FWI2025</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#calculate-daily-summaries" class="nav-link" target="_self">Calculate daily summaries</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#appendix-timezones" class="nav-link" target="_self">Appendix: Timezones</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+    <div class="col-md-9" role="main">
+
+<p><a href="../../tutorials#hourly-fwi" target="_self" style="float: left;"> back to Tutorials </a>
+<a href="https://cffdrs.github.io/website_fr/tutoriels/IFM_horaire_r" target="_self" style="float: right;"> Français </a>
+<br>
+<br></p>
+<h1 id="hourly-fwi-tutorial-r">Hourly FWI Tutorial - R</h1>
+<p><em>Last updated: September 10th, 2025</em></p>
+<h2 id="what-youll-need">What you'll need</h2>
+<p>The following files can be found on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a>: </p>
+<ul>
+<li>data/<ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv"><strong>PRF2007_hourly_wx.csv</strong></a></li>
+</ul>
+</li>
+<li>FWI/<ul>
+<li>R/<ul>
+<li>tutorial/<ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/tutorial/tutorial_hourly_FWI.r"><strong>tutorial_hourly_FWI.r</strong></a></li>
+</ul>
+</li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/NG_FWI.r"><strong>NG_FWI.r</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/util.r"><strong>util.r</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/daily_summaries.R"><strong>daily_summaries.r</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>If you are unfamiliar with GitHub, there are many options for you to retrieve the code and data files:</p>
+<ol>
+<li><em>Download each file</em> to your computer individually. On the file's GitHub page (e.g. <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv"><strong>PRF2007_hourly_wx.csv</strong></a>), find the "More file actions" button at the top-right side of the website (denoted "..."), and select "Download". This will begin downloading based on your browser settings. Repeat this for every file.</li>
+<li><em>Download the whole repository</em> to your computer. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
+<li><em>Clone</em> the whole repository to your computer with Git. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
+<li><em>Fork</em> the repository to create a new repository on GitHub. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
+</ol>
+<p>Besides the files, ensure you have the required R packages, which are listed at <a href="../../code/FWI2025_R#packages" target="_self">FWI2025_R#packages</a>.</p>
+<h2 id="data">Data</h2>
+<p><strong>PRF2007_hourly_wx.csv</strong> contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data. If you would like guidance on how to fill in missing weather data for your situation, check the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> or <a href="../../contact">reach out to us</a>! The column headers are those required for hourly FWI calculations, details of which can be found at <a href="../../code/FWI2025_R#input-data" target="_self">FWI2025_R#input-data</a>. Grassland curing (<code>percent_cured</code>) and solar radiation (<code>solrad</code>) are not included, but these are optional inputs and they will be automatically calculated if not provided.</p>
+<h2 id="steps">Steps</h2>
+<p>Open the <strong>tutorial_hourly_FWI.r</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
+<h3 id="load-libraries">Load libraries</h3>
+<p>Run <code>install.packages()</code> to install any you are missing</p>
+<pre><code class="language-r">library(lubridate)
+library(data.table)
+</code></pre>
+<h3 id="load-functions-and-data">Load functions and data</h3>
+<p>Check your current working directory</p>
+<pre><code class="language-r">getwd()
+</code></pre>
+<p>If the working directory is different from where you saved the FWI2025 scripts, change the working directory with <code>setwd()</code> to that folder.  </p>
+<p>Load the files containing the functions and variables to calculate FWI2025.</p>
+<pre><code class="language-r">source(&quot;NG_FWI.r&quot;)
+source(&quot;util.r&quot;)
+source(&quot;daily_summaries.r&quot;)
+</code></pre>
+<p>Load the input weather station data file. Specify the file path if <strong>PRF2007_hourly_wx.csv</strong> is not in the working directory</p>
+<pre><code class="language-r">data &lt;- read.csv(&quot;PRF2007_hourly_wx.csv&quot;)
+</code></pre>
+<p>Print the column names, data should contain 12 columns</p>
+<pre><code class="language-r">&gt; names(data)
+ [1] &quot;id&quot;       &quot;lat&quot;      &quot;long&quot;     &quot;timezone&quot; &quot;yr&quot;       &quot;mon&quot;
+ [7] &quot;day&quot;      &quot;hr&quot;       &quot;temp&quot;     &quot;rh&quot;       &quot;ws&quot;       &quot;prec&quot;
+</code></pre>
+<p>Previously, the timezone (UTC offset) was a function parameter and calculated from latitude and longitude. Now it is a data frame column and provided. See the <a href="#appendix-timezones" target="_self">appendix of this tutorial</a> for extra information on how to calculate the timezone, along with the extra information required about the dataset.</p>
+<h3 id="run-fwi2025">Run FWI2025</h3>
+<p><code>hFWI()</code> is the function that calculates hourly FWI codes in FWI2025. Details about it can be found at <a href="../../code/FWI2025_R/#hourly-fwi" target="_self">FWI2025 - R#hourly-fwi</a>. It can handle multiple stations and years/fire seasons (not shown in this tutorial). Default FWI start-up code values are: ffmc_old = 85, dmc_old = 6, dc_old = 15.</p>
+<pre><code class="language-r">data_fwi &lt;- hFWI(data)
+</code></pre>
+<p>Output is a data.frame (matching input class), with FWI calculations appended after the input columns. Save the output as a .csv file (overrides any preexisting file).</p>
+<pre><code class="language-r">write.csv(data_fwi, &quot;PRF2007_hourly_FWI.csv&quot;, row.names = FALSE)
+</code></pre>
+<p>Print the last two rows of the standard moisture codes and fire behaviour indices.</p>
+<pre><code class="language-r">&gt; standard_components &lt;- c(&quot;ffmc&quot;, &quot;dmc&quot;, &quot;dc&quot;, &quot;isi&quot;, &quot;bui&quot;, &quot;fwi&quot;)
+&gt; tail(data_fwi[standard_components], 2)
+        ffmc    dmc       dc    isi    bui    fwi
+2622 80.2669 3.0924 219.5169 1.6423 5.9745 0.7650
+2623 82.1759 3.3503 220.0533 2.1462 6.4550 1.2023
+</code></pre>
+<p>Print a simple summary of the standard FWI components.</p>
+<pre><code class="language-r">&gt; summary(data_fwi[standard_components])
+      ffmc            dmc               dc              isi
+ Min.   : 0.00   Min.   : 0.000   Min.   : 15.41   Min.   : 0.0000
+ 1st Qu.:67.87   1st Qu.: 5.925   1st Qu.: 72.28   1st Qu.: 0.7877
+ Median :79.38   Median :16.461   Median :133.06   Median : 1.3958
+ Mean   :70.62   Mean   :17.487   Mean   :136.12   Mean   : 2.1582
+ 3rd Qu.:85.18   3rd Qu.:26.511   3rd Qu.:188.64   3rd Qu.: 2.9785
+ Max.   :94.40   Max.   :50.174   Max.   :292.95   Max.   :17.5958
+      bui              fwi
+ Min.   : 0.000   Min.   : 0.000
+ 1st Qu.: 8.408   1st Qu.: 0.422
+ Median :22.623   Median : 2.408
+ Mean   :23.972   Mean   : 3.877
+ 3rd Qu.:34.605   3rd Qu.: 5.930
+ Max.   :66.148   Max.   :25.135
+</code></pre>
+<h3 id="calculate-daily-summaries">Calculate daily summaries</h3>
+<p>Calculate outputs like peak burn time and number of hours of spread potential. Details about the daily summaries function can be found at 
+<a href="../../code/FWI2025_R/#daily-summaries" target="_self">FWI2025 - R#daily-summaries</a>.</p>
+<pre><code class="language-r">report &lt;- generate_daily_summaries(data_fwi)
+</code></pre>
+<p>Print a simple summary of the daily report.</p>
+<pre><code class="language-r">&gt; daily_components &lt;- c(&quot;peak_hr&quot;, &quot;duration&quot;, &quot;isi_smooth&quot;, &quot;dsr&quot;)
+&gt; summary(report[daily_components])
+    peak_hr         duration        isi_smooth          dsr
+ Min.   :13.00   Min.   : 0.000   Min.   : 0.000   Min.   :0.0000
+ 1st Qu.:17.00   1st Qu.: 0.000   1st Qu.: 1.234   1st Qu.:0.0338
+ Median :17.00   Median : 0.000   Median : 4.032   Median :0.9913
+ Mean   :17.29   Mean   : 2.697   Mean   : 4.324   Mean   :1.5533
+ 3rd Qu.:18.00   3rd Qu.: 5.000   3rd Qu.: 6.495   3rd Qu.:2.5940
+ Max.   :23.00   Max.   :14.000   Max.   :15.771   Max.   :6.9486
+</code></pre>
+<p>From here, the outputs can be converted to any datatype for further analysis or plotted for visualization.</p>
+<h2 id="appendix-timezones">Appendix: Timezones</h2>
+<p>This section will cover how to calculate a timezone based on a location (latitude and longitude) and date. Note that this is not necessarily a substitute for actual information about the time used in a dataset. The <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> specifies to collect data by local standard time, which is different in many places due to the shift to daylight time in summer months (daylight savings).</p>
+<p>The 'lutz' library has functions to get the timezone of the weather station based on latitude and longitude.</p>
+<pre><code class="language-r">library(lutz)
+</code></pre>
+<p>First, make a dataframe of stations with unique ID, latitude, and longitude.</p>
+<pre><code class="language-r">stations &lt;- unique(data[c(&quot;id&quot;, &quot;lat&quot;, &quot;long&quot;)])
+</code></pre>
+<p>Print the unique station IDs and coordinates. For this dataset the only station is at Petawawa Research Forest (PRF).</p>
+<pre><code class="language-r">&gt; stations
+   id    lat    long
+1 PRF 45.996 -77.427
+</code></pre>
+<p>Find the timezone based on latitude and longitude, this can take some time. You may need to download the package 'sf' for method = "accurate".</p>
+<pre><code class="language-r">tz_loc &lt;- tz_lookup_coords(stations$lat, stations$long, method = &quot;accurate&quot;)
+</code></pre>
+<p>Print the timezone location. PRF is equivalent to "America/Toronto".</p>
+<pre><code class="language-r">&gt; tz_loc
+[1] &quot;America/Toronto&quot;
+</code></pre>
+<p>The UTC offset can then be determined from the timezone location.</p>
+<pre><code class="language-r">utc &lt;- tz_offset(&quot;2007-05-10&quot;, tz_loc)[[5]]
+</code></pre>
+<p>Print the UTC offset.</p>
+<pre><code class="language-r">&gt; utc
+[1] -4
+</code></pre>
+<p>Since May 10, 2007 is during daylight savings the UTC offset calculated above corresponds to Eastern Daylight Time (EDT), UTC-4. This matches the timezone column provided since this data was collected using EDT. For Eastern Standard Time (EST), the UTC offset would be UTC-5.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>FWI2025 python - NG-CFFDRS</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" >
+        <link href="../../style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    <base target="_blank">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Roboto+Mono&display=swap');
+    </style>
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+    <a class="navbar-brand" href="../.." target="_self">NG-CFFDRS</a>
+    <a class="navbar-brand" href="../.." target="_self"> <img style="height: 40px; margin: 0px; padding: 0px;" src="/website_en/img/CFFDRS_Black_4.png" alt="CFFDRS logo"> </img> </a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a href="../../home/" class="nav-link" target="_self">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="../" class="nav-link" target="_self">Code</a>
+            </li>
+            <li class="nav-item">
+                <a href="../../tutorials/" class="nav-link" target="_self">Tutorials</a>
+            </li>
+            <li class="nav-item">
+                <a href="../../resources/" class="nav-link" target="_self">Resources</a>
+            </li>
+            <li class="nav-item">
+                <a href="../../contact/" class="nav-link" target="_self">Contact</a>
+            </li>
+        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+    <!-- Construction Sign -->
+    <style>
+        div.construction p {
+            text-align: center;
+            font-family: Times;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <!-- <div class="construction">
+        <p>website is still in development. problems or feedback can be sent to <a href="mailto:kevin.siu@nrcan-rncan.gc.ca" target="_self">kevin.siu@nrcan-rncan.gc.ca</a></p>
+    </div> -->
+
+    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1">
+                    <a href="#fwi2025-python" class="nav-link" target="_self"> (Top) </a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#scripts" class="nav-link" target="_self">Scripts</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#packages" class="nav-link" target="_self">Packages</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#get-started" class="nav-link" target="_self">Get Started</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#data-format" class="nav-link" target="_self">Data Format</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#hourly-fwi" class="nav-link" target="_self">Hourly FWI</a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#input-dataframe" class="nav-link" target="_self">Input DataFrame</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#parameters" class="nav-link" target="_self">Parameters</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#output" class="nav-link" target="_self">Output</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#daily-summaries" class="nav-link" target="_self">Daily Summaries</a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#parameters_1" class="nav-link" target="_self">Parameters</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#output_1" class="nav-link" target="_self">Output</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
+            </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+    <div class="col-md-9" role="main">
+
+<p><a href="../../code#fwi2025" target="_self" style="float: left;"> back to Code </a>
+<a href="https://cffdrs.github.io/website_fr/code/IFM2025_Python" target="_self" style="float: right;"> Français </a>
+<br></p>
+<h1 id="fwi2025-python">FWI2025 - Python</h1>
+<p><em>Last updated: September 10th, 2025</em></p>
+<h2 id="scripts">Scripts</h2>
+<p>There are three scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
+<ol>
+<li>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/NG_FWI.py"><strong>NG_FWI.py</strong></a> holds the functions and equations for generating FWI2025 outputs.</p>
+</li>
+<li>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/util.py"><strong>util.py</strong></a> includes basic functions that are not part of FWI2025 equations, but generate intermediate information for the calculation of the FWI2025 components (e.g. time of sunrise and sunset, number of sunlight hours).</p>
+</li>
+<li>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/daily_summaries.py"><strong>daily_summaries.py</strong></a> holds the functions to generate the daily summary report.</p>
+</li>
+</ol>
+<h2 id="packages">Packages</h2>
+<p>The FWI2025 Python scripts require the following packages which must be installed prior to running <strong>NG_FWI.py</strong>.</p>
+<ul>
+<li><code>datetime</code> (built-in)</li>
+<li><code>logging</code> (built-in)</li>
+<li><code>argparse</code> (built-in)</li>
+<li><code>math</code> (built-in)</li>
+<li><code>numpy</code></li>
+<li><code>pandas</code></li>
+</ul>
+<h2 id="get-started">Get Started</h2>
+<p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">GitHub repository</a> also includes a tutorial script and test data. See the <a href="../../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
+<h2 id="data-format">Data Format</h2>
+<p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Each row then corresponds with a single timestep (i.e. hour), in sequential order. Outputs are then also of the same table/array form, with additional columns. In Python, we use the <code>pandas</code> package and its <a href="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#">DataFrame data type</a> to perform calculations. Users can configure the input file type before and output file type after calculation to fit individual data streams.</p>
+<h2 id="hourly-fwi">Hourly FWI</h2>
+<p>The <code>hFWI()</code> function (case sensitive) in the <strong>NG_FWI.py</strong> file calculates hourly FWI moisture codes and fire behaviour indices. It can handle multiple stations (locations) and multiple years of hourly input data all at once, or just a single hour.</p>
+<h3 id="input-dataframe">Input DataFrame</h3>
+<p>The FWI system was originally designed to be calculated using data recorded at local weather stations, but any collected or calculated data (e.g. gridded data, forecast data, etc.) that includes the required weather variables can be used. See the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> for a description of weather data standards for the FWI System.</p>
+<p>The table below describes the columns and data types for the input DataFrame. Columns are required unless otherwise specified, in which case they will be set or calculated. The column names can be lower-case or upper-case, output columns are lower-case.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+<th>Units</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Unique identifier for weather station or location</td>
+<td></td>
+<td>str</td>
+</tr>
+<tr>
+<td><code>lat</code></td>
+<td>Latitude</td>
+<td>DD</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>Longitude</td>
+<td>DD</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>UTC offset</td>
+<td></td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>yr</code></td>
+<td>Year of data point</td>
+<td></td>
+<td>int</td>
+</tr>
+<tr>
+<td><code>mon</code></td>
+<td>Month of the year (1-12)</td>
+<td></td>
+<td>int</td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td>Day of the month (1-31)</td>
+<td></td>
+<td>int</td>
+</tr>
+<tr>
+<td><code>hr</code></td>
+<td>Hour of the day (0-23)</td>
+<td></td>
+<td>int</td>
+</tr>
+<tr>
+<td><code>temp</code></td>
+<td>Air temperature</td>
+<td>°C</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>rh</code></td>
+<td>Relative humidity (0-100)</td>
+<td>%</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>ws</code></td>
+<td>10 m open wind speed</td>
+<td>km/hr</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>prec</code></td>
+<td>Hourly precipitation</td>
+<td>mm</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>grass_fuel_load</code></td>
+<td>Density of grassland fuels (default 0.35)</td>
+<td>kg/m^2</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>percent_cured</code></td>
+<td>Fraction of grassland fuels that is cured (0-100, optional)</td>
+<td>%</td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>solrad</code></td>
+<td><a href="../../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf">Solar radiation</a>📥 (optional)</td>
+<td>kW/m^2</td>
+<td>float</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the weather variables, you can specify start-up values for moisture codes and other parameters in <code>hFWI()</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<p>The only required parameter for <code>hFWI()</code> is the input DataFrame, although many start-up values can be altered from default if desired. If you are performing a "live" run which is a continuation from previous FWI outputs with new data, the prior outputs need to be specified.</p>
+<pre><code class="language-python">hFWI(df_wx, ffmc_old = 85, mcffmc_old = None, dmc_old = 6, dc_old = 15, mcgfmc_matted_old = 16.31, mcgfmc_standing_old = 16.31, prec_cumulative = 0.0, canopy_drying = 0.0, silent = False, round_out = 4)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>df_wx</code></td>
+<td>DataFrame of hourly weather stream (see <a href="#input-dataframe" target="_self">Input DataFrame</a> section above)</td>
+</tr>
+<tr>
+<td><code>ffmc_old</code></td>
+<td>Previous value for FFMC (default 85). Set to <code>None</code> if <code>mcffmc_old</code> is specified instead</td>
+</tr>
+<tr>
+<td><code>mcffmc_old</code></td>
+<td>Previous value for mcffmc (default <code>None</code>)</td>
+</tr>
+<tr>
+<td><code>dmc_old</code></td>
+<td>Previous value for DMC (default 6)</td>
+</tr>
+<tr>
+<td><code>dc_old</code></td>
+<td>Previous value for DC (default 15)</td>
+</tr>
+<tr>
+<td><code>mcgfmc_matted_old</code></td>
+<td>Previous value for mcgfmc_matted (default 16.31)</td>
+</tr>
+<tr>
+<td><code>mcgfmc_standing_old</code></td>
+<td>Previous value for mcgfmc_standing (default 16.31)</td>
+</tr>
+<tr>
+<td><code>prec_cumulative</code></td>
+<td>Cumulative precipitation this rainfall (default 0)</td>
+</tr>
+<tr>
+<td><code>canopy_drying</code></td>
+<td>Consecutive hours of no rain (default 0). 5 hours or more set to 0</td>
+</tr>
+<tr>
+<td><code>silent</code></td>
+<td>Suppress informative print statements (default False)</td>
+</tr>
+<tr>
+<td><code>round_out</code></td>
+<td>Decimal places to truncate output values to (default 4). Set to <code>None</code> for no rounding</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output">Output</h3>
+<p>The result of <code>hFWI()</code> is a copy of the input DataFrame, with output columns added, described below. This means all columns from the input, even ones that are unused, are still preserved in the output. </p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grass_fuel_load</code></td>
+<td>Density of grassland fuels (if not provided)</td>
+</tr>
+<tr>
+<td><code>percent_cured</code></td>
+<td>Fraction of grassland fuels that is cured (if not provided)</td>
+</tr>
+<tr>
+<td><code>solrad</code></td>
+<td>Solar radiation (if not provided)</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td>Hour of sunrise</td>
+</tr>
+<tr>
+<td><code>sunset</code></td>
+<td>Hour of sunset</td>
+</tr>
+<tr>
+<td><code>sunlight_hours</code></td>
+<td>Number of hours between sunrise and sunset</td>
+</tr>
+<tr>
+<td><code>mcffmc</code></td>
+<td>Fine fuel moisture content</td>
+</tr>
+<tr>
+<td><code>ffmc</code></td>
+<td>Fine Fuel Moisture Code</td>
+</tr>
+<tr>
+<td><code>dmc</code></td>
+<td>Duff Moisture Code</td>
+</tr>
+<tr>
+<td><code>dc</code></td>
+<td>Drought Code</td>
+</tr>
+<tr>
+<td><code>isi</code></td>
+<td>Initial Spread Index</td>
+</tr>
+<tr>
+<td><code>bui</code></td>
+<td>Buildup Index</td>
+</tr>
+<tr>
+<td><code>fwi</code></td>
+<td>Fire Weather Index</td>
+</tr>
+<tr>
+<td><code>dsr</code></td>
+<td>Daily Severity Rating</td>
+</tr>
+<tr>
+<td><code>mcgfmc_matted</code></td>
+<td>Matted grassland fuel moisture content</td>
+</tr>
+<tr>
+<td><code>mcgfmc_standing</code></td>
+<td>Standing grassland fuel moisture content</td>
+</tr>
+<tr>
+<td><code>gfmc</code></td>
+<td>Grassland Fuel Moisture Code</td>
+</tr>
+<tr>
+<td><code>gsi</code></td>
+<td>Grassland Spread Index</td>
+</tr>
+<tr>
+<td><code>gfwi</code></td>
+<td>Grassland Fire Weather Index</td>
+</tr>
+<tr>
+<td><code>prec_cumulative</code></td>
+<td>Cumulative precipitation this rainfall</td>
+</tr>
+<tr>
+<td><code>canopy_drying</code></td>
+<td>Consecutive hours of no rain. 5 hours or more set to 0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="daily-summaries">Daily Summaries</h2>
+<p>Hourly FWI components can be summarized in a variety of ways depending on usage and requirements. One way is to create a daily report, the method of which can be found in the <strong>daily_summaries.py</strong> script. <code>generate_daily_summaries()</code> boils down the hourly data into daily metrics, which means every row in the output now represents a day.</p>
+<p>To align more accurately with the typical daily fire behaviour cycle, the "reset hour" for a day can be redefined away from midnight (see <code>reset_hr</code> parameter below). By default, we use 05:00 (12 hours opposite 17:00), which means the 24 hours summarized are between 05:00 of the listed day and 04:00 of the next day (instead of 00:00 to 23:00). The first or last days are left out if they are represented by 12 or fewer hours of data.</p>
+<h3 id="parameters_1">Parameters</h3>
+<pre><code class="language-python">generate_daily_summaries(hourly_FWI, reset_hr = 5, silent = False, round_out = 4)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hourly_FWI</code></td>
+<td>DataFrame produced by <code>hFWI()</code> (see <a href="#hourly-fwi" target="_self">Hourly FWI</a> section above)</td>
+</tr>
+<tr>
+<td><code>reset_hr</code></td>
+<td>The boundary between days, instead of midnight (default 5)</td>
+</tr>
+<tr>
+<td><code>silent</code></td>
+<td>Suppress informative print statements (default False)</td>
+</tr>
+<tr>
+<td><code>round_out</code></td>
+<td>Decimal places to truncate output values to (default 4). Set to <code>None</code> for no rounding</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output_1">Output</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Unique identifier for weather station or location</td>
+</tr>
+<tr>
+<td><code>yr</code></td>
+<td>Year</td>
+</tr>
+<tr>
+<td><code>mon</code></td>
+<td>Month of year</td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td>Day of month</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td>Hour of sunrise</td>
+</tr>
+<tr>
+<td><code>sunset</code></td>
+<td>Hour of sunset</td>
+</tr>
+<tr>
+<td><code>peak_hr</code></td>
+<td>Expected hour of daily maximum fire behaviour. Set as the hour of maximum ISI calculated using a smoothed wind speed (see <code>ws_smooth</code>), or 17:00 if daily maximum FFMC is less than 85</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>Expected number of hours in the daily burning window. Calculated as the number of hours (possibly discontinuous) where <code>isi_smooth</code> is greater than 5</td>
+</tr>
+<tr>
+<td><code>ffmc</code></td>
+<td>Fine Fuel Moisture Code at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>dmc</code></td>
+<td>Duff Moisture Code at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>dc</code></td>
+<td>Drought Code at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>isi</code></td>
+<td>Initial Spread Index at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>bui</code></td>
+<td>Buildup Index at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>fwi</code></td>
+<td>Fire Weather Index at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>dsr</code></td>
+<td>Daily Severity Rating at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>gfmc</code></td>
+<td>Grassland Fuel Moisture Code at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>gsi</code></td>
+<td>Grassland Spread Index at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>gfwi</code></td>
+<td>Grassland Fire Weather Index at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>ws_smooth</code></td>
+<td>Smoothed 10 m open wind speed at <code>peak_hr</code>. Smoothing calculated as every 24 hours being passed through a [1,4,6,4,1] binomial filter</td>
+</tr>
+<tr>
+<td><code>isi_smooth</code></td>
+<td>ISI calculated using a smoothed wind speed at <code>peak_hr</code></td>
+</tr>
+<tr>
+<td><code>gsi_smooth</code></td>
+<td>GSI calculated using a smoothed wind speed at <code>peak_hr</code></td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
