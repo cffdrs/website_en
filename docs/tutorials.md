@@ -8,9 +8,9 @@ This tutorial is a simple example of how to produce hourly [Fire Weather Index (
 <div class="text-center">
 	<button disabled class="btn btn-dark"">HOURLY FWI <br> Tutorial <br> C <br> (under development)</button>
 	&emsp;
-    <button class="btn btn-dark" onclick="location.href='../tutorials/hourly_FWI_python'">HOURLY FWI <br> Tutorial <br> Python</button>
+    <button class="btn btn-dark" onclick="location.href='../tutorials/Hourly_FWI_Python'">HOURLY FWI <br> Tutorial <br> Python</button>
 	&emsp;
-	<button class="btn btn-dark" onclick="location.href='../tutorials/hourly_FWI_r'">HOURLY FWI <br> Tutorial <br> R</button>
+	<button class="btn btn-dark" onclick="location.href='../tutorials/Hourly_FWI_R'">HOURLY FWI <br> Tutorial <br> R</button>
 </div>
 <br>
 

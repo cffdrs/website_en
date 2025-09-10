@@ -21,9 +21,9 @@ The [Canadian Forest Fire Weather Index (FWI)](https://cwfis.cfs.nrcan.gc.ca/bac
 <div class="text-center">
 	<button disabled class="btn btn-dark"">FWI2025 <br> C <br> (under development)</button>
 	&emsp;
-    <button class="btn btn-dark" onclick="location.href='../code/FWI2025_python'">FWI2025 <br> Python</button>
+    <button class="btn btn-dark" onclick="location.href='../code/FWI2025_Python'">FWI2025 <br> Python</button>
 	&emsp;
-	<button class="btn btn-dark" onclick="location.href='../code/FWI2025_r'">FWI2025 <br> R</button>
+	<button class="btn btn-dark" onclick="location.href='../code/FWI2025_R'">FWI2025 <br> R</button>
 </div>
 
 ## License
