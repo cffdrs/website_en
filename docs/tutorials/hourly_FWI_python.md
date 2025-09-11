@@ -50,7 +50,7 @@ from NG_FWI import hFWI
 from daily_summaries import generate_daily_summaries
 ```
 
-Load the input weather station data file. Specify the file path if PRF2007_hourly_wx.csv is not in the working directory.
+Load the input weather station data file. Specify the file path if **PRF2007_hourly_wx.csv** is not in the working directory.
 ```py
 data = pd.read_csv("PRF2007_hourly_wx.csv")
 ```
