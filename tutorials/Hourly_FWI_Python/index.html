@@ -47,7 +47,7 @@
                 <a href="../../code/" class="nav-link" target="_self">Code</a>
             </li>
             <li class="nav-item">
-                <a href="../" class="nav-link" target="_self">Tutorials</a>
+                <a href="../" class="nav-link active" target="_self">Tutorials</a>
             </li>
             <li class="nav-item">
                 <a href="../../resources/" class="nav-link" target="_self">Resources</a>
@@ -100,7 +100,7 @@
         <ul class="nav flex-column">
             
             <li class="nav-item" data-bs-level="1">
-                    <a href="#hourly-fwi-tutorial-python" class="nav-link" target="_self"> (Top) </a>
+                    <a href="#" class="nav-link" target="_self"> (Top) </a>
                 <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2">
                     <a href="#what-youll-need" class="nav-link" target="_self">What you'll need</a>
@@ -198,7 +198,7 @@ from datetime import datetime
 <pre><code class="language-py">from NG_FWI import hFWI
 from daily_summaries import generate_daily_summaries
 </code></pre>
-<p>Load the input weather station data file. Specify the file path if PRF2007_hourly_wx.csv is not in the working directory.</p>
+<p>Load the input weather station data file. Specify the file path if <strong>PRF2007_hourly_wx.csv</strong> is not in the working directory.</p>
 <pre><code class="language-py">data = pd.read_csv(&quot;PRF2007_hourly_wx.csv&quot;)
 </code></pre>
 <p>Print the column names, data should contain 12 columns.</p>
