@@ -52,7 +52,7 @@ We have recently updated the cffdrs-ng GitHub repository [README](https://github
 [firedanger-dangerincendie@nrcan-rncan.gc.ca](mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca)
 
 #### May 2025
-Natasha Jurko and Sam LaCarte hosted a webinar introducing the grassland components of the NG-FWI (FWI2025) on May 22nd. This was the first of a series of webinars designed to facilitate discussions with the Fire Danger Group. The recording will be made publicly available <a href="../resources/#seminar-series" target="_self">on this website</a> at the beginning of June. In the meantime, you can <a href="../contact" target="_self">email us</a> if you would like to have access to the recording.
+Natasha Jurko and Sam LaCarte hosted a <a href="../resources/#grasslands-in-the-fire-weather-index-system-may-2025" target="_self">webinar</a> introducing the grassland components of the NG-FWI (FWI2025) on May 22nd. This was the first of a series of webinars designed to facilitate discussions with the Fire Danger Group. The recording will be made publicly available on this website at the beginning of June. In the meantime, you can <a href="../contact" target="_self">email us</a> if you would like to have access to the recording.
 
 #### March 2025
 The first edition of the newsletter is available now under
