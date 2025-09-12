@@ -36,12 +36,15 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 
 ## Announcements
 
-### August 2025
+### September 2025
+A major code update for FWI2025 has been released to the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng). It includes changes to the options when running `hFWI()`, the repository file structure, and how DMC and solar radiation are calculated. More details and the rest of the changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md). This website has also been updated to have up-to-date <a href="../code" target="_self">documentation in Code</a> and <a href="../tutorials" target="_self">Tutorials</a>.
+
+### Past Announcements
+
+#### August 2025
 A minor update has been released to the cffdrs-ng GitHub repository. The specific changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md), which also includes extra details about the next (to be released) update. A running <a href="../code/#capabilities" target="_self">list of capabilities</a> is now available.
 
 Natasha Jurko and Gabrielle Ayres hosted the second Fire Danger Group webinar about the new FWI2025 changes in comparison to the FWI1987 version. The recording is available on the <a href="../resources/#seminar-series" target="_self">Resources page</a>.
-
-### Past Announcements
 
 #### June 2025
 We have recently updated the cffdrs-ng GitHub repository [README](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main?tab=readme-ov-file#readme) description and [contributing guidelines](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CONTRIBUTING.md) (how to provide code feedback and bug reports). Coming soon, we will be releasing our list of capabilities, FAQ, and roadmap detailing our code updating process for CFFDRS2025. And as always, you can contact us with your ideas and general inquiries at our team email:
