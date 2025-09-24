@@ -31,6 +31,7 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 ## Reports
 [Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 
+- [FWI2025 Structure, Changes, and Interpretation](https://ostrnrcan-dostrncan.canada.ca/handle/1845/347500)
 - [CFFDRS2025 Solar Radiation Input (Draft)](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥
 
 Field Guides
