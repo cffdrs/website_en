@@ -37,12 +37,12 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 ## Announcements
 
 ### September 2025
-A major code update for FWI2025 has been released to the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng). It includes changes to the options when running `hFWI()`, the repository file structure, and how DMC and solar radiation are calculated. More details and the rest of the changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md). This website has also been updated to have up-to-date <a href="../code" target="_self">documentation in Code</a> and <a href="../tutorials" target="_self">Tutorials</a>.
+A major code update for FWI2025 has been released to the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng). It includes changes to the options when running `hFWI()`, the repository file structure, and how DMC and solar radiation are calculated. More details and the rest of the changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-09-10). This website has also been updated to have up-to-date <a href="../code" target="_self">documentation in Code</a> and <a href="../tutorials" target="_self">Tutorials</a>.
 
 ### Past Announcements
 
 #### August 2025
-A minor update has been released to the cffdrs-ng GitHub repository. The specific changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md), which also includes extra details about the next (to be released) update. A running <a href="../code/#capabilities" target="_self">list of capabilities</a> is now available.
+A minor update has been released to the cffdrs-ng GitHub repository. The specific changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-08-22), which also includes extra details about the next (to be released) update. A running <a href="../code/#capabilities" target="_self">list of capabilities</a> is now available.
 
 Natasha Jurko and Gabrielle Ayres hosted the second Fire Danger Group webinar about the new FWI2025 changes in comparison to the FWI1987 version. The recording is available on the <a href="../resources/#seminar-series" target="_self">Resources page</a>.
 

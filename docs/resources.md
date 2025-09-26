@@ -29,23 +29,24 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 <br>
 
 ## Reports
-[Next Generation CFFDRS (NG-CFFDRS)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
+NG-CFFDRS
 
-- [FWI2025 Structure, Changes, and Interpretation](https://ostrnrcan-dostrncan.canada.ca/handle/1845/347500)
+- [NG-CFFDRS Overview (GLC-X-26)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
+- [FWI2025 Structure, Changes, and Interpretation (GLC-X-42)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/347500)
 - [CFFDRS2025 Solar Radiation Input (Draft)](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥
 
 Field Guides
 
-- [Field Guide: Sampling Fuels in the Context of the NG-CFFDRS](https://ca.nfis.org/fss/fss?command=retrieveByName&fileName=Field_Guide_of_NG_Protocol.pdf&fileNameSpace=docs/nfi&format=xml&promptToSave=true)📥
-- [Field Guide to the Canadian FBP System 3rd edition (Red Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/223682)
-- [Field Guide for Predicting Fire Behaviour in Ontario's Tallgrass Prairie (Yellow Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/246080)
-- [Weather Guide for the CFFDRS](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568)
+- [Sampling Fuels in the Context of the NG-CFFDRS](https://ca.nfis.org/fss/fss?command=retrieveByName&fileName=Field_Guide_of_NG_Protocol.pdf&fileNameSpace=docs/nfi&format=xml&promptToSave=true)📥
+- [Canadian FBP System 3rd edition (Red Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/223682)
+- [Predicting Fire Behaviour in Ontario's Tallgrass Prairie (Yellow Book)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/246080)
 
 CFFDRS1992
 
 - [FWI1987 Development and Structure](https://ostrnrcan-dostrncan.canada.ca/handle/1845/228434)
 - [FBP1992 Development and Structure (ST-X-3)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/235421)
 - [FBP1992 Updates and Revisions (GLC-X-10)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/247839)
+- [Weather Guide for the CFFDRS](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568)
 
 More current and historical CFFDRS documentation can be found on the  
 [NRCan Open S&T Repository (OSTR)](https://ostrnrcan-dostrncan.canada.ca/home).
