@@ -11,7 +11,9 @@ To receive our newsletters directly to your inbox, fill out the form at the link
 
 [Newsletter Sign-up Form (Microsoft Forms)](https://forms.office.com/r/jmT8HVrsK8)
 
-## Seminar Series
+## Videos
+
+### Seminar Series
 In these Fire Danger Group seminars, we are looking to connect directly with fire management agencies and other end users of the CFFDRS to communicate the new and ongoing updates. Anyone is welcome to attend. To get notifications about when our next live seminar will be, sign up to our mailing list at the form above. Videos of past seminars will be available here shortly after each session.  
 
 *If you’re experiencing issues with the video player, try refreshing this page. If the problem persists, click on 'Watch video on YouTube' in the video player.*
@@ -51,22 +53,15 @@ CFFDRS1992
 More current and historical CFFDRS documentation can be found on the  
 [NRCan Open S&T Repository (OSTR)](https://ostrnrcan-dostrncan.canada.ca/home).
 
-## Maps
-[Canadian Wildland Fire Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/home)  
-[Canadian Interagency Forest Fire Centre (CIFFC)](https://ciffc.net)  
-[National Forest Information System (NFIS) Forest Atlas](https://ca.nfis.org/map/atlas.html)  
-[Global Wildfire Information System (GWIS)](https://gwis.jrc.ec.europa.eu/)
+## Links
 
-## Overview
-[Forest fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/forest-fires/13143)  
-[Fire management](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/forest-fires/fire-management/13157)
-
-Canadian Forest Fire Danger Rating System (CFFDRS)
+CFFDRS
 
 - [Government of Canada](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/canadian-forest-fire-danger-rating-system/14470)  
 - [Natural Resources Canada](https://cwfis.cfs.nrcan.gc.ca/background/summary/fdr)
 
-Link Hubs
+Hubs
 
+- [Canadian Wildland Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/home)
 - [Wildland fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/17598)  
-- [Wildfires](https://www.canada.ca/en/public-safety-canada/campaigns/wildfires.html)
+- [Wildfires: Federal Response](https://www.canada.ca/en/public-safety-canada/campaigns/wildfires.html)

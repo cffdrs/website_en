@@ -16,23 +16,7 @@ Join our
 <a href="../resources/#sign-up" target="_self">newsletter mailing list</a> to get email updates about the latest developments with CFFDRS2025.
 
 For those unfamiliar with the CFFDRS, or for official information regarding wildfires in Canada, read more on official Government of Canada pages under 
-<a href="../resources/#overview" target="_self">Resources#Overview</a>. 
-
-<img 
-    style="display: block;
-           width: 75px;
-           padding: 5px;
-           margin: 10px 25px 0px 0px;
-           float: left;
-           border-radius: 5px;
-           background-color: #FFFFFF!important;"
-    src="../img/CFFDRS logo.png" 
-    alt="CFFDRS1992 logo">
-</img>  
-
-The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://github.com/cffdrs), while the R documentation can be found on the [CFFDRS CRAN page](https://cran.r-project.org/web/packages/cffdrs/). 
-
-<br>
+<a href="../resources/#links" target="_self">Resources#Links</a>.  
 
 ## Announcements
 

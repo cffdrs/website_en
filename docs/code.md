@@ -7,6 +7,22 @@ The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) c
 
 See the [repository README](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme) for more information about how to provide bug reports, the structure of the repository, and our updating process. For email notifications about code updates, you can specify the type of updates to receive when you <a href="../resources/#sign-up" target="_self">join our mailing list</a>.
 
+<img 
+    style="display: block;
+           width: 75px;
+           padding: 5px;
+           margin: 10px 25px 0px 0px;
+           float: left;
+           border-radius: 5px;
+           background-color: #FFFFFF!important;"
+    src="../img/CFFDRS logo.png" 
+    alt="CFFDRS1992 logo">
+</img>
+
+The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://github.com/cffdrs), while the R documentation can be found on the [CFFDRS CRAN page](https://cran.r-project.org/web/packages/cffdrs/).
+
+<br>
+
 ## Capabilities
 - Calculate hourly FWI codes and indices
 - Calculate daily summaries of FWI metrics at peak burn time
