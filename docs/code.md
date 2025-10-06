@@ -3,7 +3,7 @@
 # Code
 
 ## Repository
-The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) contains the up-to-date code for the CFFDRS2025 modules in three programming languages: *C*, *Python*, and *R* (**all C code is still under development**). These three versions are written to produce the same results so users can choose the version that fits their own software systems.
+The [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) contains the up-to-date code for the CFFDRS2025 modules in three programming languages: *C*, *Python*, and *R*. These three versions are written to produce the same results so users can choose the version that fits their own software systems.
 
 See the [repository README](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme) for more information about how to provide bug reports, the structure of the repository, and our updating process. For email notifications about code updates, you can specify the type of updates to receive when you <a href="../resources/#sign-up" target="_self">join our mailing list</a>.
 

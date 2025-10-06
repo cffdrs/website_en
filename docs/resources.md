@@ -12,11 +12,10 @@ To receive our newsletters directly to your inbox, fill out the form at the link
 [Newsletter Sign-up Form (Microsoft Forms)](https://forms.office.com/r/jmT8HVrsK8)
 
 ## Videos
+*If you’re experiencing issues with a video player, try refreshing this page. If the problem persists, click on 'Watch video on YouTube' in the video player.*
 
 ### Seminar Series
 In these Fire Danger Group seminars, we are looking to connect directly with fire management agencies and other end users of the CFFDRS to communicate the new and ongoing updates. Anyone is welcome to attend. To get notifications about when our next live seminar will be, sign up to our mailing list at the form above. Videos of past seminars will be available here shortly after each session.  
-
-*If you’re experiencing issues with the video player, try refreshing this page. If the problem persists, click on 'Watch video on YouTube' in the video player.*
 
 #### Grasslands in the Fire Weather Index System (May 2025)
 
@@ -27,6 +26,14 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 #### Interpreting Outputs and the Shift to Hourly Weather Inputs (August 2025)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AiXcUh-n2Ow?rel=0&cc_load_policy=1" title="Shift to Hourly Seminar YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer" allowfullscreen></iframe>
+
+<br>
+
+### Explainers
+
+#### Overview of the Updates in the Fire Weather Index System (October 2025)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8LNpvOEbNAA?rel=0&cc_load_policy=1" title="Overview of FWI Updates YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer" allowfullscreen></iframe>
 
 <br>
 
