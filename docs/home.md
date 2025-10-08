@@ -20,10 +20,15 @@ For those unfamiliar with the CFFDRS, or for official information regarding wild
 
 ## Announcements
 
-### September 2025
-A major code update for FWI2025 has been released to the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng). It includes changes to the options when running `hFWI()`, the repository file structure, and how DMC and solar radiation are calculated. More details and the rest of the changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-09-10). This website has also been updated to have up-to-date <a href="../code" target="_self">documentation in Code</a> and <a href="../tutorials" target="_self">Tutorials</a>.
+### October 2025
+The FWI2025 information report has been published, and is titled <a href="../resources/#reports" target="_self">The 2025 Update to the FWI System: Structure, Changes and Interpretation</a> (GLC-X-42). It provides information on the FWI2025 and the changes from the previous FWI1987 version, and can be found on the [NRCan Open S&T Repository](https://ostrnrcan-dostrncan.canada.ca/home). Additionally, a new informational video that explains the FWI2025 in general is now available on the <a href="../resources/#explainers" target="_self">resources page</a>.
+
+The C code has been updated to now mostly match the Python and R versions. Details can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-10-02) along with more recent, minor bug fixes.
 
 ### Past Announcements
+
+#### September 2025
+A major code update for FWI2025 has been released to the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng). It includes changes to the options when running `hFWI()`, the repository file structure, and how DMC and solar radiation are calculated. More details and the rest of the changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-09-10). This website has also been updated to have up-to-date <a href="../code" target="_self">documentation in Code</a> and <a href="../tutorials" target="_self">Tutorials</a>.
 
 #### August 2025
 A minor update has been released to the cffdrs-ng GitHub repository. The specific changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-08-22), which also includes extra details about the next (to be released) update. A running <a href="../code/#capabilities" target="_self">list of capabilities</a> is now available.
