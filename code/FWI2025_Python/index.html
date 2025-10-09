@@ -231,7 +231,7 @@
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>UTC offset</td>
+<td>UTC offset (can be specified in <code>hFWI()</code> parameter, see below)</td>
 <td></td>
 <td>float</td>
 </tr>
@@ -319,6 +319,10 @@
 <tr>
 <td><code>df_wx</code></td>
 <td>DataFrame of hourly weather stream (see <a href="#input-dataframe" target="_self">Input DataFrame</a> section above)</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>UTC offset (default <code>None</code>). <code>None</code> is for using a provided column in <code>df_wx</code>. Specifying a number will create/overwrite <code>df_wx</code> column.</td>
 </tr>
 <tr>
 <td><code>ffmc_old</code></td>

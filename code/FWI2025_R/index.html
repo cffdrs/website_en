@@ -229,7 +229,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>UTC offset</td>
+<td>UTC offset (can be specified in <code>hFWI()</code> parameter, see below)</td>
 <td></td>
 <td>numeric</td>
 </tr>
@@ -317,6 +317,10 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <tr>
 <td><code>df_wx</code></td>
 <td>data.table or data.frame with hourly weather stream (see <a href="#input-data" target="_self">Input Data</a> section above)</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>UTC offset (default <code>NA</code>). <code>NA</code> is for using a provided column in <code>df_wx</code>. Specifying a number will create/overwrite <code>df_wx</code> column.</td>
 </tr>
 <tr>
 <td><code>ffmc_old</code></td>
