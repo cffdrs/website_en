@@ -4,20 +4,20 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>NG-CFFDRS</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/fontawesome.min.css" rel="stylesheet">
-        <link href="css/brands.min.css" rel="stylesheet">
-        <link href="css/solid.min.css" rel="stylesheet">
-        <link href="css/v4-font-face.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Hourly FWI C - NG-CFFDRS</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" >
-        <link href="style.css" rel="stylesheet">
+        <link href="../../style.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
     <base target="_blank">
@@ -26,11 +26,11 @@
     </style>
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-    <a class="navbar-brand" href="." target="_self">NG-CFFDRS</a>
-    <a class="navbar-brand" href="." target="_self"> <img style="height: 40px; margin: 0px; padding: 0px;" src="/website_en/img/CFFDRS_Black_4.png" alt="CFFDRS logo"> </img> </a>
+    <a class="navbar-brand" href="../.." target="_self">NG-CFFDRS</a>
+    <a class="navbar-brand" href="../.." target="_self"> <img style="height: 40px; margin: 0px; padding: 0px;" src="/website_en/img/CFFDRS_Black_4.png" alt="CFFDRS logo"> </img> </a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -41,19 +41,19 @@
         <!-- Main navigation -->
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a href="home/" class="nav-link" target="_self">Home</a>
+                <a href="../../home/" class="nav-link" target="_self">Home</a>
             </li>
             <li class="nav-item">
-                <a href="code/" class="nav-link" target="_self">Code</a>
+                <a href="../../code/" class="nav-link" target="_self">Code</a>
             </li>
             <li class="nav-item">
-                <a href="tutorials/" class="nav-link" target="_self">Tutorials</a>
+                <a href="../" class="nav-link active" target="_self">Tutorials</a>
             </li>
             <li class="nav-item">
-                <a href="resources/" class="nav-link" target="_self">Resources</a>
+                <a href="../../resources/" class="nav-link" target="_self">Resources</a>
             </li>
             <li class="nav-item">
-                <a href="contact/" class="nav-link" target="_self">Contact</a>
+                <a href="../../contact/" class="nav-link" target="_self">Contact</a>
             </li>
         </ul>
 
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <script src="js/darkmode.js"></script>
+        <script src="../../js/darkmode.js"></script>
 
         <div class="container">
             <div class="row">
@@ -98,29 +98,23 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1">
+                    <a href="#" class="nav-link" target="_self"> (Top) </a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
         </ul>
     </div>
 </div></div>
     <div class="col-md-9" role="main">
 
-<p><link rel="icon" href="/website_en/img/favicon.ico"></p>
-<p><br></p>
-<p><img 
-    style="display: block; 
-           margin-left: auto;
-           margin-right: auto;
-           width: 500px;
-           border-radius: 14px;"
-    src="./img/CFFDRS_banner.png" 
-    alt="CFFDRS logo">
-</img></p>
-<div class="text-center">
-    <button class="btn btn-dark" onclick="location.href='home'" style="width: 120px; height: 50px;">English</button>
-    &emsp;
-    <button class="btn btn-dark" onclick="location.href='https://cffdrs.github.io/website_fr/accueil'" style="width: 120px; height: 50px;">Français</button>
-</div>
-
-<p><br></p></div>
+<p><a href="../../tutorials#hourly-fwi" target="_self" style="float: left;"> back to Tutorials </a>
+<a aria-disabled="true" target="_self" style="float: right;"> Français </a>
+<br>
+<br></p>
+<h1 id="hourly-fwi-tutorial-c">Hourly FWI Tutorial - C</h1>
+<p>*Last updated: *</p></div>
             </div>
         </div>
 
@@ -128,13 +122,13 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -199,8 +193,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2025-10-09 15:14:13.515463+00:00
--->
