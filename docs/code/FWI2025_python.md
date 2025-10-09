@@ -4,7 +4,7 @@
 
 # FWI2025 - Python
 
-*Last updated: September 10th, 2025*
+*Last updated: October 9th, 2025*
 
 ## Scripts
 There are three scripts on the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) that are required to generate FWI2025 outputs:
@@ -44,7 +44,7 @@ The table below describes the columns and data types for the input DataFrame. Co
 | `id` | Unique identifier for weather station or location | | str |
 | `lat` | Latitude | DD | float |
 | `long` | Longitude | DD | float |
-| `timezone` | UTC offset | | float |
+| `timezone` | UTC offset (can be specified in `hFWI()` parameter instead, see <a href="#parameters" target="_self">below</a>) | | float |
 | `yr` | Year of data point | | int |
 | `mon` | Month of the year (1-12) | | int |
 | `day` | Day of the month (1-31) | | int |
@@ -69,6 +69,7 @@ hFWI(df_wx, ffmc_old = 85, mcffmc_old = None, dmc_old = 6, dc_old = 15, mcgfmc_m
 | Parameter | Description |
 | --- | --- |
 | `df_wx` | DataFrame of hourly weather stream (see <a href="#input-dataframe" target="_self">Input DataFrame</a> section above) |
+| `timezone` | UTC offset (default `None`). `None` is for using a provided column in `df_wx`. Specifying a number will create/overwrite `df_wx` column. |
 | `ffmc_old` | Previous value for FFMC (default 85). Set to `None` if `mcffmc_old` is specified instead |
 | `mcffmc_old` | Previous value for mcffmc (default `None`) |
 | `dmc_old` | Previous value for DMC (default 6) |
