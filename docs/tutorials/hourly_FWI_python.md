@@ -32,7 +32,6 @@ Besides the files, ensure you have the required R packages, which are listed at 
 ## Data
 **PRF2007_hourly_wx.csv** contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data. If you would like guidance on how to fill in missing weather data for your situation, check the [CFFDRS Weather Guide](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568) or [reach out to us](../../contact)! The column headers are those required for hourly FWI calculations, details of which can be found at <a href="../../code/FWI2025_Python#input-dataframe" target="_self">FWI2025_Python#input-dataframe</a>. Grassland curing (`percent_cured`) and solar radiation (`solrad`) are not included, but these are optional inputs and they will be automatically calculated if not provided.
 
-
 ## Steps
 Open the **tutorial_hourly_FWI.py** code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).
 

@@ -54,7 +54,7 @@ The table below describes the columns and data types for the input DataFrame. Co
 | `ws` | 10 m open wind speed | km/hr | float |
 | `prec` | Hourly precipitation | mm | float |
 | `grass_fuel_load` | Density of grassland fuels (default 0.35) | kg/m^2 | float |
-| `percent_cured` | Fraction of grassland fuels that is cured (0-100, optional) | % | float |
+| `percent_cured` | Fraction of grassland fuels that is cured (0-100, default based on annual variation in the Boreal Plains region) | % | float |
 | `solrad` | [Solar radiation](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥 (optional) | kW/m^2 | float |
 
 In addition to the weather variables, you can specify start-up values for moisture codes and other parameters in `hFWI()`.
