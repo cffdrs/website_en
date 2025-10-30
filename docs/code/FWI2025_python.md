@@ -4,7 +4,7 @@
 
 # FWI2025 - Python
 
-*Last updated: October 9th, 2025*
+*Last updated: October 30th, 2025*
 
 ## Scripts
 There are three scripts on the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) that are required to generate FWI2025 outputs:
@@ -63,7 +63,7 @@ In addition to the weather variables, you can specify start-up values for moistu
 The only required parameter for `hFWI()` is the input DataFrame, although many start-up values can be altered from default if desired. If you are performing a "live" run which is a continuation from previous FWI outputs with new data, the prior outputs need to be specified.
 
 ```python
-hFWI(df_wx, ffmc_old = 85, mcffmc_old = None, dmc_old = 6, dc_old = 15, mcgfmc_matted_old = 16.31, mcgfmc_standing_old = 16.31, prec_cumulative = 0.0, canopy_drying = 0.0, silent = False, round_out = 4)
+hFWI(df_wx, timezone = None, ffmc_old = 85, mcffmc_old = None, dmc_old = 6, dc_old = 15, mcgfmc_matted_old = 16.31, mcgfmc_standing_old = 16.31, prec_cumulative = 0.0, canopy_drying = 0.0, silent = False, round_out = 4)
 ```
 
 | Parameter | Description |
