@@ -168,7 +168,7 @@
 <a href="https://cffdrs.github.io/website_fr/code/IFM2025_R" target="_self" style="float: right;"> Français </a>
 <br></p>
 <h1 id="fwi2025-r">FWI2025 - R</h1>
-<p><em>Last updated: October 9th, 2025</em></p>
+<p><em>Last updated: October 30th, 2025</em></p>
 <h2 id="scripts">Scripts</h2>
 <p>There are three scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
 <ol>
@@ -304,7 +304,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <p>In addition to the weather variables, you can specify start-up values for moisture codes and other parameters in <code>hFWI()</code>.</p>
 <h3 id="parameters">Parameters</h3>
 <p>The only required parameter for <code>hFWI()</code> is the input data.table or data.frame, although many start-up values can be altered from default if desired. If you are performing a "live" run which is a continuation from previous FWI outputs with new data, the prior outputs need to be specified.</p>
-<pre><code class="language-r">hFWI(df_wx, ffmc_old = 85, mcffmc_old = NA, dmc_old = 6, dc_old = 15, mcgfmc_matted_old = 16.31, mcgfmc_standing_old = 16.31, prec_cumulative = 0.0, canopy_drying = 0.0, silent = FALSE, round_out = 4)
+<pre><code class="language-r">hFWI(df_wx, timezone = NA, ffmc_old = 85, mcffmc_old = NA, dmc_old = 6, dc_old = 15, mcgfmc_matted_old = 16.31, mcgfmc_standing_old = 16.31, prec_cumulative = 0.0, canopy_drying = 0.0, silent = FALSE, round_out = 4)
 </code></pre>
 <table>
 <thead>
