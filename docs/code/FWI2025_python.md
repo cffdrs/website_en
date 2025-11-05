@@ -4,7 +4,7 @@
 
 # FWI2025 - Python
 
-*Last updated: October 30th, 2025*
+*Last updated: November 5th, 2025*
 
 ## Scripts
 There are three scripts on the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) that are required to generate FWI2025 outputs:
@@ -22,6 +22,7 @@ The FWI2025 Python scripts require the following packages which must be installe
 - `logging` (built-in)
 - `argparse` (built-in)
 - `math` (built-in)
+- `calendar` (built-in)
 - `numpy`
 - `pandas`
 
