@@ -4,7 +4,7 @@
 <br>
 
 # Hourly FWI Tutorial - R
-*Last updated: September 10th, 2025*
+*Last updated: November 5th, 2025*
 
 ## What you'll need
 
@@ -18,7 +18,7 @@ The following files can be found on the [cffdrs-ng GitHub repository](https://gi
              - [**tutorial_hourly_FWI.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/tutorial/tutorial_hourly_FWI.R)
         - [**NG_FWI.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/NG_FWI.r)
         - [**util.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/util.r)
-        - [**daily_summaries.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/daily_summaries.R)
+        - [**daily_summaries.r**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/daily_summaries.r)
 
 If you are unfamiliar with GitHub, there are many options for you to retrieve the code and data files:
 
