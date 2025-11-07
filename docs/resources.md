@@ -19,13 +19,13 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 
 #### Grasslands in the Fire Weather Index System (May 2025)
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7Lja-CeO11E?rel=0&cc_load_policy=1" title="Grasslands Seminar YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7Lja-CeO11E?rel=0&cc_load_policy=1" title="Grasslands Seminar YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <br>
 
 #### Interpreting Outputs and the Shift to Hourly Weather Inputs (August 2025)
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AiXcUh-n2Ow?rel=0&cc_load_policy=1" title="Shift to Hourly Seminar YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AiXcUh-n2Ow?rel=0&cc_load_policy=1" title="Shift to Hourly Seminar YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <br>
 
@@ -33,7 +33,7 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 
 #### Overview of the Updates in the Fire Weather Index System (October 2025)
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8LNpvOEbNAA?rel=0&cc_load_policy=1" title="Overview of FWI Updates YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8LNpvOEbNAA?rel=0&cc_load_policy=1" title="Overview of FWI Updates YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <br>
 
