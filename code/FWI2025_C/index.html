@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>FWI2025 Python - NG-CFFDRS</title>
+        <title>FWI2025 C - NG-CFFDRS</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -103,12 +103,12 @@
                     <a href="#" class="nav-link" target="_self"> (Top) </a>
                 <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2">
-                    <a href="#python-scripts" class="nav-link" target="_self">Python Scripts</a>
+                    <a href="#c-scripts" class="nav-link" target="_self">C Scripts</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
             <li class="nav-item" data-bs-level="2">
-                    <a href="#packages" class="nav-link" target="_self">Packages</a>
+                    <a href="#headers" class="nav-link" target="_self">Headers</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
@@ -165,60 +165,73 @@
     <div class="col-md-9" role="main">
 
 <p><a href="../../code#fwi2025" target="_self" style="float: left;"> back to Code </a>
-<a href="https://cffdrs.github.io/website_fr/code/IFM2025_Python" target="_self" style="float: right;"> Français </a>
+<a href="https://cffdrs.github.io/website_fr/code/IFM2025_C" target="_self" style="float: right;"> Français </a>
 <br></p>
-<h1 id="fwi2025-python">FWI2025 - Python</h1>
+<h1 id="fwi2025-c">FWI2025 - C</h1>
 <p><em>Last updated: December 10th, 2025</em></p>
-<h2 id="python-scripts">Python Scripts</h2>
-<p>There are three scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
+<h2 id="c-scripts">C Scripts</h2>
+<p>There are six scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
 <ol>
 <li>
-<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/NG_FWI.py"><strong>NG_FWI.py</strong></a> holds the functions and equations for generating FWI2025 outputs.</p>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI_main.c"><strong>NG_FWI_main.c</strong></a> holds the <code>main()</code> function that handles the command line input parameters and output.</p>
 </li>
 <li>
-<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/util.py"><strong>util.py</strong></a> includes basic functions that are not part of FWI2025 equations, but generate intermediate information for the calculation of the FWI2025 components (e.g. time of sunrise and sunset, number of sunlight hours).</p>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.c"><strong>NG_FWI.c</strong></a> holds the functions and equations for generating FWI2025 outputs.</p>
 </li>
 <li>
-<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/daily_summaries.py"><strong>daily_summaries.py</strong></a> holds the functions to generate the daily summary report.</p>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.h"><strong>NG_FWI.h</strong></a> header file for <strong>NG_FWI.c</strong>.</p>
+</li>
+<li>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/util.c"><strong>util.c</strong></a> includes basic functions that are not part of FWI2025 equations, but generate intermediate information for the calculation of the FWI2025 components (e.g. time of sunrise and sunset, number of sunlight hours).</p>
+</li>
+<li>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/util.h"><strong>util.h</strong></a> header file for <strong>util.c</strong>.</p>
+</li>
+<li>
+<p><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/daily_summaries.c"><strong>daily_summaries.c</strong></a> holds the functions to generate the daily summary report.</p>
 </li>
 </ol>
-<h2 id="packages">Packages</h2>
-<p>The FWI2025 Python scripts require the following packages which must be installed prior to running <strong>NG_FWI.py</strong>.</p>
+<h2 id="headers">Headers</h2>
+<p>The FWI2025 C scripts use the following header files from the C standard library.</p>
 <ul>
-<li><a href="https://docs.python.org/3/library/datetime"><code>datetime</code></a> (built-in)</li>
-<li><a href="https://docs.python.org/3/library/logging"><code>logging</code></a> (built-in)</li>
-<li><a href="https://docs.python.org/3/library/argparse"><code>argparse</code></a> (built-in)</li>
-<li><a href="https://docs.python.org/3/library/math"><code>math</code></a> (built-in)</li>
-<li><a href="https://docs.python.org/3/library/calendar"><code>calendar</code></a> (built-in)</li>
-<li><a href="https://numpy.org/doc/stable"><code>numpy</code></a></li>
-<li><a href="https://pandas.pydata.org/docs"><code>pandas</code></a></li>
+<li><a href="https://en.cppreference.com/w/c/header/math"><code>&lt;math.h&gt;</code></a></li>
+<li><a href="https://en.cppreference.com/w/c/header/stdarg"><code>&lt;stdarg.h&gt;</code></a></li>
+<li><a href="https://en.cppreference.com/w/c/header/stdbool"><code>&lt;stdbool.h&gt;</code></a></li>
+<li><a href="https://en.cppreference.com/w/c/header/stdio"><code>&lt;stdio.h&gt;</code></a></li>
+<li><a href="https://en.cppreference.com/w/c/header/stdlib"><code>&lt;stdlib.h&gt;</code></a></li>
+<li><a href="https://en.cppreference.com/w/c/header/string"><code>&lt;string.h&gt;</code></a></li>
+<li><a href="https://en.cppreference.com/w/c/header/time"><code>&lt;time.h&gt;</code></a></li>
 </ul>
 <h2 id="get-started">Get Started</h2>
-<p>The GitHub repository also includes a <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/tutorial/tutorial_hourly_FWI.py">tutorial script</a> and <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv">test data</a>. See <a href="../../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
+<p>The GitHub repository also includes a [tutorial script] and [C-formatted test data]. See <a href="../../tutorials/Hourly_FWI_C" target="_self">Tutorials#Hourly FWI</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
 <h2 id="data-format">Data Format</h2>
-<p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as a comma-separated values (CSV) file. Each row then corresponds with a single timestep (i.e. hour), in sequential order. If you would like guidance on how to fill in missing weather data for your situation, check the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> or <a href="../../contact">reach out to us</a>! Outputs are then also of the same table/array form, with additional columns.</p>
-<p>In Python, we use the <code>pandas</code> package and its <a href="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html">DataFrame data type</a> to perform calculations. Users can configure the input file type before and output file type after calculation to fit individual data streams.</p>
+<p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated values (CSV) file. Each row then corresponds with a single timestep (i.e. hour), in sequential order. Outputs are then also of the same table/array form, with additional columns.</p>
+<p>In C, the code is built to be compiled and then run in a command-line interface only. Users can configure the input file type before and output file type after calculation to fit individual data streams.</p>
+<p><strong>NOTE: The C version can only handle one station for one continuous season at a time!</strong> See the <a href="../FWI2025_Python" target="_self">Python</a> or <a href="../FWI2025_R" target="_self">R</a> versions to be able to run multiple stations with multiple years at once.</p>
 <h2 id="hourly-fwi">Hourly FWI</h2>
-<p>The <code>hFWI()</code> function (case sensitive) in the <strong>NG_FWI.py</strong> file calculates hourly FWI moisture codes and fire behaviour indices. It can handle multiple stations (locations) and multiple years of hourly input data all at once, or just a single hour.</p>
+<p>To calculate hourly FWI moisture codes and fire behaviour indices, the scripts to compile are:</p>
+<ul>
+<li><strong>NG_FWI_main.c</strong></li>
+<li><strong>NG_FWI.c</strong></li>
+<li><strong>util.c</strong></li>
+</ul>
+<p>For example, using <a href="https://gcc.gnu.org/"><code>gcc</code></a> in PowerShell:</p>
+<pre><code class="language-ps">gcc -o NG_FWI NG_FWI_main.c NG_FWI.c util.c
+</code></pre>
+<p>produces a <strong>NG_FWI.exe</strong> executable file.</p>
 <h3 id="input-dataframe">Input DataFrame</h3>
 <p>The FWI system was originally designed to be calculated using data recorded at local weather stations, but any collected or calculated data (e.g. gridded data, forecast data, etc.) that includes the required weather variables can be used. See the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> for a description of weather data standards for the FWI System.</p>
-<p>The table below describes the columns and data types for the input DataFrame. Columns are required unless otherwise specified, in which case they will be set or calculated. The column names can be lower-case or upper-case, but output columns are always lower-case.</p>
+<p>The table below describes the columns and units for the input CSV file. Columns are required unless there is a default, in which case they will be set or calculated. At this time for C, <strong>column names must be lower-case</strong>, and output columns are always lower-case.</p>
 <table>
 <thead>
 <tr>
 <th>Column</th>
 <th>Description</th>
 <th style="text-align: center;">Units</th>
-<th style="text-align: center;">Class</th>
+<th style="text-align: center;">Type</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>id</code></td>
-<td>Unique identifier for weather station or location</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">str</td>
-</tr>
 <tr>
 <td><code>lat</code></td>
 <td>Latitude</td>
@@ -229,12 +242,6 @@
 <td><code>long</code></td>
 <td>Longitude</td>
 <td style="text-align: center;">DD</td>
-<td style="text-align: center;">float</td>
-</tr>
-<tr>
-<td><code>timezone</code></td>
-<td>UTC offset (can be specified in <code>hFWI()</code> parameter instead, see <a href="#parameters" target="_self">below</a>)</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
@@ -306,69 +313,78 @@
 </tbody>
 </table>
 <h3 id="parameters">Parameters</h3>
-<p>The only required parameter for <code>hFWI()</code> is the input DataFrame, although many start-up values can be altered from default if desired. If you are performing a "live" run which is a continuation from previous FWI outputs with new data, the prior outputs need to be specified.</p>
-<pre><code class="language-python">hFWI(df_wx, timezone = None, ffmc_old = 85, mcffmc_old = None, dmc_old = 6, dc_old = 15, mcgfmc_matted_old = 16.31, mcgfmc_standing_old = 16.31, prec_cumulative = 0.0, canopy_drying = 0.0, silent = False, round_out = 4)
+<p>The required parameters in the command line are input data file location/name, output file location/name, and timezone. All other parameters have a default startup value if not specified (denoted with square brackets). Since they are ordered, if you want to specify a single optional parameter, you will need to provide defaults to all prior parameters as well.</p>
+<pre><code class="language-ps">./NG_FWI.exe input output timezone [ffmc_old] [mcffmc_old] [dmc_old] [dc_old]
+    [mcgfmc_matted_old] [mcgfmc_standing_old] [prec_cumulative] [canopy_drying]
 </code></pre>
 <table>
 <thead>
 <tr>
+<th style="text-align: center;">No.</th>
 <th>Parameter</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>df_wx</code></td>
-<td>DataFrame of hourly weather stream (see <a href="#input-dataframe" target="_self">Input DataFrame</a> section above)</td>
+<td style="text-align: center;">1</td>
+<td><code>input</code></td>
+<td>Location and name of CSV file of hourly weather stream (see <a href="#input-dataframe" target="_self">Input DataFrame</a> section above)</td>
 </tr>
 <tr>
+<td style="text-align: center;">2</td>
+<td><code>output</code></td>
+<td>Location and name for hourly FWI CSV file</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
 <td><code>timezone</code></td>
-<td>UTC offset (default <code>None</code>). <code>None</code> is for using a provided column in <code>df_wx</code>. Specifying a number will create/overwrite <code>df_wx</code> column.</td>
+<td>UTC offset. There is no option currently to use a <code>timezone</code> column in input data like in Python and R.</td>
 </tr>
 <tr>
+<td style="text-align: center;">4</td>
 <td><code>ffmc_old</code></td>
-<td>Previous value for FFMC (default 85). Set to <code>None</code> if <code>mcffmc_old</code> is specified instead</td>
+<td>Previous value for FFMC (default 85). Set to "n" if <code>mcffmc_old</code> is specified instead</td>
 </tr>
 <tr>
+<td style="text-align: center;">5</td>
 <td><code>mcffmc_old</code></td>
-<td>Previous value for mcffmc (default <code>None</code>)</td>
+<td>Previous value for mcffmc. Set to "n" if <code>ffmc_old</code> is specified instead</td>
 </tr>
 <tr>
+<td style="text-align: center;">6</td>
 <td><code>dmc_old</code></td>
 <td>Previous value for DMC (default 6)</td>
 </tr>
 <tr>
+<td style="text-align: center;">7</td>
 <td><code>dc_old</code></td>
 <td>Previous value for DC (default 15)</td>
 </tr>
 <tr>
+<td style="text-align: center;">8</td>
 <td><code>mcgfmc_matted_old</code></td>
 <td>Previous value for mcgfmc_matted (default 16.31)</td>
 </tr>
 <tr>
+<td style="text-align: center;">9</td>
 <td><code>mcgfmc_standing_old</code></td>
 <td>Previous value for mcgfmc_standing (default 16.31)</td>
 </tr>
 <tr>
+<td style="text-align: center;">10</td>
 <td><code>prec_cumulative</code></td>
 <td>Cumulative precipitation this rainfall (default 0)</td>
 </tr>
 <tr>
+<td style="text-align: center;">11</td>
 <td><code>canopy_drying</code></td>
 <td>Consecutive hours of no precipitation (default 0). 5 hours or more resets to 0</td>
-</tr>
-<tr>
-<td><code>silent</code></td>
-<td>Suppress informative print statements (default False)</td>
-</tr>
-<tr>
-<td><code>round_out</code></td>
-<td>Decimal places to truncate output values to (default 4). Set to <code>None</code> for no rounding</td>
 </tr>
 </tbody>
 </table>
 <h3 id="output">Output</h3>
-<p>The result of <code>hFWI()</code> is a copy of the input DataFrame, with output columns added, described below. This means all columns from the input, even ones that are unused, are still preserved in the output. </p>
+<p>The result of <strong>NG_FWI.exe</strong> is the input CSV file with additional output columns. The order is preserved with the exception of a <code>timezone</code> column after <code>long</code> and before <code>yr</code>. See below for the other output columns.</p>
 <table>
 <thead>
 <tr>
@@ -459,15 +475,23 @@
 </tr>
 <tr>
 <td><code>canopy_drying</code></td>
-<td>Consecutive hours of no precipitation (default 0). 5 hours or more resets to 0</td>
+<td>Consecutive hours of no precipitation. 5 hours or more resets to 0</td>
 </tr>
 </tbody>
 </table>
 <h2 id="daily-summaries">Daily Summaries</h2>
-<p>Hourly FWI components can be summarized in a variety of ways depending on usage and requirements. One way is to create a daily report, the method of which can be found in the <strong>daily_summaries.py</strong> script. <code>generate_daily_summaries()</code> boils down the hourly data into daily metrics, which means every row in the output now represents a day.</p>
-<p>To align more accurately with the typical daily fire behaviour cycle, the "reset hour" for a day can be redefined away from midnight (see <code>reset_hr</code> parameter below). By default, we use 05:00 (12 hours opposite 17:00), which means the 24 hours summarized are between 05:00 of the listed day and 04:00 of the next day (instead of 00:00 to 23:00). The first or last days are left out if they are represented by 12 or fewer hours of data.</p>
+<p>Hourly FWI components can be summarized in a variety of ways depending on usage and requirements. One way is to create a daily report, the default method of which can be run by compiling the following scripts:</p>
+<ul>
+<li><strong>daily_summaries.c</strong></li>
+<li><strong>NG_FWI.c</strong></li>
+<li><strong>util.c</strong></li>
+</ul>
+<pre><code class="language-ps">gcc -o daily_summaries daily_summaries.c NG_FWI.c util.c
+</code></pre>
+<p><strong>daily_summaries.exe</strong> boils down the hourly data into daily metrics, which means every row in the output now represents a day.</p>
 <h3 id="parameters_1">Parameters</h3>
-<pre><code class="language-python">generate_daily_summaries(hourly_FWI, reset_hr = 5, silent = False, round_out = 4)
+<p>The only required parameters are input and output file location/name. The optional <code>reset_hr</code> parameter deals with how to align more accurately with the typical daily fire behaviour cycle. By default, we use 05:00 (12 hours opposite 17:00), which means the 24 hours summarized are between 05:00 of the listed day and 04:00 of the next day (instead of 00:00 to 23:00). The first or last days are left out if they are represented by 12 or fewer hours of data.</p>
+<pre><code class="language-ps">./daily_summaries.exe input ouput [reset_hr]
 </code></pre>
 <table>
 <thead>
@@ -478,20 +502,16 @@
 </thead>
 <tbody>
 <tr>
-<td><code>hourly_FWI</code></td>
-<td>DataFrame produced by <code>hFWI()</code> (see <a href="#hourly-fwi" target="_self">Hourly FWI</a> section above)</td>
+<td><code>input</code></td>
+<td>Location and name of hourly FWI CSV file generated by <strong>NG_FWI.exe</strong> (see <a href="#hourly-fwi" target="_self">Hourly FWI</a> section above)</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td>Location and name for daily summaries report CSV file</td>
 </tr>
 <tr>
 <td><code>reset_hr</code></td>
 <td>The boundary between days, instead of midnight (default 5)</td>
-</tr>
-<tr>
-<td><code>silent</code></td>
-<td>Suppress informative print statements (default False)</td>
-</tr>
-<tr>
-<td><code>round_out</code></td>
-<td>Decimal places to truncate output values to (default 4). Set to <code>None</code> for no rounding</td>
 </tr>
 </tbody>
 </table>
@@ -504,10 +524,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>id</code></td>
-<td>Unique identifier for weather station or location</td>
-</tr>
 <tr>
 <td><code>yr</code></td>
 <td>Year</td>

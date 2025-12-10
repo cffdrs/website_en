@@ -103,7 +103,7 @@
                     <a href="#" class="nav-link" target="_self"> (Top) </a>
                 <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2">
-                    <a href="#scripts" class="nav-link" target="_self">Scripts</a>
+                    <a href="#r-scripts" class="nav-link" target="_self">R Scripts</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
@@ -168,8 +168,8 @@
 <a href="https://cffdrs.github.io/website_fr/code/IFM2025_R" target="_self" style="float: right;"> Français </a>
 <br></p>
 <h1 id="fwi2025-r">FWI2025 - R</h1>
-<p><em>Last updated: October 30th, 2025</em></p>
-<h2 id="scripts">Scripts</h2>
+<p><em>Last updated: December 10th, 2025</em></p>
+<h2 id="r-scripts">R Scripts</h2>
 <p>There are three scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
 <ol>
 <li>
@@ -185,20 +185,21 @@
 <h2 id="packages">Packages</h2>
 <p>The FWI2025 R scripts require the following packages which must be installed prior to running <strong>NG_FWI.r</strong>.</p>
 <ul>
-<li><code>lubridate</code></li>
-<li><code>data.table</code></li>
+<li><a href="https://lubridate.tidyverse.org/"><code>lubridate</code></a></li>
+<li><a href="https://r-datatable.com/"><code>data.table</code></a></li>
 </ul>
 <h2 id="get-started">Get Started</h2>
-<p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">GitHub repository</a> also includes a tutorial script and test data. See the
+<p>The GitHub repository also includes a <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/R/tutorial/tutorial_hourly_FWI.R">tutorial script</a> and <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv">test data</a>. See
 <a href="../../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a>
 for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
 <h2 id="data-format">Data Format</h2>
-<p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Each row then corresponds with a single timestep (i.e. hour), in sequential order. Outputs are then also of the same table/array form, with additional columns. In R, we use the <a href="https://cran.r-project.org/package=data.table"><code>data.table</code></a> package and its data.table class to perform calculations. <em>We accept input data in either data.table or the native data.frame class.</em> The output will have the same class as the input. Users can configure the input file type before and output file type after calculation to fit individual data streams.</p>
+<p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated values (CSV) file. Each row then corresponds with a single timestep (i.e. hour), in sequential order. If you would like guidance on how to fill in missing weather data for your situation, check the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> or <a href="../../contact">reach out to us</a>! Outputs are then also of the same table/array form, with additional columns.</p>
+<p>In R, we use the <code>data.table</code> package and its data.table class to perform calculations. <strong>Input data can be in either the data.table class or the native data.frame class.</strong> The output will have the same class as the input. Users can configure the input file type before and output file type after calculation to fit individual data streams.</p>
 <h2 id="hourly-fwi">Hourly FWI</h2>
 <p>The <code>hFWI()</code> function (case sensitive) in the <strong>NG_FWI.r</strong> file calculates hourly FWI moisture codes and fire behaviour indices. It can handle multiple stations (locations) and multiple years of hourly input data all at once, or just a single hour.</p>
 <h3 id="input-data">Input Data</h3>
 <p>The FWI system was originally designed to be calculated using data recorded at local weather stations, but any collected or calculated data (e.g. gridded data, forecast data, etc.) that includes the required weather variables can be used. See the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> for a description of weather data standards for the FWI System.</p>
-<p>The table below describes the columns and data types for the input data.table or data.frame. Columns are required unless otherwise specified, in which case they will be set or calculated. The column names can be lower-case or upper-case, output columns are lower-case.</p>
+<p>The table below describes the columns and data types for the input data.table or data.frame. Columns are required unless otherwise specified, in which case they will be set or calculated. The column names can be lower-case or upper-case, but output columns are always lower-case.</p>
 <table>
 <thead>
 <tr>
@@ -295,13 +296,12 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>solrad</code></td>
-<td><a href="../../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf">Solar radiation</a>📥 (optional)</td>
+<td><a href="../../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf">Solar radiation</a>📥 (default an estimation based on other required variables)</td>
 <td>kW/m^2</td>
 <td>numeric</td>
 </tr>
 </tbody>
 </table>
-<p>In addition to the weather variables, you can specify start-up values for moisture codes and other parameters in <code>hFWI()</code>.</p>
 <h3 id="parameters">Parameters</h3>
 <p>The only required parameter for <code>hFWI()</code> is the input data.table or data.frame, although many start-up values can be altered from default if desired. If you are performing a "live" run which is a continuation from previous FWI outputs with new data, the prior outputs need to be specified.</p>
 <pre><code class="language-r">hFWI(df_wx, timezone = NA, ffmc_old = 85, mcffmc_old = NA, dmc_old = 6, dc_old = 15, mcgfmc_matted_old = 16.31, mcgfmc_standing_old = 16.31, prec_cumulative = 0.0, canopy_drying = 0.0, silent = FALSE, round_out = 4)
@@ -352,7 +352,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>canopy_drying</code></td>
-<td>Consecutive hours of no rain (default 0). 5 hours or more set to 0</td>
+<td>Consecutive hours of no precipitation (default 0). 5 hours or more resets to 0</td>
 </tr>
 <tr>
 <td><code>silent</code></td>
@@ -456,7 +456,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>canopy_drying</code></td>
-<td>Consecutive hours of no rain. 5 hours or more set to 0</td>
+<td>Consecutive hours of no precipitation (default 0). 5 hours or more resets to 0</td>
 </tr>
 </tbody>
 </table>

@@ -205,3 +205,11 @@ iframe {
     border-width: 2px;
     border-radius: 7px;
 }
+
+/* Block Quotes */
+blockquote {
+    font-style: italic;
+    border-color: #ff5e17;
+    border-radius: 7px;
+    padding: 0 0 0 20px;
+}

@@ -113,8 +113,13 @@
                 </ul>
             </li>
             <li class="nav-item" data-bs-level="2">
+                    <a href="#documentation" class="nav-link" target="_self">Documentation</a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3">
                     <a href="#fwi2025" class="nav-link" target="_self">FWI2025</a>
                 <ul class="nav flex-column">
+                </ul>
+            </li>
                 </ul>
             </li>
             <li class="nav-item" data-bs-level="2">
@@ -133,7 +138,7 @@
 <h1 id="code">Code</h1>
 <h2 id="repository">Repository</h2>
 <p>The <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> contains the up-to-date code for the CFFDRS2025 modules in three programming languages: <em>C</em>, <em>Python</em>, and <em>R</em>. These three versions are written to produce the same results so users can choose the version that fits their own software systems.</p>
-<p>See the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme">repository README</a> for more information about how to provide bug reports, the structure of the repository, and our updating process. For email notifications about code updates, you can specify the type of updates to receive when you <a href="../resources/#sign-up" target="_self">join our mailing list</a>.</p>
+<p>See the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=readme-ov-file#readme">repository README</a> for more information about how to provide bug reports, the structure of the repository, and more. For email notifications about code updates, you can specify the type of updates to receive when you <a href="../resources/#sign-up" target="_self">join our mailing list</a>.</p>
 <p><img 
     style="display: block;
            width: 75px;
@@ -148,18 +153,71 @@
 <p>The previous CFFDRS1992 code can still be found on the <a href="https://github.com/cffdrs">CFFDRS GitHub</a>, while the R documentation can be found on the <a href="https://cran.r-project.org/web/packages/cffdrs/">CFFDRS CRAN page</a>.</p>
 <p><br></p>
 <h2 id="capabilities">Capabilities</h2>
-<ul>
-<li>Calculate hourly FWI codes and indices</li>
-<li>Calculate daily summaries of FWI metrics at peak burn time</li>
-<li>Calculate hourly grassland code and indices</li>
-<li>Calculate sunrise, sunset from date and location, and additionally solar radiation from local weather data</li>
-<li>Convert traditional daily noon weather data into daily minimum/maximum weather data</li>
-<li>Convert daily minimum/maximum weather data into hourly weather data</li>
-</ul>
-<h2 id="fwi2025">FWI2025</h2>
+<table>
+<thead>
+<tr>
+<th>Programming Language</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">Python</th>
+<th style="text-align: center;">R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calculate hourly FWI codes and indices</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+<tr>
+<td>Calculate sunrise, sunset, and solar radiation</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+<tr>
+<td>Calculate grassland code and indices</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+<tr>
+<td>Calculate daily summaries and a peak burn time</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+<tr>
+<td>Convert daily noon to daily min/max weather data</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+<tr>
+<td>Convert daily min/max to hourly weather data</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+<tr>
+<td>Input multiple stations at a time</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+<tr>
+<td>Splitting for inputs with multiple years at a time</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✔️</td>
+<td style="text-align: center;">✔️</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentation">Documentation</h2>
+<h3 id="fwi2025">FWI2025</h3>
 <p>The <a href="https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi">Canadian Forest Fire Weather Index (FWI)</a> is a major system of the CFFDRS. FWI2025 is the next generation FWI system found in CFFDRS2025. Select a programming language below to see a description of the required code files and input data along with documentation of the main functions.</p>
 <div class="text-center">
-    <button disabled class="btn btn-dark"">FWI2025 <br> C <br> (under development)</button>
+    <button class="btn btn-dark" onclick="location.href='../code/FWI2025_C'">FWI2025 <br> C</button>
     &emsp;
     <button class="btn btn-dark" onclick="location.href='../code/FWI2025_Python'">FWI2025 <br> Python</button>
     &emsp;

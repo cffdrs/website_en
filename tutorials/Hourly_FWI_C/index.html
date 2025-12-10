@@ -102,6 +102,41 @@
             <li class="nav-item" data-bs-level="1">
                     <a href="#" class="nav-link" target="_self"> (Top) </a>
                 <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#c-files" class="nav-link" target="_self">C files</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#data" class="nav-link" target="_self">Data</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#steps" class="nav-link" target="_self">Steps</a>
+                <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#open-a-terminal" class="nav-link" target="_self">Open a terminal</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#compile-fwi2025" class="nav-link" target="_self">Compile FWI2025</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#run-fwi2025" class="nav-link" target="_self">Run FWI2025</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3">
+                    <a href="#calculate-daily-summaries" class="nav-link" target="_self">Calculate daily summaries</a>
+                <ul class="nav flex-column">
+                </ul>
+            </li>
+                </ul>
+            </li>
                 </ul>
             </li>
         </ul>
@@ -114,7 +149,91 @@
 <br>
 <br></p>
 <h1 id="hourly-fwi-tutorial-c">Hourly FWI Tutorial - C</h1>
-<p>*Last updated: *</p></div>
+<p><em>Last updated: December 10th, 2025</em></p>
+<h2 id="c-files">C files</h2>
+<p>This tutorial will show you how to compile the FWI2025 C code and run the executable with an example hourly weather dataset in a Windows environment. This can be done in PowerShell or Command Prompt, which are included with Windows. The tutorial code and file are written in PowerShell, although the commands in this tutorial can be used for either.  </p>
+<p>The following files can be found on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a>:  </p>
+<ul>
+<li>data/<ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/dev/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a></li>
+</ul>
+</li>
+<li>FWI/<ul>
+<li>C/<ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI_main.c"><strong>NG_FWI_main.c</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.c"><strong>NG_FWI.c</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.h"><strong>NG_FWI.h</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/util.c"><strong>util.c</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/util.h"><strong>util.h</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/daily_summaries.c"><strong>daily_summaries.c</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>If you are unfamiliar with GitHub, there are many options for you to retrieve the code and data files:</p>
+<ol>
+<li><em>Download each file</em> to your computer individually. On the file's GitHub page (e.g. <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/dev/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a>), find the "More file actions" button at the top-right side of the website (denoted "..."), and select "Download". This will begin downloading based on your browser settings. Repeat this for every file.</li>
+<li><em>Download the whole repository</em> to your computer. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
+<li><em>Clone</em> the whole repository to your computer with Git. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
+<li><em>Fork</em> the repository to create a new repository on GitHub. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
+</ol>
+<h2 id="data">Data</h2>
+<p><strong>NOTE: The C version can only handle one station for one continuous season at a time!</strong> See the Python or R versions to be able to run multiple stations with multiple years at once.  </p>
+<p><strong>PRF2007_hourly_wx_C-format.csv</strong> contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data. If you would like guidance on how to fill in missing weather data for your situation, check the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> or <a href="../../contact">reach out to us</a>! Grassland fuel load (<code>grass_fuel_load</code>), grassland curing (<code>percent_cured</code>), and solar radiation (<code>solrad</code>) are not included, but these are optional inputs and they will be automatically set/calculated if not provided.</p>
+<p>The <strong>C-format</strong> version differs from <a href=""><strong>PRF2007_hourly_wx.csv</strong></a> due to the strict requirements in the C version for column names, order, and case. Details can be found at <a href="../../code/FWI2025_C/#input-dataframe" target="_self"> FWI2025_C#input-dataframe</a>.</p>
+<h2 id="steps">Steps</h2>
+<h3 id="open-a-terminal">Open a terminal</h3>
+<p>To run the C code in Windows, it first needs to be compiled into an executable (.exe) file. This can be done in <a href="https://aka.ms/terminal">Windows Terminal</a>, which is a default Windows application.  </p>
+<p>By default, it should open a Windows PowerShell tab/profile where we will run commands for the rest of the tutorial. First, notice that the path next to the prompt should be to your Windows user folder.</p>
+<pre><code class="language-ps">PS C:\Users\username&gt;
+</code></pre>
+<p>Navigate from here to the folder where the .c and .h code files are located with <code>cd</code> (change directory) and <code>dir</code> (list current directory contents) commands. Otherwise, you will need to specify the location of each file every time one is called.  </p>
+<h3 id="compile-fwi2025">Compile FWI2025</h3>
+<p>To calculate hourly FWI, the code files to compile are: <strong>NG_FWI_main.c</strong>, <strong>NG_FWI.c</strong>, and <strong>util.c</strong>. The corresponding <strong>NG_FWI.h</strong> and <strong>util.h</strong> header files need to be in the same folder, but do not need to be invoked directly. One compiler option is <a href="https://gcc.gnu.org/"><code>gcc</code></a></p>
+<pre><code class="language-ps">gcc -o NG_FWI NG_FWI_main.c NG_FWI.c util.c
+</code></pre>
+<p>The prompt should return with no comments if the code was compiled successfully, and a new file should be created in the current folder named <strong>NG_FWI.exe</strong>. The name of the executable (.exe) file is specified after the <code>-o</code> option above.</p>
+<h3 id="run-fwi2025">Run FWI2025</h3>
+<p>The <strong>NG_FWI.exe</strong> file does not have to be run with all function arguments if you want to use default season startup values. The only required parameters are the input data file, an output file location/name, and timezone (UTC offset). Details can be found in the code documentation page at <a href="../../code/FWI2025_C/#parameters" target="_self"> FWI2025 - C#parameters</a> or by running the compiled executable with no arguments.</p>
+<pre><code class="language-ps">./NG_FWI.exe
+</code></pre>
+<pre><code class="language-ps">########
+help/usage:
+path\to\code\folder\NG_FWI.exe input output timezone
+[ffmc_old] [mcffmc_old] [dmc_old] [dc_old] [mcgfmc_matted_old] [mcgfmc_standing_old]
+[prec_cumulative] [canopy_drying]
+
+positional arguments:
+input                 Input csv data file
+...
+</code></pre>
+<p>For this tutorial, we will leave all the optional parameters to default. The UTC offset for the sample PRF2007 dataset is -4 (for Eastern Daylight Time).</p>
+<pre><code class="language-ps">./NG_FWI.exe ../../data/PRF2007_hourly_wx_C-format.csv PRF2007_hourly_FWI.csv -4
+</code></pre>
+<pre><code class="language-ps">Opening input file &gt;&gt;&gt; ../../data/PRF2007_hourly_wx_C-format.csv
+Saving outputs to file &gt;&gt;&gt; PRF2007_hourly_FWI.csv
+
+########
+Startup values used:
+FFMC = 85.0 or mcffmc = -1.0 %
+DMC = 6.0 and DC = 15.0
+mcgfmc matted = 16.3075 % and standing = 16.3075 %
+cumulative precipitation = 0.0 mm and canopy drying = 0
+########
+</code></pre>
+<p>This will place our outputs in a new CSV file called <strong>PRF2007_hourly_FWI.csv</strong>. Compare your outputs with our standard outputs in <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_standard_hourly_FWI.csv"><strong>PRF2007_standard_hourly_FWI.csv</strong></a>.</p>
+<blockquote>
+<p>Tip: if the CSV data file is in a different folder than the code and executable file, you can specify a relative path with ".." indicating one folder up in the hierarchy. In the case of the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> structure, from the <strong>C</strong> folder the relative path of the data file can be specified as <strong>../../data/PRF2007_hourly_wx.csv</strong>, which is shown above. This indicates to go up one folder to <strong>FWI</strong>, and then another folder to <strong>cffdrs-ng</strong> where the <strong>data</strong> folder and file resides.</p>
+</blockquote>
+<h3 id="calculate-daily-summaries">Calculate daily summaries</h3>
+<p>Calculate outputs like peak burn time and number of hours of spread potential. Going through the process again, the files to compile to calculate daily summaries are: <strong>daily_summaries.c</strong>, <strong>NG_FWI.c</strong>, and <strong>util.c</strong>. Ensure the corresponding <strong>NG_FWI.h</strong> and <strong>util.h</strong> header files are in the same folder.</p>
+<pre><code class="language-ps">gcc -o daily_summaries daily_summaries.c NG_FWI.c util.c
+</code></pre>
+<p>The required parameters for <strong>daily_summaries.exe</strong> are the input data file (output of <strong>NG_FWI.exe</strong>) and an output file location/name. Details of the optional <code>reset_hr</code> parameter can be found in the code documentation page at <a aria-disabled="true" target="_self"> FWI2025 - C#daily-summaries</a>.</p>
+<pre><code class="language-ps">./daily_summaries.exe PRF2007_hourly_FWI.csv PRF2007_daily_report.csv
+</code></pre>
+<p>From here, the output CSV files can be opened and converted for further analysis or plotted for visualization.</p></div>
             </div>
         </div>
 
