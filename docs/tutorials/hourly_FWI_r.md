@@ -4,9 +4,9 @@
 <br>
 
 # Hourly FWI Tutorial - R
-*Last updated: November 5th, 2025*
+*Last updated: December 10th, 2025*
 
-## What you'll need
+## R files
 
 The following files can be found on the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main): 
 
@@ -30,7 +30,9 @@ If you are unfamiliar with GitHub, there are many options for you to retrieve th
 Besides the files, ensure you have the required R packages, which are listed at <a href="../../code/FWI2025_R#packages" target="_self">FWI2025_R#packages</a>.
 
 ## Data
-**PRF2007_hourly_wx.csv** contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data. If you would like guidance on how to fill in missing weather data for your situation, check the [CFFDRS Weather Guide](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568) or [reach out to us](../../contact)! The column headers are those required for hourly FWI calculations, details of which can be found at <a href="../../code/FWI2025_R#input-data" target="_self">FWI2025_R#input-data</a>. Grassland curing (`percent_cured`) and solar radiation (`solrad`) are not included, but these are optional inputs and they will be automatically calculated if not provided.
+**PRF2007_hourly_wx.csv** contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data.
+
+The column headers are those required for hourly FWI calculations, details of which can be found at <a href="../../code/FWI2025_R#input-data" target="_self">FWI2025_R#input-data</a>. Grassland fuel load (`grass_fuel_load`), grassland curing (`percent_cured`) and solar radiation (`solrad`) are not included, but these are optional inputs and they will be automatically calculated if not provided. There is a column for UTC offset (`timezone`) which will be used by default in the `hFWI()` function.
 
 ## Steps
 Open the **tutorial_hourly_FWI.r** code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).
@@ -56,35 +58,61 @@ source("util.r")
 source("daily_summaries.r")
 ```
 
-Load the input weather station data file. Specify the file path if **PRF2007_hourly_wx.csv** is not in the working directory
+Load the input weather station data file. The path below is specified based on the layout in the GitHub repository. Change the file path for **PRF2007_hourly_wx.csv** if your structure is different.
 ```r
-data <- read.csv("PRF2007_hourly_wx.csv")
+data <- read.csv("../../data/PRF2007_hourly_wx.csv")
 ```
 
 Print the column names, data should contain 12 columns
 ```r
-> names(data)
+print(names(data))
+```
+```r
  [1] "id"       "lat"      "long"     "timezone" "yr"       "mon"
  [7] "day"      "hr"       "temp"     "rh"       "ws"       "prec"
 ```
 
-Previously, the timezone (UTC offset) was a function parameter and calculated from latitude and longitude. Now it is a data frame column and provided. See the <a href="#appendix-timezones" target="_self">appendix of this tutorial</a> for extra information on how to calculate the timezone, along with the extra information required about the dataset.
+Previously, the UTC offset (`timezone` column) was a function parameter and could be calculated from latitude and longitude. Now it is a data frame column and provided. See the <a href="#appendix-timezones" target="_self">appendix of this tutorial</a> for extra information on how to calculate the timezone, along with the extra information required about the dataset.
 
 ### Run FWI2025
-`hFWI()` is the function that calculates hourly FWI codes in FWI2025. Details about it can be found at <a href="../../code/FWI2025_R/#hourly-fwi" target="_self">FWI2025 - R#hourly-fwi</a>. It can handle multiple stations and years/fire seasons (not shown in this tutorial). Default FWI start-up code values are: ffmc_old = 85, dmc_old = 6, dc_old = 15.
+`hFWI()` is the function that calculates hourly FWI codes in FWI2025. Details about it can be found at <a href="../../code/FWI2025_R/#hourly-fwi" target="_self">FWI2025 - R#hourly-fwi</a>. It can handle multiple stations and years/fire seasons (not shown in this tutorial). For the arguments you can run `args()`.
+```r
+args(hFWI)
+```
+```r
+function (df_wx, timezone = NA, ffmc_old = FFMC_DEFAULT, mcffmc_old = NA, 
+    dmc_old = DMC_DEFAULT, dc_old = DC_DEFAULT, mcgfmc_matted_old = ffmc_to_mcffmc(FFMC_DEFAULT),
+    mcgfmc_standing_old = ffmc_to_mcffmc(FFMC_DEFAULT), prec_cumulative = 0,
+    canopy_drying = 0, silent = FALSE, round_out = 4)
+```
+
+For this tutorial, we will leave all the optional parameters to default.
 ```r
 data_fwi <- hFWI(data)
 ```
+```r
+########
+Startup values used:
+FFMC = 85.0 or mcffmc = NA %
+DMC = 6.0 and DC = 15.0
+mcgfmc matted = 16.3075 % and standing = 16.3075 %
+cumulative precipitation = 0.0 mm and canopy drying = 0
 
-Output is a data.frame (matching input class), with FWI calculations appended after the input columns. Save the output as a .csv file (overrides any preexisting file).
+Running PRF for 2007
+########
+```
+
+Output is a data.frame (matching input class), with FWI calculations appended after the input columns. Save the output as a CSV file (overrides any preexisting file).
 ```r
 write.csv(data_fwi, "PRF2007_hourly_FWI.csv", row.names = FALSE)
 ```
 
 Print the last two rows of the standard moisture codes and fire behaviour indices.
 ```r
-> standard_components <- c("ffmc", "dmc", "dc", "isi", "bui", "fwi")
-> tail(data_fwi[standard_components], 2)
+standard_components <- c("ffmc", "dmc", "dc", "isi", "bui", "fwi")
+tail(data_fwi[standard_components], 2)
+```
+```r
         ffmc    dmc       dc    isi    bui    fwi
 2622 80.2669 3.0924 219.5169 1.6423 5.9745 0.7650
 2623 82.1759 3.3503 220.0533 2.1462 6.4550 1.2023
@@ -92,7 +120,9 @@ Print the last two rows of the standard moisture codes and fire behaviour indice
 
 Print a simple summary of the standard FWI components.
 ```r
-> summary(data_fwi[standard_components])
+summary(data_fwi[standard_components])
+```
+```r
       ffmc            dmc               dc              isi
  Min.   : 0.00   Min.   : 0.000   Min.   : 15.41   Min.   : 0.0000
  1st Qu.:67.87   1st Qu.: 5.925   1st Qu.: 72.28   1st Qu.: 0.7877
@@ -109,6 +139,8 @@ Print a simple summary of the standard FWI components.
  Max.   :66.148   Max.   :25.135
 ```
 
+Compare your outputs with our standard outputs in [**PRF2007_standard_hourly_FWI.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_standard_hourly_FWI.csv).
+
 ### Calculate daily summaries
 Calculate outputs like peak burn time and number of hours of spread potential. Details about the daily summaries function can be found at 
 <a href="../../code/FWI2025_R/#daily-summaries" target="_self">FWI2025 - R#daily-summaries</a>.
@@ -119,8 +151,10 @@ report <- generate_daily_summaries(data_fwi)
 Print a simple summary of the daily report.
 
 ```r
-> daily_components <- c("peak_hr", "duration", "isi_smooth", "dsr")
-> summary(report[daily_components])
+daily_components <- c("peak_hr", "duration", "isi_smooth", "dsr")
+summary(report[daily_components])
+```
+```r
     peak_hr         duration        isi_smooth          dsr
  Min.   :13.00   Min.   : 0.000   Min.   : 0.000   Min.   :0.0000
  1st Qu.:17.00   1st Qu.: 0.000   1st Qu.: 1.234   1st Qu.:0.0338

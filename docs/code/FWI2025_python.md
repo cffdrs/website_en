@@ -4,9 +4,9 @@
 
 # FWI2025 - Python
 
-*Last updated: November 5th, 2025*
+*Last updated: December 10th, 2025*
 
-## Scripts
+## Python Scripts
 There are three scripts on the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) that are required to generate FWI2025 outputs:
 
 1. [**NG_FWI.py**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/NG_FWI.py) holds the functions and equations for generating FWI2025 outputs.
@@ -18,19 +18,21 @@ There are three scripts on the [cffdrs-ng GitHub repository](https://github.com/
 ## Packages
 The FWI2025 Python scripts require the following packages which must be installed prior to running **NG_FWI.py**.
 
-- `datetime` (built-in)
-- `logging` (built-in)
-- `argparse` (built-in)
-- `math` (built-in)
-- `calendar` (built-in)
-- `numpy`
-- `pandas`
+- [`datetime`](https://docs.python.org/3/library/datetime) (built-in)
+- [`logging`](https://docs.python.org/3/library/logging) (built-in)
+- [`argparse`](https://docs.python.org/3/library/argparse) (built-in)
+- [`math`](https://docs.python.org/3/library/math) (built-in)
+- [`calendar`](https://docs.python.org/3/library/calendar) (built-in)
+- [`numpy`](https://numpy.org/doc/stable)
+- [`pandas`](https://pandas.pydata.org/docs)
 
 ## Get Started
-The [GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) also includes a tutorial script and test data. See the <a href="../../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.
+The GitHub repository also includes a [tutorial script](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/tutorial/tutorial_hourly_FWI.py) and [test data](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv). See <a href="../../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.
 
 ## Data Format
-FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated value (.csv) files. Each row then corresponds with a single timestep (i.e. hour), in sequential order. Outputs are then also of the same table/array form, with additional columns. In Python, we use the `pandas` package and its [DataFrame data type](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#) to perform calculations. Users can configure the input file type before and output file type after calculation to fit individual data streams.
+FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as a comma-separated values (CSV) file. Each row then corresponds with a single timestep (i.e. hour), in sequential order. If you would like guidance on how to fill in missing weather data for your situation, check the [CFFDRS Weather Guide](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568) or [reach out to us](../../contact)! Outputs are then also of the same table/array form, with additional columns.
+
+In Python, we use the `pandas` package and its [DataFrame data type](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html) to perform calculations. Users can configure the input file type before and output file type after calculation to fit individual data streams.
 
 ## Hourly FWI
 The `hFWI()` function (case sensitive) in the **NG_FWI.py** file calculates hourly FWI moisture codes and fire behaviour indices. It can handle multiple stations (locations) and multiple years of hourly input data all at once, or just a single hour.
@@ -38,10 +40,10 @@ The `hFWI()` function (case sensitive) in the **NG_FWI.py** file calculates hour
 ### Input DataFrame
 The FWI system was originally designed to be calculated using data recorded at local weather stations, but any collected or calculated data (e.g. gridded data, forecast data, etc.) that includes the required weather variables can be used. See the [CFFDRS Weather Guide](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568) for a description of weather data standards for the FWI System.
 
-The table below describes the columns and data types for the input DataFrame. Columns are required unless otherwise specified, in which case they will be set or calculated. The column names can be lower-case or upper-case, output columns are lower-case.
+The table below describes the columns and data types for the input DataFrame. Columns are required unless otherwise specified, in which case they will be set or calculated. The column names can be lower-case or upper-case, but output columns are always lower-case.
 
 | Column | Description | Units | Class |
-| --- | --- | --- | --- |
+| --- | --- | :-: | :-: |
 | `id` | Unique identifier for weather station or location | | str |
 | `lat` | Latitude | DD | float |
 | `long` | Longitude | DD | float |
@@ -56,9 +58,7 @@ The table below describes the columns and data types for the input DataFrame. Co
 | `prec` | Hourly precipitation | mm | float |
 | `grass_fuel_load` | Density of grassland fuels (default 0.35) | kg/m^2 | float |
 | `percent_cured` | Fraction of grassland fuels that is cured (0-100, default based on annual variation in the Boreal Plains region) | % | float |
-| `solrad` | [Solar radiation](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥 (optional) | kW/m^2 | float |
-
-In addition to the weather variables, you can specify start-up values for moisture codes and other parameters in `hFWI()`.
+| `solrad` | [Solar radiation](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥 (default an estimation based on other required variables) | kW/m^2 | float |
 
 ### Parameters
 The only required parameter for `hFWI()` is the input DataFrame, although many start-up values can be altered from default if desired. If you are performing a "live" run which is a continuation from previous FWI outputs with new data, the prior outputs need to be specified.
@@ -78,7 +78,7 @@ hFWI(df_wx, timezone = None, ffmc_old = 85, mcffmc_old = None, dmc_old = 6, dc_o
 | `mcgfmc_matted_old` | Previous value for mcgfmc_matted (default 16.31) |
 | `mcgfmc_standing_old` | Previous value for mcgfmc_standing (default 16.31) |
 | `prec_cumulative` | Cumulative precipitation this rainfall (default 0) |
-| `canopy_drying` | Consecutive hours of no rain (default 0). 5 hours or more set to 0 |
+| `canopy_drying` | Consecutive hours of no precipitation (default 0). 5 hours or more resets to 0 |
 | `silent` | Suppress informative print statements (default False) |
 | `round_out` | Decimal places to truncate output values to (default 4). Set to `None` for no rounding |
 
@@ -107,7 +107,7 @@ The result of `hFWI()` is a copy of the input DataFrame, with output columns add
 | `gsi` | Grassland Spread Index |
 | `gfwi` | Grassland Fire Weather Index |
 | `prec_cumulative` | Cumulative precipitation this rainfall |
-| `canopy_drying` | Consecutive hours of no rain. 5 hours or more set to 0 |
+| `canopy_drying` | Consecutive hours of no precipitation (default 0). 5 hours or more resets to 0 |
 
 ## Daily Summaries
 Hourly FWI components can be summarized in a variety of ways depending on usage and requirements. One way is to create a daily report, the method of which can be found in the **daily_summaries.py** script. `generate_daily_summaries()` boils down the hourly data into daily metrics, which means every row in the output now represents a day.

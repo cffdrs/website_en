@@ -55,11 +55,6 @@ Research Scientist
 IT Analyst  
 [mackenzie.simpson@nrcan-rncan.gc.ca](mailto:mackenzie.simpson@NRCan-RNCan.gc.ca)  
 
-**Kevin Siu** (he, him | il, lui)  
-Fire Analyst Programmer  
-<a href="../contact/Kevin_Siu" target="_self">Bio</a>  
-[kevin.siu@nrcan-rncan.gc.ca](mailto:kevin.siu@nrcan-rncan.gc.ca)
-
 **Steve Taylor**  
 Forest Fire Research Scientist  
 [steve.taylor@nrcan-rncan.gc.ca](mailto:steve.taylor@NRCan-RNCan.gc.ca)  

@@ -20,12 +20,17 @@ For those unfamiliar with the CFFDRS, or for official information regarding wild
 
 ## Announcements
 
-### October 2025
+### December 2025
+A code update has been released so all calculations now account for leap years and have moved from defining seasonal transition dates as a Julian Date to a calendar date. The C version has also been further improved to match the Python and R versions. Details can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-12-10) including new options to run continuously over multiple years and not have grassland fuels transition from matted to standing.
+ 
+Along with this code update, the C version now has a <a href="../code/#fwi2025" target="_self">code page</a> on this website, along with a <a href="../tutorials/#hourly-fwi" target="_self">tutorial</a> to calculate hourly FWI.
+
+### Past Announcements
+
+#### October 2025
 The FWI2025 information report has been published, and is titled <a href="../resources/#reports" target="_self">The 2025 Update to the FWI System: Structure, Changes and Interpretation</a> (GLC-X-42). It provides information on the FWI2025 and the changes from the previous FWI1987 version, and can be found on the [NRCan Open S&T Repository](https://ostrnrcan-dostrncan.canada.ca/home). Additionally, a new informational video that explains the FWI2025 in general is now available on the <a href="../resources/#explainers" target="_self">resources page</a>.
 
 The C code has been updated to now mostly match the Python and R versions. Details can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-10-02) along with more recent, minor bug fixes.
-
-### Past Announcements
 
 #### September 2025
 A major code update for FWI2025 has been released to the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng). It includes changes to the options when running `hFWI()`, the repository file structure, and how DMC and solar radiation are calculated. More details and the rest of the changes can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-09-10). This website has also been updated to have up-to-date <a href="../code" target="_self">documentation in Code</a> and <a href="../tutorials" target="_self">Tutorials</a>.
