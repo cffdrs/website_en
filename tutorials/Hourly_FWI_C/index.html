@@ -155,11 +155,15 @@
 <p>The following files can be found on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a>:  </p>
 <ul>
 <li>data/<ul>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/dev/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a></li>
 </ul>
 </li>
 <li>FWI/<ul>
 <li>C/<ul>
+<li>tutorial/<ul>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/tutorial/tutorial_hourly_FWI.ps1"><strong>tutorial_hourly_FWI.ps1</strong></a></li>
+</ul>
+</li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI_main.c"><strong>NG_FWI_main.c</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.c"><strong>NG_FWI.c</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.h"><strong>NG_FWI.h</strong></a></li>
@@ -173,7 +177,7 @@
 </ul>
 <p>If you are unfamiliar with GitHub, there are many options for you to retrieve the code and data files:</p>
 <ol>
-<li><em>Download each file</em> to your computer individually. On the file's GitHub page (e.g. <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/dev/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a>), find the "More file actions" button at the top-right side of the website (denoted "..."), and select "Download". This will begin downloading based on your browser settings. Repeat this for every file.</li>
+<li><em>Download each file</em> to your computer individually. On the file's GitHub page (e.g. <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a>), find the "More file actions" button at the top-right side of the website (denoted "..."), and select "Download". This will begin downloading based on your browser settings. Repeat this for every file.</li>
 <li><em>Download the whole repository</em> to your computer. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
 <li><em>Clone</em> the whole repository to your computer with Git. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
 <li><em>Fork</em> the repository to create a new repository on GitHub. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
@@ -181,7 +185,7 @@
 <h2 id="data">Data</h2>
 <p><strong>NOTE: The C version can only handle one station for one continuous season at a time!</strong> See the Python or R versions to be able to run multiple stations with multiple years at once.  </p>
 <p><strong>PRF2007_hourly_wx_C-format.csv</strong> contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data. If you would like guidance on how to fill in missing weather data for your situation, check the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> or <a href="../../contact">reach out to us</a>! Grassland fuel load (<code>grass_fuel_load</code>), grassland curing (<code>percent_cured</code>), and solar radiation (<code>solrad</code>) are not included, but these are optional inputs and they will be automatically set/calculated if not provided.</p>
-<p>The <strong>C-format</strong> version differs from <a href=""><strong>PRF2007_hourly_wx.csv</strong></a> due to the strict requirements in the C version for column names, order, and case. Details can be found at <a href="../../code/FWI2025_C/#input-dataframe" target="_self"> FWI2025_C#input-dataframe</a>.</p>
+<p>The <strong>C-format</strong> version differs from <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv"><strong>PRF2007_hourly_wx.csv</strong></a> due to the strict requirements in the C version for column names, order, and case. Details can be found at <a href="../../code/FWI2025_C/#input-dataframe" target="_self"> FWI2025_C#input-dataframe</a>.</p>
 <h2 id="steps">Steps</h2>
 <h3 id="open-a-terminal">Open a terminal</h3>
 <p>To run the C code in Windows, it first needs to be compiled into an executable (.exe) file. This can be done in <a href="https://aka.ms/terminal">Windows Terminal</a>, which is a default Windows application.  </p>
