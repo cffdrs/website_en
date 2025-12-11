@@ -27,12 +27,12 @@ If you are unfamiliar with GitHub, there are many options for you to retrieve th
 3. *Clone* the whole repository to your computer with Git. See the [GitHub documentation](https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github) for more information.
 4. *Fork* the repository to create a new repository on GitHub. See the [GitHub documentation](https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github) for more information.
 
-Besides the files, ensure you have the required R packages, which are listed at <a href="../../code/FWI2025_R#packages" target="_self">FWI2025_R#packages</a>.
+Besides the files, ensure you have the required R packages, which are listed in the <a href="../../code/FWI2025_R#packages" target="_self">code documentation</a>.
 
 ## Data
 **PRF2007_hourly_wx.csv** contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data.
 
-The column headers are those required for hourly FWI calculations, details of which can be found at <a href="../../code/FWI2025_R#input-data" target="_self">FWI2025_R#input-data</a>. Grassland fuel load (`grass_fuel_load`), grassland curing (`percent_cured`) and solar radiation (`solrad`) are not included, but these are optional inputs and they will be automatically calculated if not provided. There is a column for UTC offset (`timezone`) which will be used by default in the `hFWI()` function.
+The column headers are those required for hourly FWI calculations, details of which can be found in the <a href="../../code/FWI2025_R#input-data" target="_self">code documentation</a>. Grassland fuel load (`grass_fuel_load`), grassland curing (`percent_cured`) and solar radiation (`solrad`) are not included, but these are optional inputs and they will be automatically calculated if not provided. There is a column for UTC offset (`timezone`) which will be used by default in the `hFWI()` function.
 
 ## Steps
 Open the **tutorial_hourly_FWI.r** code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).
@@ -75,7 +75,7 @@ print(names(data))
 Previously, the UTC offset (`timezone` column) was a function parameter and could be calculated from latitude and longitude. Now it is a data frame column and provided. See the <a href="#appendix-timezones" target="_self">appendix of this tutorial</a> for extra information on how to calculate the timezone, along with the extra information required about the dataset.
 
 ### Run FWI2025
-`hFWI()` is the function that calculates hourly FWI codes in FWI2025. Details about it can be found at <a href="../../code/FWI2025_R/#hourly-fwi" target="_self">FWI2025 - R#hourly-fwi</a>. It can handle multiple stations and years/fire seasons (not shown in this tutorial). For the arguments you can run `args()`.
+`hFWI()` is the function that calculates hourly FWI codes in FWI2025. Details about it can be found in the <a href="../../code/FWI2025_R/#parameters" target="_self">code documentation</a>. It can handle multiple stations and years/fire seasons (not shown in this tutorial). For the arguments you can run `args()`.
 ```r
 args(hFWI)
 ```
@@ -142,8 +142,8 @@ summary(data_fwi[standard_components])
 Compare your outputs with our standard outputs in [**PRF2007_standard_hourly_FWI.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_standard_hourly_FWI.csv).
 
 ### Calculate daily summaries
-Calculate outputs like peak burn time and number of hours of spread potential. Details about the daily summaries function can be found at 
-<a href="../../code/FWI2025_R/#daily-summaries" target="_self">FWI2025 - R#daily-summaries</a>.
+Calculate outputs like peak burn time and number of hours of spread potential. Details about the daily summaries function can be found in the 
+<a href="../../code/FWI2025_R/#daily-summaries" target="_self">code documentation</a>.
 ```r
 report <- generate_daily_summaries(data_fwi)
 ```

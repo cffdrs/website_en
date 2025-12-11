@@ -27,7 +27,7 @@ The FWI2025 Python scripts require the following packages which must be installe
 - [`pandas`](https://pandas.pydata.org/docs)
 
 ## Get Started
-The GitHub repository also includes a [tutorial script](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/tutorial/tutorial_hourly_FWI.py) and [test data](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv). See <a href="../../tutorials/#hourly-fwi" target="_self">Tutorials#Hourly FWI</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.
+The GitHub repository also includes a [tutorial script](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/Python/tutorial/tutorial_hourly_FWI.py) and [test data](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv). See the <a href="../../tutorials/Hourly_FWI_Python" target="_self">tutorial</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.
 
 ## Data Format
 FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as a comma-separated values (CSV) file. Each row then corresponds with a single timestep (i.e. hour), in sequential order. If you would like guidance on how to fill in missing weather data for your situation, check the [CFFDRS Weather Guide](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568) or [reach out to us](../../contact)! Outputs are then also of the same table/array form, with additional columns.
