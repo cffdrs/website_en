@@ -185,7 +185,7 @@
 <h2 id="data">Data</h2>
 <p><strong>NOTE: The C version can only handle one station for one continuous season at a time!</strong> See the Python or R versions to be able to run multiple stations with multiple years at once.  </p>
 <p><strong>PRF2007_hourly_wx_C-format.csv</strong> contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data. If you would like guidance on how to fill in missing weather data for your situation, check the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> or <a href="../../contact">reach out to us</a>! Grassland fuel load (<code>grass_fuel_load</code>), grassland curing (<code>percent_cured</code>), and solar radiation (<code>solrad</code>) are not included, but these are optional inputs and they will be automatically set/calculated if not provided.</p>
-<p>The <strong>C-format</strong> version differs from <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv"><strong>PRF2007_hourly_wx.csv</strong></a> due to the strict requirements in the C version for column names, order, and case. Details can be found at <a href="../../code/FWI2025_C/#input-dataframe" target="_self"> FWI2025_C#input-dataframe</a>.</p>
+<p>The <strong>C-format</strong> version differs from <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv"><strong>PRF2007_hourly_wx.csv</strong></a> due to the strict requirements in the C version for column names, order, and case. Details can be found in the <a href="../../code/FWI2025_C/#input-dataframe" target="_self">code documentation</a>.</p>
 <h2 id="steps">Steps</h2>
 <h3 id="open-a-terminal">Open a terminal</h3>
 <p>To run the C code in Windows, it first needs to be compiled into an executable (.exe) file. This can be done in <a href="https://aka.ms/terminal">Windows Terminal</a>, which is a default Windows application.  </p>
@@ -193,6 +193,7 @@
 <pre><code class="language-ps">PS C:\Users\username&gt;
 </code></pre>
 <p>Navigate from here to the folder where the .c and .h code files are located with <code>cd</code> (change directory) and <code>dir</code> (list current directory contents) commands. Otherwise, you will need to specify the location of each file every time one is called.  </p>
+<p>Open the <strong>tutorial_hourly_FWI.ps1</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
 <h3 id="compile-fwi2025">Compile FWI2025</h3>
 <p>To calculate hourly FWI, the code files to compile are: <strong>NG_FWI_main.c</strong>, <strong>NG_FWI.c</strong>, and <strong>util.c</strong>. The corresponding <strong>NG_FWI.h</strong> and <strong>util.h</strong> header files need to be in the same folder, but do not need to be invoked directly. One compiler option is <a href="https://gcc.gnu.org/"><code>gcc</code></a></p>
 <pre><code class="language-ps">gcc -o NG_FWI NG_FWI_main.c NG_FWI.c util.c

@@ -203,7 +203,7 @@
 <li><a href="https://en.cppreference.com/w/c/header/time"><code>&lt;time.h&gt;</code></a></li>
 </ul>
 <h2 id="get-started">Get Started</h2>
-<p>The GitHub repository also includes a [tutorial script] and [C-formatted test data]. See <a href="../../tutorials/Hourly_FWI_C" target="_self">Tutorials#Hourly FWI</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
+<p>The GitHub repository also includes a <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/tutorial/tutorial_hourly_FWI.ps1">tutorial script</a> and <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx_C-format.csv">C-formatted test data</a>. See the <a href="../../tutorials/Hourly_FWI_C" target="_self">tutorial</a> for a step-by-step workflow with hourly data. The documentation below goes into details about specific functions and data requirements.</p>
 <h2 id="data-format">Data Format</h2>
 <p>FWI2025 code is written for and tested using input data in the form of a table/array, commonly imported as comma-separated values (CSV) file. Each row then corresponds with a single timestep (i.e. hour), in sequential order. Outputs are then also of the same table/array form, with additional columns.</p>
 <p>In C, the code is built to be compiled and then run in a command-line interface only. Users can configure the input file type before and output file type after calculation to fit individual data streams.</p>
@@ -221,10 +221,11 @@
 <p>produces a <strong>NG_FWI.exe</strong> executable file.</p>
 <h3 id="input-dataframe">Input DataFrame</h3>
 <p>The FWI system was originally designed to be calculated using data recorded at local weather stations, but any collected or calculated data (e.g. gridded data, forecast data, etc.) that includes the required weather variables can be used. See the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> for a description of weather data standards for the FWI System.</p>
-<p>The table below describes the columns and units for the input CSV file. Columns are required unless there is a default, in which case they will be set or calculated. At this time for C, <strong>column names must be lower-case</strong>, and output columns are always lower-case.</p>
+<p>The table below describes the columns and units for the input CSV file. Columns are required unless there is a default, in which case they will be set or calculated. They also <strong>need to be in the following order</strong>, unlike in the Python and R versions. At this time for C, column names must be lower-case, and output columns are always lower-case.</p>
 <table>
 <thead>
 <tr>
+<th>No.</th>
 <th>Column</th>
 <th>Description</th>
 <th style="text-align: center;">Units</th>
@@ -233,78 +234,91 @@
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td><code>lat</code></td>
 <td>Latitude</td>
 <td style="text-align: center;">DD</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>2</td>
 <td><code>long</code></td>
 <td>Longitude</td>
 <td style="text-align: center;">DD</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>3</td>
 <td><code>yr</code></td>
 <td>Year of data point</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">int</td>
 </tr>
 <tr>
+<td>4</td>
 <td><code>mon</code></td>
 <td>Month of the year (1-12)</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">int</td>
 </tr>
 <tr>
+<td>5</td>
 <td><code>day</code></td>
 <td>Day of the month (1-31)</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">int</td>
 </tr>
 <tr>
+<td>6</td>
 <td><code>hr</code></td>
 <td>Hour of the day (0-23)</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">int</td>
 </tr>
 <tr>
+<td>7</td>
 <td><code>temp</code></td>
 <td>Air temperature</td>
 <td style="text-align: center;">°C</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>8</td>
 <td><code>rh</code></td>
 <td>Relative humidity (0-100)</td>
 <td style="text-align: center;">%</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>9</td>
 <td><code>ws</code></td>
 <td>10 m open wind speed</td>
 <td style="text-align: center;">km/hr</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>10</td>
 <td><code>prec</code></td>
 <td>Hourly precipitation</td>
 <td style="text-align: center;">mm</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>11</td>
 <td><code>grass_fuel_load</code></td>
 <td>Density of grassland fuels (default 0.35)</td>
 <td style="text-align: center;">kg/m^2</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>11/12</td>
 <td><code>percent_cured</code></td>
 <td>Fraction of grassland fuels that is cured (0-100, default based on annual variation in the Boreal Plains region)</td>
 <td style="text-align: center;">%</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
+<td>11/12/13</td>
 <td><code>solrad</code></td>
 <td><a href="../../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf">Solar radiation</a>📥 (default an estimation based on other required variables)</td>
 <td style="text-align: center;">kW/m^2</td>
