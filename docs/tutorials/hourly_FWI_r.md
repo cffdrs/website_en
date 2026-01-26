@@ -4,7 +4,7 @@
 <br>
 
 # Hourly FWI Tutorial - R
-*Last updated: December 10th, 2025*
+*Last updated: January 26th, 2026*
 
 ## R files
 
@@ -110,7 +110,7 @@ write.csv(data_fwi, "PRF2007_hourly_FWI.csv", row.names = FALSE)
 Print the last two rows of the standard moisture codes and fire behaviour indices.
 ```r
 standard_components <- c("ffmc", "dmc", "dc", "isi", "bui", "fwi")
-tail(data_fwi[standard_components], 2)
+print(tail(data_fwi[standard_components], 2))
 ```
 ```r
         ffmc    dmc       dc    isi    bui    fwi
@@ -182,7 +182,9 @@ stations <- unique(data[c("id", "lat", "long")])
 
 Print the unique station IDs and coordinates. For this dataset the only station is at Petawawa Research Forest (PRF).
 ```r
-> stations
+print(stations)
+```
+```r
    id    lat    long
 1 PRF 45.996 -77.427
 ```
@@ -194,7 +196,9 @@ tz_loc <- tz_lookup_coords(stations$lat, stations$long, method = "accurate")
 
 Print the timezone location. PRF is equivalent to "America/Toronto".
 ```r
-> tz_loc
+print(tz_loc)
+```
+```r
 [1] "America/Toronto"
 ```
 
@@ -205,7 +209,9 @@ utc <- tz_offset("2007-05-10", tz_loc)[[5]]
 
 Print the UTC offset.
 ```r
-> utc
+print(utc)
+```
+```r
 [1] -4
 ```
 

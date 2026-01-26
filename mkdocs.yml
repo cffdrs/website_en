@@ -17,6 +17,9 @@ theme:
     nav_style: dark
     user_color_mode_toggle: false
     navigation_depth: 3
+# markdown_extensions:
+#   - pymdownx.arithmatex:
+#       generic: true
 extra_css: [style.css]
 plugins:
     - search
