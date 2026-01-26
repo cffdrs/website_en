@@ -154,7 +154,7 @@
 <br>
 <br></p>
 <h1 id="hourly-fwi-tutorial-r">Hourly FWI Tutorial - R</h1>
-<p><em>Last updated: December 10th, 2025</em></p>
+<p><em>Last updated: January 26th, 2026</em></p>
 <h2 id="r-files">R files</h2>
 <p>The following files can be found on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a>: </p>
 <ul>
@@ -241,7 +241,7 @@ Running PRF for 2007
 </code></pre>
 <p>Print the last two rows of the standard moisture codes and fire behaviour indices.</p>
 <pre><code class="language-r">standard_components &lt;- c(&quot;ffmc&quot;, &quot;dmc&quot;, &quot;dc&quot;, &quot;isi&quot;, &quot;bui&quot;, &quot;fwi&quot;)
-tail(data_fwi[standard_components], 2)
+print(tail(data_fwi[standard_components], 2))
 </code></pre>
 <pre><code class="language-r">        ffmc    dmc       dc    isi    bui    fwi
 2622 80.2669 3.0924 219.5169 1.6423 5.9745 0.7650
@@ -293,23 +293,26 @@ summary(report[daily_components])
 <pre><code class="language-r">stations &lt;- unique(data[c(&quot;id&quot;, &quot;lat&quot;, &quot;long&quot;)])
 </code></pre>
 <p>Print the unique station IDs and coordinates. For this dataset the only station is at Petawawa Research Forest (PRF).</p>
-<pre><code class="language-r">&gt; stations
-   id    lat    long
+<pre><code class="language-r">print(stations)
+</code></pre>
+<pre><code class="language-r">   id    lat    long
 1 PRF 45.996 -77.427
 </code></pre>
 <p>Find the timezone based on latitude and longitude, this can take some time. You may need to download the package 'sf' for method = "accurate".</p>
 <pre><code class="language-r">tz_loc &lt;- tz_lookup_coords(stations$lat, stations$long, method = &quot;accurate&quot;)
 </code></pre>
 <p>Print the timezone location. PRF is equivalent to "America/Toronto".</p>
-<pre><code class="language-r">&gt; tz_loc
-[1] &quot;America/Toronto&quot;
+<pre><code class="language-r">print(tz_loc)
+</code></pre>
+<pre><code class="language-r">[1] &quot;America/Toronto&quot;
 </code></pre>
 <p>The UTC offset can then be determined from the timezone location.</p>
 <pre><code class="language-r">utc &lt;- tz_offset(&quot;2007-05-10&quot;, tz_loc)[[5]]
 </code></pre>
 <p>Print the UTC offset.</p>
-<pre><code class="language-r">&gt; utc
-[1] -4
+<pre><code class="language-r">print(utc)
+</code></pre>
+<pre><code class="language-r">[1] -4
 </code></pre>
 <p>Since May 10, 2007 is during daylight savings the UTC offset calculated above corresponds to Eastern Daylight Time (EDT), UTC-4. This matches the timezone column provided since this data was collected using EDT. For Eastern Standard Time (EST), the UTC offset would be UTC-5.</p></div>
             </div>
