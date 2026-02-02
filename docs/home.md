@@ -55,3 +55,17 @@ It goes over the new features of the Fire Weather Index (FWI2025) including the 
 
 #### January 2025
 The NG-CFFDRS Fire Weather Index (FWI) System module is available for users to test. Release of the other modules of the CFFDRS (e.g. FBP System, FMS, and FOP System) is ongoing.
+
+## FAQ
+#### Can FWI2025 be used with the current FBP system?
+
+*As of February 2026:*
+
+Feedback from users is crucial, and to that effect – we have heard valuable feedback on the compatibility between the Fire Weather Index 2025 (FWI2025) System and the current Fire Behaviour Prediction (FBP) System that needs to be addressed. FWI2025 is related to a new danger-rating system. It has not yet been linked to absolute (rather than relative) quantities of fire behaviour prediction and therefore should not be used with FBP1992 at this time. Linking of FWI2025 and fire behaviour prediction will come with (interim) iFBP2025. As for what agencies can do, they can implement FWI2025 in parallel with FWI1987 to take advantage of its new capabilities and help us with ongoing testing. Some of those new capabilities include:
+
+- Tracking moisture in fast drying fine fuels like the Fine Fuel Moisture Code
+- Provide indication of overnight burning
+- Better indicators for ignition, spread and intensity with the Grassland FWI System components (Grassland Fuel Moisture Code, Grassland Spread Index, Grassland Fire Weather Index)
+- Better indicator of peak fire danger with calculations of the FWI System components in near-real time
+
+For FBP inputs, they should continue to use FWI1987 for operational decisions, though testing FWI2025 with FBP1992 and providing feedback would be valuable. Work is ongoing to quantify the differences between FWI2025 and FWI1987 in relation to the effect on fire behaviour using the current FBP System (FBP1992). We will communicate our findings this spring via our communication channels.  But, at this time, **FWI2025 should not be used as an input to the FBP System**.
