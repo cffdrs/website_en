@@ -11,6 +11,8 @@ To receive our newsletters directly to your inbox, fill out the form at the link
 
 [Newsletter Sign-up Form (Microsoft Forms)](https://forms.office.com/r/jmT8HVrsK8)
 
+---
+
 ## Videos
 *If you’re experiencing issues with a video player, try refreshing this page. If the problem persists, click on 'Watch video on YouTube' in the video player.*
 
@@ -37,6 +39,8 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 
 <br>
 
+---
+
 ## Reports
 NG-CFFDRS
 
@@ -59,6 +63,8 @@ CFFDRS1992
 
 More current and historical CFFDRS documentation can be found on the  
 [NRCan Open S&T Repository (OSTR)](https://ostrnrcan-dostrncan.canada.ca/home).
+
+---
 
 ## Links
 

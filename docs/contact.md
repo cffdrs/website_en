@@ -9,6 +9,8 @@ For all other inquiries, scientific or general, or website feedback, please send
 
 Any feedback to help make this a better resource is greatly appreciated!
 
+---
+
 ## Fire Danger Group Members
 **Gabrielle Ayres** (she, her | elle, elle)  
 Research Mobilization Analyst  

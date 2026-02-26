@@ -18,14 +18,21 @@ Join our
 For those unfamiliar with the CFFDRS, or for official information regarding wildfires in Canada, read more on official Government of Canada pages under 
 <a href="../resources/#links" target="_self">Resources#Links</a>.  
 
+---
+
 ## Announcements
 
-### December 2025
+### February 2026
+Over the past six weeks, the Fire Danger Group delivered three in‑person FWI2025 workshops across the country. Each session focused on presenting the system updates, introducing the new grassland fire danger components, and sharing a proposed national fire danger classification method.
+
+A code update has been released focused on updating the methods to convert daily weather data to hourly. A new tutorial for it can be found <a href="../../tutorials/#daily-to-hourly" target="_self">here</a>. More update details can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2026-02-27).
+
+### Past Announcements
+
+#### December 2025
 A code update has been released so all calculations now account for leap years and have moved from defining seasonal transition dates as a Julian Date to a calendar date. The C version has also been further improved to match the Python and R versions. Details can be found on the [GitHub changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2025-12-10) including new options to run continuously over multiple years and not have grassland fuels transition from matted to standing.
  
 Along with this code update, the C version now has a <a href="../code/#fwi2025" target="_self">code page</a> on this website, along with a <a href="../tutorials/#hourly-fwi" target="_self">tutorial</a> to calculate hourly FWI.
-
-### Past Announcements
 
 #### October 2025
 The FWI2025 information report has been published, and is titled <a href="../resources/#reports" target="_self">The 2025 Update to the FWI System: Structure, Changes and Interpretation</a> (GLC-X-42). It provides information on the FWI2025 and the changes from the previous FWI1987 version, and can be found on the [NRCan Open S&T Repository](https://ostrnrcan-dostrncan.canada.ca/home). Additionally, a new informational video that explains the FWI2025 in general is now available on the <a href="../resources/#explainers" target="_self">resources page</a>.
@@ -56,7 +63,15 @@ It goes over the new features of the Fire Weather Index (FWI2025) including the 
 #### January 2025
 The NG-CFFDRS Fire Weather Index (FWI) System module is available for users to test. Release of the other modules of the CFFDRS (e.g. FBP System, FMS, and FOP System) is ongoing.
 
+---
+
 ## FAQ
+
+- <a href="#can-fwi2025-be-used-with-the-current-fbp-system" target="_self">Can FWI2025 be used with the current FBP system?</a>
+- <a href="#why-is-timezone-required-and-how-do-i-determine-it" target="_self">Why is timezone required and how do I determine it?</a>
+
+<br>
+
 #### Can FWI2025 be used with the current FBP system?
 
 *As of February 2026:*
@@ -68,4 +83,15 @@ Feedback from users is crucial, and to that effect – we have heard valuable fe
 - Better indicators for ignition, spread and intensity with the Grassland FWI System components (Grassland Fuel Moisture Code, Grassland Spread Index, Grassland Fire Weather Index)
 - Better indicator of peak fire danger with calculations of the FWI System components in near-real time
 
-For FBP inputs, they should continue to use FWI1987 for operational decisions, though testing FWI2025 with FBP1992 and providing feedback would be valuable. Work is ongoing to quantify the differences between FWI2025 and FWI1987 in relation to the effect on fire behaviour using the current FBP System (FBP1992). We will communicate our findings this spring via our communication channels.  But, at this time, **FWI2025 should not be used as an input to the FBP System**.
+For FBP inputs, they should continue to use FWI1987 for operational decisions, though testing FWI2025 with FBP1992 and providing feedback would be valuable. Work is ongoing to quantify the differences between FWI2025 and FWI1987 in relation to the effect on fire behaviour using the current FBP System (FBP1992). We will communicate our findings this spring via our communication channels.  But, at this time, **FWI2025 should not be used as an input to the FBP System**.  
+
+<br>
+
+#### Why is timezone required and how do I determine it?
+`timezone` is one of the required parameters to run FWI2025. More specifically, it is the UTC offset corresponding to the times in a dataset, and should be given in units of hours. It is required because it is an essential piece of information to be able to calculate sunrise and sunset times, along with latitude and longitude.  
+
+If you know your weather data was collected in Local Standard Time (LST), the `timezone` parameter is simply the [UTC offset of the LST](https://en.wikipedia.org/wiki/List_of_UTC_offsets). This is true for any dataset that followed the [old CFFDRS standard](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568) of collecting daily weather data at noon LST. For example, [Eastern Standard Time](https://en.wikipedia.org/wiki/Eastern_Time_Zone) is 5 hours behind Coordinated Universal Time (UTC), which corresponds to a `timezone` input of -5. To find the UTC offset of a date and location programmatically, see the corresponding FWI2025 tutorial appendices for <a href="../../tutorials/Hourly_FWI_Python/#appendix-timezone" target="_self">Python</a> and <a href="../../tutorials/Hourly_FWI_R/#appendix-timezone" target="_self">R</a>.  
+
+The other common practise for weather data is to collect it in UTC. In this case, `timezone` should be set to 0. If you know a dataset was collected in Local Daylight Time (LDT), this should be one hour ahead of LST, so add 1 to the UTC offset of the LST.  
+
+If you do not know the UTC offset used for a dataset, the only thing you can do is guess what it is based on the diurnal fluctuations of the weather variables. Feel free to <a href="../../Contact" target = "_self">contact us</a> for more information or guidance.

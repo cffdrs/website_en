@@ -9,9 +9,9 @@ See the [repository README](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=read
 
 <img 
     style="display: block;
-           width: 75px;
+           width: 50px;
            padding: 5px;
-           margin: 10px 25px 0px 0px;
+           margin: 5px 25px 0px 0px;
            float: left;
            border-radius: 5px;
            background-color: #FFFFFF!important;"
@@ -21,7 +21,7 @@ See the [repository README](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=read
 
 The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://github.com/cffdrs), while the R documentation can be found on the [CFFDRS CRAN page](https://cran.r-project.org/web/packages/cffdrs/).
 
-<br>
+---
 
 ## Capabilities
 | Programming Language                                  | C   | Python | R   |
@@ -35,6 +35,7 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 | Input multiple stations at a time                     | ❌ | ✔️     | ✔️ |
 | Splitting for inputs with multiple years at a time    | ❌ | ✔️     | ✔️ |
 
+---
 
 ## Documentation
 ### FWI2025
@@ -47,6 +48,8 @@ The [Canadian Forest Fire Weather Index (FWI)](https://cwfis.cfs.nrcan.gc.ca/bac
 	&emsp;
 	<button class="btn btn-dark" onclick="location.href='../code/FWI2025_R'">FWI2025 <br> R</button>
 </div>
+
+---
 
 ## License
 The [NG-CFFDRS scripts](https://github.com/nrcan-cfs-fire/cffdrs-ng) are licensed under the GNU General Public License version 2. A copy of the license is available on the [GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=GPL-2.0-1-ov-file#readme).
