@@ -4,7 +4,7 @@
 
 # FWI2025 - Python
 
-*Last updated: December 10th, 2025*
+*Last updated: February 27th, 2026*
 
 ## Python Scripts
 There are three scripts on the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng) that are required to generate FWI2025 outputs:
@@ -43,11 +43,11 @@ The FWI system was originally designed to be calculated using data recorded at l
 The table below describes the columns and data types for the input DataFrame. Columns are required unless otherwise specified, in which case they will be set or calculated. The column names can be lower-case or upper-case, but output columns are always lower-case.
 
 | Column | Description | Units | Class |
-| --- | --- | :-: | :-: |
+| ------ | ----------- | :---: | :---: |
 | `id` | Unique identifier for weather station or location | | str |
 | `lat` | Latitude | DD | float |
 | `long` | Longitude | DD | float |
-| `timezone` | UTC offset (can be specified in `hFWI()` parameter instead, see <a href="#parameters" target="_self">below</a>) | | float |
+| `timezone` | [UTC offset](https://en.wikipedia.org/wiki/ISO_8601) corresponding to the `yr`, `mon`, `day`, and `hr` of the input data. Can vary with `id`. Can be specified in `hFWI()` parameter instead, see <a href="#parameters" target="_self">below</a> | hr | float |
 | `yr` | Year of data point | | int |
 | `mon` | Month of the year (1-12) | | int |
 | `day` | Day of the month (1-31) | | int |
@@ -70,7 +70,7 @@ hFWI(df_wx, timezone = None, ffmc_old = 85, mcffmc_old = None, dmc_old = 6, dc_o
 | Parameter | Description |
 | --- | --- |
 | `df_wx` | DataFrame of hourly weather stream (see <a href="#input-dataframe" target="_self">Input DataFrame</a> section above) |
-| `timezone` | UTC offset (default `None`). `None` is for using a provided column in `df_wx`. Specifying a number will create/overwrite `df_wx` column. |
+| `timezone` | [UTC offset](https://en.wikipedia.org/wiki/ISO_8601) corresponding to the `yr`, `mon`, `day`, and `hr` of the input data (default `None`). `None` is for using a provided `timezone` column in `df_wx`. Specifying a number here will create/overwrite that column |
 | `ffmc_old` | Previous value for FFMC (default 85). Set to `None` if `mcffmc_old` is specified instead |
 | `mcffmc_old` | Previous value for mcffmc (default `None`) |
 | `dmc_old` | Previous value for DMC (default 6) |
@@ -138,7 +138,7 @@ generate_daily_summaries(hourly_FWI, reset_hr = 5, silent = False, round_out = 4
 | `sunrise` | Hour of sunrise |
 | `sunset` | Hour of sunset |
 | `peak_hr` | Expected hour of daily maximum fire behaviour. Set as the hour of maximum ISI calculated using a smoothed wind speed (see `ws_smooth`), or 17:00 if daily maximum FFMC is less than 85 |
-| `duration` | Expected number of hours in the daily burning window. Calculated as the number of hours (possibly discontinuous) where `isi_smooth` is greater than 5 |
+| `duration` | Expected number of hours in the daily burning window. Calculated as the number of hours between and including the first and last instances when `isi_smooth` reaches 5 |
 | `ffmc` | Fine Fuel Moisture Code at `peak_hr` |
 | `dmc` | Duff Moisture Code at `peak_hr` |
 | `dc` | Drought Code at `peak_hr` |

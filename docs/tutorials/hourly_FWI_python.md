@@ -1,10 +1,10 @@
 <a href="../../tutorials#hourly-fwi" target="_self" style="float: left;"> back to Tutorials </a>
-<a href="https://cffdrs.github.io/website_fr/tutoriels/IFM_horaire_python" target="_self" style="float: right;"> Français </a>
+<a href="https://cffdrs.github.io/website_fr/tutoriels/IFM_horaire_Python" target="_self" style="float: right;"> Français </a>
 <br>
 <br>
 
 # Hourly FWI Tutorial - Python
-*Last updated: December 10th, 2025*
+*Last updated: February 27th, 2026*
 
 ## Python files
 
@@ -41,14 +41,14 @@ Open the **tutorial_hourly_FWI.py** code file. You can either follow the code an
 Run `pip install` to install any you are missing.
 ```py
 import pandas as pd
-from datetime import datetime
+import sys
 ```
 
 ### Load functions and data
-If the working directory is different from where you saved the FWI2025 scripts, you can add the path to the scripts with the sys package and `sys.path.append()`.
+This tutorial will refer to file locations as structured in the GitHub repository. Specify the local path to the cffdrs-ng folder. It can accept absolute paths (e.g. starting with "C:/") or relative paths (e.g. "./" if the working directory is cffdrs-ng). Change the path strings to match your file layout if it is different.
 ```py
-import sys
-sys.path.append("CHANGE/PATH/TO/cffdrs-ng/FWI/Python")
+path_prefix = "CHANGE/TO/PATH/TO/cffdrs-ng/"
+sys.path.append(path_prefix + "FWI/Python")
 ```
 
 Load the files containing the variables and functions to calculate FWI2025.
@@ -57,9 +57,9 @@ from NG_FWI import hFWI
 from daily_summaries import generate_daily_summaries
 ```
 
-Load the input weather station data file. The path below is specified based on the layout in the GitHub repository. Change the file path for **PRF2007_hourly_wx.csv** if your structure is different.
+Load the input weather station data file.
 ```py
-data = pd.read_csv("../../data/PRF2007_hourly_wx.csv")
+data = pd.read_csv(path_prefix + "data/PRF2007_hourly_wx.csv")
 ```
 
 Print the column names, data should contain 12 columns.
@@ -72,8 +72,6 @@ Index(['id', 'lat', 'long', 'timezone', 'yr', 'mon', 'day', 'hr', 'temp', 'rh',
        'ws', 'prec'],
       dtype='object')
 ```
-
-Previously, the UTC offset (`timezone` column) was a function parameter and could be calculated from latitude and longitude. Now it is a data frame column and provided. See the <a href="#appendix-timezones" target="_self">appendix of this tutorial</a> for extra information on how to calculate the timezone, along with the extra information required about the dataset.
 
 ### Run FWI2025
 `hFWI()` is the function that calculates hourly FWI codes in FWI2025. Details about it can be found in the <a href="../../code/FWI2025_Python/#parameters" target="_self">code documentation</a>. It can handle multiple stations and years/fire seasons (not shown in this tutorial). For details you can run the help.
@@ -101,6 +99,7 @@ hFWI(
     # Calculate hourly FWI indices from hourly weather stream.
     #
     # @param    df_wx               hourly values weather stream
+...
 ```
 
 For this tutorial, we will leave all the optional parameters to default.
@@ -109,8 +108,10 @@ data_fwi = hFWI(data)
 ```
 ```py
 ########
+FWI2025 (YYYY-MM-DD)
+
 Startup values used:
-FFMC = 85.0 or mcffmc = None %
+FFMC = 85.0 % and mcffmc = None
 DMC = 6.0 and DC = 15.0
 mcgfmc matted = 16.3075 % and standing = 16.3075 %
 cumulative precipitation = 0.0 mm and canopy drying = 0
@@ -121,7 +122,7 @@ Running PRF for 2007
 
 Output is a DataFrame, with FWI calculations appended after the input columns. Save the output as a CSV file (overrides any preexisting file).
 ```py
-data_fwi.to_csv("PRF2007_hourly_FWI.csv", index = False)
+data_fwi.to_csv(path_prefix + "PRF2007_hourly_FWI.csv", index = False)
 ```
 
 Print the last two rows of the standard moisture codes and fire behaviour indices.
@@ -162,6 +163,13 @@ Calculate outputs like peak burn time and number of hours of spread potential. D
 ```py
 report = generate_daily_summaries(data_fwi)
 ```
+```py
+########
+FWI2025: Daily Summaries (YYYY-MM-DD)
+
+Summarizing PRF to daily
+########
+```
 
 Print a simple summary of the daily report.
 ```py
@@ -201,11 +209,12 @@ Name: count, dtype: int64
 
 From here, the outputs can be converted to any datatype for further analysis or plotted for visualization.
 
-## Appendix: Timezones
-This section will cover how to calculate a timezone based on a location (latitude and longitude) and date. Note that this is not necessarily a substitute for actual information about the time used in a dataset. The [CFFDRS Weather Guide](https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568) specifies to collect data by local standard time, which is different in many places due to the shift to daylight time in summer months (daylight savings).
+## Appendix: Timezone
+This section will cover how to determine the UTC offset of a Local Standard Time (LST) based on a date and location (latitude and longitude). This only applies to datasets that are *known to be recorded using LST*, and is **not** a substitute in cases where a dataset's UTC offset is unknown. See the <a href="../../home/#why-is-timezone-required-and-how-do-i-determine-it" target="_self">FAQ</a> for more details.
 
 The 'timezonefinder' and 'pytz' packages have functions to get the timezone of the weather station based on latitude and longitude.
 ```py
+from datetime import datetime
 from timezonefinder import TimezoneFinder
 from pytz import timezone
 ```
@@ -238,22 +247,17 @@ print(tz_loc)
 'America/Toronto'
 ```
 
-The UTC offset can then be determined from the timezone location.
+The UTC offset can then be determined from the timezone location and a date. To guarantee the UTC offset for LST, use a date in winter (e.g. January 1st in the Northern hemisphere or July 1st in the Southern hemisphere).
 ```py
-utc = timezone(tz_loc).localize(datetime(2007, 5, 10)).strftime('%z')
+utc = timezone(tz_loc).localize(datetime(2007, 1, 1)).strftime('%z')
 ```
 
-Print UTC offset, PRF in May is in Eastern Daylight Time (EDT)
+Print UTC offset, PRF in winter is in Eastern Standard Time.
 ```py
 print(utc)
 ```
 ```py
-'-0400'
+'-0500'
 ```
 
-The UTC offset is expected as integer hours, so we can set it to -4.
-```py
-utc = -4
-```
-
-Since May 10, 2007 is during daylight savings the UTC offset calculated above corresponds to Eastern Daylight Time (EDT), UTC-4. This matches the timezone column provided since this data was collected using EDT. For Eastern Standard Time (EST), the UTC offset would be UTC-5.
+The provided [PRF dataset](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv) is actually not recorded in LST, but Local Daylight Time (Eastern Daylight Time). This is why the `timezone` parameter is set to -4, and why this process is not a substitute for actual information about a dataset.

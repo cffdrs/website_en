@@ -1,11 +1,11 @@
 <a href="../../tutorials#hourly-fwi" target="_self" style="float: left;"> back to Tutorials </a>
-<a aria-disabled="true" target="_self" style="float: right;"> Français </a>
+<a href="https://cffdrs.github.io/website_fr/tutoriels/IFM_horaire_C" target="_self" style="float: right;"> Français </a>
 <br>
 <br>
 
 # Hourly FWI Tutorial - C
 
-*Last updated: December 10th, 2025*
+*Last updated: February 27th, 2026*
 
 ## C files
 
@@ -73,12 +73,12 @@ The **NG_FWI.exe** file does not have to be run with all function arguments if y
 ```ps
 ########
 help/usage:
-path\to\code\folder\NG_FWI.exe input output timezone
-[ffmc_old] [mcffmc_old] [dmc_old] [dc_old] [mcgfmc_matted_old] [mcgfmc_standing_old]
-[prec_cumulative] [canopy_drying]
+PATH\TO\cffdrs-ng\FWI\C\NG_FWI.exe input output timezone [ffmc_old] [mcffmc_old]
+[dmc_old] [dc_old] [mcgfmc_matted_old] [mcgfmc_standing_old]
+[prec_cumulative] [canopy_drying] [silent]
 
-positional arguments:
-input                 Input csv data file
+argument descriptions:
+input                Input csv data file
 ...
 ```
 
@@ -88,21 +88,24 @@ For this tutorial, we will leave all the optional parameters to default. The UTC
 ./NG_FWI.exe ../../data/PRF2007_hourly_wx_C-format.csv PRF2007_hourly_FWI.csv -4
 ```
 ```ps
+########
+FWI2025 (YYYY-MM-DD)
 Opening input file >>> ../../data/PRF2007_hourly_wx_C-format.csv
 Saving outputs to file >>> PRF2007_hourly_FWI.csv
 
-########
 Startup values used:
-FFMC = 85.0 or mcffmc = -1.0 %
+FFMC = 85.0 % and mcffmc = n
 DMC = 6.0 and DC = 15.0
 mcgfmc matted = 16.3075 % and standing = 16.3075 %
 cumulative precipitation = 0.0 mm and canopy drying = 0
+
+Running FWI2025
 ########
 ```
 
 This will place our outputs in a new CSV file called **PRF2007_hourly_FWI.csv**. Compare your outputs with our standard outputs in [**PRF2007_standard_hourly_FWI.csv**](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_standard_hourly_FWI.csv).
 
-> Tip: if the CSV data file is in a different folder than the code and executable file, you can specify a relative path with ".." indicating one folder up in the hierarchy. In the case of the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) structure, from the **C** folder the relative path of the data file can be specified as **../../data/PRF2007_hourly_wx.csv**, which is shown above. This indicates to go up one folder to **FWI**, and then another folder to **cffdrs-ng** where the **data** folder and file resides.
+> Tip: if the CSV data file is in a different folder than the code and executable file, you can specify a relative path with ".." indicating one folder up in the hierarchy. In the case of the [cffdrs-ng GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main) structure, from the **C** folder the relative path of the data file can be specified as **../../data/PRF2007_hourly_wx_C-format.csv**, which is shown above. This indicates to go up one folder to **FWI**, and then another folder to **cffdrs-ng** where the **data** folder and file resides.
 
 ### Calculate daily summaries
 Calculate outputs like peak burn time and number of hours of spread potential. Going through the process again, the files to compile to calculate daily summaries are: **daily_summaries.c**, **NG_FWI.c**, and **util.c**. Ensure the corresponding **NG_FWI.h** and **util.h** header files are in the same folder.
@@ -111,10 +114,20 @@ Calculate outputs like peak burn time and number of hours of spread potential. G
 gcc -o daily_summaries daily_summaries.c NG_FWI.c util.c
 ```
 
-The required parameters for **daily_summaries.exe** are the input data file (output of **NG_FWI.exe**) and an output file location/name. Details of the optional `reset_hr` parameter can be found in the code documentation page at <a aria-disabled="true" target="_self"> FWI2025 - C#daily-summaries</a>.
+The required parameters for **daily_summaries.exe** are the input data file (output of **NG_FWI.exe**) and an output file location/name. Details of the optional `reset_hr` parameter can be found in the <a href="../../code/FWI2025_C/#parameters_1" target="_self">code documentation</a>.
 
 ```ps
 ./daily_summaries.exe PRF2007_hourly_FWI.csv PRF2007_daily_report.csv
+```
+```ps
+########
+FWI2025: Daily Summaries (YYYY-MM-DD)
+
+Opening input file >>> PRF2007_hourly_FWI.csv
+Saving outputs to file >>> PRF2007_daily_report.csv
+
+Summarizing to daily
+########
 ```
 
 From here, the output CSV files can be opened and converted for further analysis or plotted for visualization.
