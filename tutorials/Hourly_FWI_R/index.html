@@ -226,6 +226,8 @@ source(&quot;daily_summaries.r&quot;)
 <pre><code class="language-r">data_fwi &lt;- hFWI(data)
 </code></pre>
 <pre><code class="language-r">########
+FWI2025 (YYYY-MM-DD)
+
 Startup values used:
 FFMC = 85.0 or mcffmc = NA %
 DMC = 6.0 and DC = 15.0
@@ -269,6 +271,12 @@ print(tail(data_fwi[standard_components], 2))
 <p>Calculate outputs like peak burn time and number of hours of spread potential. Details about the daily summaries function can be found in the 
 <a href="../../code/FWI2025_R/#daily-summaries" target="_self">code documentation</a>.</p>
 <pre><code class="language-r">report &lt;- generate_daily_summaries(data_fwi)
+</code></pre>
+<pre><code class="language-r">########
+FWI2025: Daily Summaries (YYYY-MM-DD)
+
+Summarizing PRF to daily
+########
 </code></pre>
 <p>Print a simple summary of the daily report.</p>
 <pre><code class="language-r">daily_components &lt;- c(&quot;peak_hr&quot;, &quot;duration&quot;, &quot;isi_smooth&quot;, &quot;dsr&quot;)
