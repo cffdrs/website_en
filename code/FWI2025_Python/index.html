@@ -168,7 +168,7 @@
 <a href="https://cffdrs.github.io/website_fr/code/IFM2025_Python" target="_self" style="float: right;"> Français </a>
 <br></p>
 <h1 id="fwi2025-python">FWI2025 - Python</h1>
-<p><em>Last updated: December 10th, 2025</em></p>
+<p><em>Last updated: February 27th, 2026</em></p>
 <h2 id="python-scripts">Python Scripts</h2>
 <p>There are three scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
 <ol>
@@ -233,8 +233,8 @@
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>UTC offset (can be specified in <code>hFWI()</code> parameter instead, see <a href="#parameters" target="_self">below</a>)</td>
-<td style="text-align: center;"></td>
+<td><a href="https://en.wikipedia.org/wiki/ISO_8601">UTC offset</a> corresponding to the <code>yr</code>, <code>mon</code>, <code>day</code>, and <code>hr</code> of the input data. Can vary with <code>id</code>. Can be specified in <code>hFWI()</code> parameter instead, see <a href="#parameters" target="_self">below</a></td>
+<td style="text-align: center;">hr</td>
 <td style="text-align: center;">float</td>
 </tr>
 <tr>
@@ -323,7 +323,7 @@
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>UTC offset (default <code>None</code>). <code>None</code> is for using a provided column in <code>df_wx</code>. Specifying a number will create/overwrite <code>df_wx</code> column.</td>
+<td><a href="https://en.wikipedia.org/wiki/ISO_8601">UTC offset</a> corresponding to the <code>yr</code>, <code>mon</code>, <code>day</code>, and <code>hr</code> of the input data (default <code>None</code>). <code>None</code> is for using a provided <code>timezone</code> column in <code>df_wx</code>. Specifying a number here will create/overwrite that column</td>
 </tr>
 <tr>
 <td><code>ffmc_old</code></td>
@@ -534,7 +534,7 @@
 </tr>
 <tr>
 <td><code>duration</code></td>
-<td>Expected number of hours in the daily burning window. Calculated as the number of hours (possibly discontinuous) where <code>isi_smooth</code> is greater than 5</td>
+<td>Expected number of hours in the daily burning window. Calculated as the number of hours between and including the first and last instances when <code>isi_smooth</code> reaches 5</td>
 </tr>
 <tr>
 <td><code>ffmc</code></td>

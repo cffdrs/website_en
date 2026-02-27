@@ -168,7 +168,7 @@
 <a href="https://cffdrs.github.io/website_fr/code/IFM2025_C" target="_self" style="float: right;"> Français </a>
 <br></p>
 <h1 id="fwi2025-c">FWI2025 - C</h1>
-<p><em>Last updated: December 10th, 2025</em></p>
+<p><em>Last updated: February 27th, 2026</em></p>
 <h2 id="c-scripts">C Scripts</h2>
 <p>There are six scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
 <ol>
@@ -353,7 +353,7 @@
 <tr>
 <td style="text-align: center;">3</td>
 <td><code>timezone</code></td>
-<td>UTC offset. There is no option currently to use a <code>timezone</code> column in input data like in Python and R.</td>
+<td><a href="https://en.wikipedia.org/wiki/ISO_8601">UTC offset</a> corresponding to the <code>yr</code>, <code>mon</code>, <code>day</code>, and <code>hr</code> in <code>input</code>. There is no option to use a <code>timezone</code> column like in Python and R</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
@@ -564,7 +564,7 @@
 </tr>
 <tr>
 <td><code>duration</code></td>
-<td>Expected number of hours in the daily burning window. Calculated as the number of hours (possibly discontinuous) where <code>isi_smooth</code> is greater than 5</td>
+<td>Expected number of hours in the daily burning window. Calculated as the number of hours between and including the first and last instances when <code>isi_smooth</code> reaches 5</td>
 </tr>
 <tr>
 <td><code>ffmc</code></td>

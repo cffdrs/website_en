@@ -156,7 +156,8 @@ span.fa {
 /* Markdown Separator (---) */
 
 hr {
-    border-color: #ff5e17!important;
+    border: 1px solid #ff5e17!important;
+    margin-top: 50px;
 }
 
 /* Buttons */

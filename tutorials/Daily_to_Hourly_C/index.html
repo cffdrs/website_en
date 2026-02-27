@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Hourly FWI C - NG-CFFDRS</title>
+        <title>Daily to Hourly C - NG-CFFDRS</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -121,20 +121,25 @@
                 </ul>
             </li>
             <li class="nav-item" data-bs-level="3">
-                    <a href="#compile-fwi2025" class="nav-link" target="_self">Compile FWI2025</a>
+                    <a href="#compile-make_minmax-and-make_hourly" class="nav-link" target="_self">Compile make_minmax and make_hourly</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
             <li class="nav-item" data-bs-level="3">
-                    <a href="#run-fwi2025" class="nav-link" target="_self">Run FWI2025</a>
+                    <a href="#convert-daily-to-minmax" class="nav-link" target="_self">Convert daily to minmax</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
             <li class="nav-item" data-bs-level="3">
-                    <a href="#calculate-daily-summaries" class="nav-link" target="_self">Calculate daily summaries</a>
+                    <a href="#convert-minmax-to-hourly" class="nav-link" target="_self">Convert minmax to hourly</a>
                 <ul class="nav flex-column">
                 </ul>
             </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2">
+                    <a href="#appendix-minmax-to-hourly-parameters" class="nav-link" target="_self">Appendix: Minmax to Hourly Parameters</a>
+                <ul class="nav flex-column">
                 </ul>
             </li>
                 </ul>
@@ -144,32 +149,30 @@
 </div></div>
     <div class="col-md-9" role="main">
 
-<p><a href="../../tutorials#hourly-fwi" target="_self" style="float: left;"> back to Tutorials </a>
-<a href="https://cffdrs.github.io/website_fr/tutoriels/IFM_horaire_C" target="_self" style="float: right;"> Français </a>
+<p><a href="../../tutorials#daily-to-hourly" target="_self" style="float: left;"> back to Tutorials </a>
+<a href="https://cffdrs.github.io/website_fr/tutoriels/quotidien_a_horaire_C" target="_self" style="float: right;"> Français </a>
 <br>
 <br></p>
-<h1 id="hourly-fwi-tutorial-c">Hourly FWI Tutorial - C</h1>
+<h1 id="daily-to-hourly-tutorial-c">Daily to Hourly Tutorial - C</h1>
 <p><em>Last updated: February 27th, 2026</em></p>
 <h2 id="c-files">C files</h2>
-<p>This tutorial will show you how to compile the FWI2025 C code and run the executable with an example hourly weather dataset in a Windows environment. This can be done in PowerShell or Command Prompt, which are included with Windows. The tutorial code and file are written in PowerShell, although the commands in this tutorial can be used for either.  </p>
+<p>This tutorial will show you how to compile C code and run the executable in a Windows environment. This can be done in PowerShell or Command Prompt, which are included with Windows. The tutorial code and file are written in PowerShell, although the commands in this tutorial can be used for either.  </p>
 <p>The following files can be found on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a>:  </p>
 <ul>
 <li>data/<ul>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_daily_wx_C-format.csv"><strong>PRF2007_daily_wx_C-format.csv</strong></a></li>
 </ul>
 </li>
 <li>FWI/<ul>
 <li>C/<ul>
 <li>tutorial/<ul>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/tutorial/tutorial_hourly_FWI.ps1"><strong>tutorial_hourly_FWI.ps1</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/tutorial/tutorial_daily_to_hourly.ps1"><strong>tutorial_daily_to_hourly.ps1</strong></a></li>
 </ul>
 </li>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI_main.c"><strong>NG_FWI_main.c</strong></a></li>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.c"><strong>NG_FWI.c</strong></a></li>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/NG_FWI.h"><strong>NG_FWI.h</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/make_hourly.c"><strong>make_hourly.c</strong></a></li>
+<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/make_minmax.c"><strong>make_minmax.c</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/util.c"><strong>util.c</strong></a></li>
 <li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/util.h"><strong>util.h</strong></a></li>
-<li><a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/daily_summaries.c"><strong>daily_summaries.c</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -177,15 +180,17 @@
 </ul>
 <p>If you are unfamiliar with GitHub, there are many options for you to retrieve the code and data files:</p>
 <ol>
-<li><em>Download each file</em> to your computer individually. On the file's GitHub page (e.g. <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx_C-format.csv"><strong>PRF2007_hourly_wx_C-format.csv</strong></a>), find the "More file actions" button at the top-right side of the website (denoted "..."), and select "Download". This will begin downloading based on your browser settings. Repeat this for every file.</li>
+<li><em>Download each file</em> to your computer individually. On the file's GitHub page (e.g. <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_daily_wx.csv"><strong>PRF2007_daily_wx_C-format.csv</strong></a>), find the "More file actions" button at the top-right side of the website (denoted "..."), and select "Download". This will begin downloading based on your browser settings. Repeat this for every file.</li>
 <li><em>Download the whole repository</em> to your computer. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
 <li><em>Clone</em> the whole repository to your computer with Git. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
 <li><em>Fork</em> the repository to create a new repository on GitHub. See the <a href="https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github">GitHub documentation</a> for more information.</li>
 </ol>
 <h2 id="data">Data</h2>
 <p><strong>NOTE: The C version can only handle one station for one continuous season at a time!</strong> See the Python or R versions to be able to run multiple stations with multiple years at once.  </p>
-<p><strong>PRF2007_hourly_wx_C-format.csv</strong> contains hourly weather recorded from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which is a requirement for FWI2025 input data. If you would like guidance on how to fill in missing weather data for your situation, check the <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219568">CFFDRS Weather Guide</a> or <a href="../../contact">reach out to us</a>! Grassland fuel load (<code>grass_fuel_load</code>), grassland curing (<code>percent_cured</code>), and solar radiation (<code>solrad</code>) are not included, but these are optional inputs and they will be automatically set/calculated if not provided.</p>
-<p>The <strong>C-format</strong> version differs from <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_hourly_wx.csv"><strong>PRF2007_hourly_wx.csv</strong></a> due to the strict requirements in the C version for column names, order, and case. Details can be found in the <a href="../../code/FWI2025_C/#input-dataframe" target="_self">code documentation</a>.</p>
+<p><strong>PRF2007_daily_wx_C-format.csv</strong> contains daily weather which was reduced from hourly data specifically for this tutorial. Temperature, relative humidity, and wind speed data are taken from noon Local Standard Time (LST), or in this case the equivalent 13:00 Local Daylight Time (LDT). Hourly precipitation is summed over 24 hours ending at the same hour as the other weather variables. The original hourly data is from a Petawawa Research Forest (PRF) weather station during the 2007 field season. The data has no gaps and is sorted sequentially by time, which are requirements for the input data.</p>
+<p>Columns that are included and required for converting daily weather data to daily high and low (minmax) data are: year (<code>yr</code>), month (<code>mon</code>), day (<code>day</code>), temperature [°C] (<code>temp</code>), relative humidity [%] (<code>rh</code>), wind speed [km/h] (<code>ws</code>), and daily precipitation [mm] (<code>prec</code>).</p>
+<p>Columns that are required for converting daily minmax data to hourly data are: the output columns from converting daily to minmax, latitude [DD] (<code>lat</code>), and longitude [DD] (<code>long</code>).</p>
+<p>The <strong>C-format</strong> version differs from <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_daily_wx.csv"><strong>PRF2007_daily_wx.csv</strong></a> due to the strict requirements in the C version for column names, order, and case.</p>
 <h2 id="steps">Steps</h2>
 <h3 id="open-a-terminal">Open a terminal</h3>
 <p>To run the C code in Windows, it first needs to be compiled into an executable (.exe) file. This can be done in <a href="https://aka.ms/terminal">Windows Terminal</a>, which is a default Windows application.  </p>
@@ -193,64 +198,111 @@
 <pre><code class="language-ps">PS C:\Users\username&gt;
 </code></pre>
 <p>Navigate from here to the folder where the .c and .h code files are located with <code>cd</code> (change directory) and <code>dir</code> (list current directory contents) commands. Otherwise, you will need to specify the location of each file every time one is called.  </p>
-<p>Open the <strong>tutorial_hourly_FWI.ps1</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
-<h3 id="compile-fwi2025">Compile FWI2025</h3>
-<p>To calculate hourly FWI, the code files to compile are: <strong>NG_FWI_main.c</strong>, <strong>NG_FWI.c</strong>, and <strong>util.c</strong>. The corresponding <strong>NG_FWI.h</strong> and <strong>util.h</strong> header files need to be in the same folder, but do not need to be invoked directly. One compiler option is <a href="https://gcc.gnu.org/"><code>gcc</code></a></p>
-<pre><code class="language-ps">gcc -o NG_FWI NG_FWI_main.c NG_FWI.c util.c
+<p>Open the <strong>tutorial_daily_to_hourly.ps1</strong> code file. You can either follow the code and comments in the file or continue on this page (both include the same code and content).</p>
+<h3 id="compile-make_minmax-and-make_hourly">Compile make_minmax and make_hourly</h3>
+<p>To predict minmax weather data from daily data, the code files to compile are: <strong>make_minmax.c</strong> and <strong>util.c</strong>. The corresponding <strong>util.h</strong> header file needs to be in the same folder, but does not need to be invoked directly. One compiler option is <a href="https://gcc.gnu.org/"><code>gcc</code></a></p>
+<pre><code class="language-ps">gcc -o daily_to_minmax make_minmax.c util.c
 </code></pre>
-<p>The prompt should return with no comments if the code was compiled successfully, and a new file should be created in the current folder named <strong>NG_FWI.exe</strong>. The name of the executable (.exe) file is specified after the <code>-o</code> option above.</p>
-<h3 id="run-fwi2025">Run FWI2025</h3>
-<p>The <strong>NG_FWI.exe</strong> file does not have to be run with all function arguments if you want to use default season startup values. The only required parameters are the input data file, an output file location/name, and timezone (UTC offset). Details can be found in the code documentation page at <a href="../../code/FWI2025_C/#parameters" target="_self"> FWI2025 - C#parameters</a> or by running the compiled executable with no arguments.</p>
-<pre><code class="language-ps">./NG_FWI.exe
+<p>The prompt should return with no comments if the code was compiled successfully, and a new file should be created in the current folder named <strong>daily_to_minmax.exe</strong>. The name of the executable (.exe) file is specified after the <code>-o</code> option above.  </p>
+<p>To predict hourly weather data from minmax data, the code files to compile are: <strong>make_hourly.c</strong> and <strong>util.c</strong>.</p>
+<pre><code class="language-ps">gcc -o minmax_to_hourly make_hourly.c util.c
+</code></pre>
+<h3 id="convert-daily-to-minmax">Convert daily to minmax</h3>
+<p>Details about the <strong>daily_to_minmax.exe</strong> file can be found by running the compiled executable with no arguments.</p>
+<pre><code class="language-ps">./daily_to_minmax.exe
 </code></pre>
 <pre><code class="language-ps">########
 help/usage:
-PATH\TO\cffdrs-ng\FWI\C\NG_FWI.exe input output timezone [ffmc_old] [mcffmc_old]
-[dmc_old] [dc_old] [mcgfmc_matted_old] [mcgfmc_standing_old]
-[prec_cumulative] [canopy_drying] [silent]
+path\to\code\folder\daily_to_minmax.exe input output [silent]
 
 argument descriptions:
-input                Input csv data file
-...
-</code></pre>
-<p>For this tutorial, we will leave all the optional parameters to default. The UTC offset for the sample PRF2007 dataset is -4 (for Eastern Daylight Time).</p>
-<pre><code class="language-ps">./NG_FWI.exe ../../data/PRF2007_hourly_wx_C-format.csv PRF2007_hourly_FWI.csv -4
-</code></pre>
-<pre><code class="language-ps">########
-FWI2025 (YYYY-MM-DD)
-Opening input file &gt;&gt;&gt; ../../data/PRF2007_hourly_wx_C-format.csv
-Saving outputs to file &gt;&gt;&gt; PRF2007_hourly_FWI.csv
-
-Startup values used:
-FFMC = 85.0 % and mcffmc = n
-DMC = 6.0 and DC = 15.0
-mcgfmc matted = 16.3075 % and standing = 16.3075 %
-cumulative precipitation = 0.0 mm and canopy drying = 0
-
-Running FWI2025
+input        Input csv data file
+output       Output csv file name and location
+silent       Suppresses informative print statements (default false)
 ########
 </code></pre>
-<p>This will place our outputs in a new CSV file called <strong>PRF2007_hourly_FWI.csv</strong>. Compare your outputs with our standard outputs in <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/data/PRF2007_standard_hourly_FWI.csv"><strong>PRF2007_standard_hourly_FWI.csv</strong></a>.</p>
+<p>Now converting daily weather data to minmax.</p>
+<pre><code class="language-ps">./daily_to_minmax.exe ../../data/PRF2007_daily_wx_C-format.csv
+    ../../data/PRF2007_dailyminmax_out.csv
+</code></pre>
+<pre><code class="language-ps">########
+FWI2025: Make Min/Max Inputs (YYYY-MM-DD)
+
+Opening input file &gt;&gt;&gt; ../../data/PRF2007_daily_wx_C-format.csv
+Saving outputs to file &gt;&gt;&gt; ../../data/PRF2007_dailyminmax_out.csv
+
+Predicting daily min/max weather
+########
+</code></pre>
+<p>This will place our outputs in a new CSV file called <strong>PRF2007_dailyminmax_out.csv</strong>.</p>
 <blockquote>
-<p>Tip: if the CSV data file is in a different folder than the code and executable file, you can specify a relative path with ".." indicating one folder up in the hierarchy. In the case of the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> structure, from the <strong>C</strong> folder the relative path of the data file can be specified as <strong>../../data/PRF2007_hourly_wx_C-format.csv</strong>, which is shown above. This indicates to go up one folder to <strong>FWI</strong>, and then another folder to <strong>cffdrs-ng</strong> where the <strong>data</strong> folder and file resides.</p>
+<p>Tip: if the CSV data file is in a different folder than the code and executable file, you can specify a relative path with ".." indicating one folder up in the hierarchy. In the case of the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/tree/main">cffdrs-ng GitHub repository</a> structure, from the <strong>C</strong> folder the relative path of the data file can be specified as <strong>../../data/PRF2007_daily_wx_C-format.csv</strong>, which is shown above. This indicates to go up one folder to <strong>FWI</strong>, and then another folder to <strong>cffdrs-ng</strong> where the <strong>data</strong> folder and file resides.</p>
 </blockquote>
-<h3 id="calculate-daily-summaries">Calculate daily summaries</h3>
-<p>Calculate outputs like peak burn time and number of hours of spread potential. Going through the process again, the files to compile to calculate daily summaries are: <strong>daily_summaries.c</strong>, <strong>NG_FWI.c</strong>, and <strong>util.c</strong>. Ensure the corresponding <strong>NG_FWI.h</strong> and <strong>util.h</strong> header files are in the same folder.</p>
-<pre><code class="language-ps">gcc -o daily_summaries daily_summaries.c NG_FWI.c util.c
-</code></pre>
-<p>The required parameters for <strong>daily_summaries.exe</strong> are the input data file (output of <strong>NG_FWI.exe</strong>) and an output file location/name. Details of the optional <code>reset_hr</code> parameter can be found in the <a href="../../code/FWI2025_C/#parameters_1" target="_self">code documentation</a>.</p>
-<pre><code class="language-ps">./daily_summaries.exe PRF2007_hourly_FWI.csv PRF2007_daily_report.csv
+<h3 id="convert-minmax-to-hourly">Convert minmax to hourly</h3>
+<p>Details about the <strong>minmax_to_hourly.exe</strong> file can be found by running the compiled executable with no arguments.</p>
+<pre><code class="language-ps">./minmax_to_hourly.exe
 </code></pre>
 <pre><code class="language-ps">########
-FWI2025: Daily Summaries (YYYY-MM-DD)
+help/usage:
+path\to\code\folder\minmax_to_hourly.exe input output timezone [prec_hr] [silent]
 
-Opening input file &gt;&gt;&gt; PRF2007_hourly_FWI.csv
-Saving outputs to file &gt;&gt;&gt; PRF2007_daily_report.csv
-
-Summarizing to daily
+argument descriptions:
+input        Input csv data file
+output       Output csv file name and location
+timezone     UTC offset
+prec_hr      Hour when daily precipitation occurs (default sunrise)
+silent       Suppresses informative print statements (default false)
 ########
 </code></pre>
-<p>From here, the output CSV files can be opened and converted for further analysis or plotted for visualization.</p></div>
+<p>The UTC offset for the sample PRF2007 dataset is -4 (for Eastern Daylight Time). Daily precipitation is placed at one hour of each day, controlled by the <code>prec_hr</code> parameter. By default it is placed at the calculated hour of sunrise, but an integer hour can be specified instead.</p>
+<pre><code class="language-ps">./minmax_to_hourly.exe ../../data/PRF2007_dailyminmax_out.csv
+    ../../data/PRF2007_hourly_out.csv -4
+</code></pre>
+<pre><code class="language-ps">########
+FWI2025: Make Hourly Inputs (YYYY-MM-DD)
+
+Opening input file &gt;&gt;&gt; ../../data/PRF2007_hourly_out.csv   
+Saving outputs to file &gt;&gt;&gt; ../../data/PRF2007_hourly_out.csv
+
+Predicting hourly weather
+########
+</code></pre>
+<p>This will place our outputs in a new CSV file called <strong>PRF2007_hourly_out.csv</strong>.</p>
+<h2 id="appendix-minmax-to-hourly-parameters">Appendix: Minmax to Hourly Parameters</h2>
+<p>The process to predict hourly weather data from daily minmax data is controlled by timing and decay parameters for each weather variable. The first, alpha (α) parameter is the typical difference in time between sunrise and minimum temperature and wind speed (and maximum relative humidity). The second, beta (β) parameter is the typical difference in time between solar noon and maximum temperature and wind speed (and minimum relative humidity). The third, gamma (γ) parameter is the typical rate of exponential decay after sunset for temperature, relative humidity, and wind speed.  </p>
+<p>Based on an analysis of historical weather across Canada, the default values are set as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Variable \ Coefficient</th>
+<th style="text-align: center;">α</th>
+<th style="text-align: center;">β</th>
+<th style="text-align: center;">γ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature</td>
+<td style="text-align: center;">0.0</td>
+<td style="text-align: center;">2.75</td>
+<td style="text-align: center;">-1.9</td>
+</tr>
+<tr>
+<td>Relative Humidity</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">2.75</td>
+<td style="text-align: center;">-2.0</td>
+</tr>
+<tr>
+<td>Wind Speed</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">-1.3</td>
+</tr>
+</tbody>
+</table>
+<p>For more information refer to <a href="https://ostrnrcan-dostrncan.canada.ca/handle/1845/347500">Appendix A of <em>The 2025 Update to the FWI System: Structure, Changes and Interpretation</em> info report</a>.  </p>
+<p>In the code, these values are specified at the top of <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/FWI/C/make_hourly.c"><strong>make_hourly.c</strong></a> in three double arrays (one for each weather variable). To change the values, edit these arrays and save the script. Then <a href="#compile-make_minmax-and-make_hourly" target="_self"> recompile <strong>make_hourly.c</strong></a>.</p></div>
             </div>
         </div>
 

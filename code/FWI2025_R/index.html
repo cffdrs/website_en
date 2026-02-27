@@ -168,7 +168,7 @@
 <a href="https://cffdrs.github.io/website_fr/code/IFM2025_R" target="_self" style="float: right;"> Français </a>
 <br></p>
 <h1 id="fwi2025-r">FWI2025 - R</h1>
-<p><em>Last updated: December 10th, 2025</em></p>
+<p><em>Last updated: February 27th, 2026</em></p>
 <h2 id="r-scripts">R Scripts</h2>
 <p>There are three scripts on the <a href="https://github.com/nrcan-cfs-fire/cffdrs-ng">cffdrs-ng GitHub repository</a> that are required to generate FWI2025 outputs:</p>
 <ol>
@@ -205,100 +205,100 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 <tr>
 <th>Column</th>
 <th>Description</th>
-<th>Units</th>
-<th>Class</th>
+<th style="text-align: center;">Units</th>
+<th style="text-align: center;">Class</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>id</code></td>
 <td>Unique identifier for weather station or location</td>
-<td></td>
-<td>character</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">character</td>
 </tr>
 <tr>
 <td><code>lat</code></td>
 <td>Latitude</td>
-<td>DD</td>
-<td>numeric</td>
+<td style="text-align: center;">DD</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>long</code></td>
 <td>Longitude</td>
-<td>DD</td>
-<td>numeric</td>
+<td style="text-align: center;">DD</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>UTC offset (can be specified in <code>hFWI()</code> parameter instead, see <a href="#parameters" target="_self">below</a>)</td>
-<td></td>
-<td>numeric</td>
+<td><a href="https://en.wikipedia.org/wiki/ISO_8601">UTC offset</a> corresponding to the <code>yr</code>, <code>mon</code>, <code>day</code>, and <code>hr</code> of the input data. Can vary with <code>id</code>. Can be specified in <code>hFWI()</code> parameter instead, see <a href="#parameters" target="_self">below</a></td>
+<td style="text-align: center;">hr</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>yr</code></td>
 <td>Year of data point</td>
-<td></td>
-<td>integer</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">integer</td>
 </tr>
 <tr>
 <td><code>mon</code></td>
 <td>Month of the year (1-12)</td>
-<td></td>
-<td>integer</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">integer</td>
 </tr>
 <tr>
 <td><code>day</code></td>
 <td>Day of the month (1-31)</td>
-<td></td>
-<td>integer</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">integer</td>
 </tr>
 <tr>
 <td><code>hr</code></td>
 <td>Hour of the day (0-23)</td>
-<td></td>
-<td>integer</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">integer</td>
 </tr>
 <tr>
 <td><code>temp</code></td>
 <td>Air temperature</td>
-<td>°C</td>
-<td>numeric</td>
+<td style="text-align: center;">°C</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>rh</code></td>
 <td>Relative humidity (0-100)</td>
-<td>%</td>
-<td>numeric</td>
+<td style="text-align: center;">%</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>ws</code></td>
 <td>10 m open wind speed</td>
-<td>km/hr</td>
-<td>numeric</td>
+<td style="text-align: center;">km/hr</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>prec</code></td>
 <td>Hourly precipitation</td>
-<td>mm</td>
-<td>numeric</td>
+<td style="text-align: center;">mm</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>grass_fuel_load</code></td>
 <td>Density of grassland fuels (default 0.35)</td>
-<td>kg/m^2</td>
-<td>numeric</td>
+<td style="text-align: center;">kg/m^2</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>percent_cured</code></td>
 <td>Fraction of grassland fuels that is cured (0-100, default based on annual variation in the Boreal Plains region)</td>
-<td>%</td>
-<td>numeric</td>
+<td style="text-align: center;">%</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 <tr>
 <td><code>solrad</code></td>
 <td><a href="../../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf">Solar radiation</a>📥 (default an estimation based on other required variables)</td>
-<td>kW/m^2</td>
-<td>numeric</td>
+<td style="text-align: center;">kW/m^2</td>
+<td style="text-align: center;">numeric</td>
 </tr>
 </tbody>
 </table>
@@ -320,7 +320,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>timezone</code></td>
-<td>UTC offset (default <code>NA</code>). <code>NA</code> is for using a provided column in <code>df_wx</code>. Specifying a number will create/overwrite <code>df_wx</code> column.</td>
+<td><a href="https://en.wikipedia.org/wiki/ISO_8601">UTC offset</a> corresponding to the <code>yr</code>, <code>mon</code>, <code>day</code>, and <code>hr</code> of the input data (default <code>NA</code>). <code>NA</code> is for using a provided <code>timezone</code> column in <code>df_wx</code>. Specifying a number here will create/overwrite that column</td>
 </tr>
 <tr>
 <td><code>ffmc_old</code></td>
@@ -531,7 +531,7 @@ for a step-by-step workflow with hourly data. The documentation below goes into 
 </tr>
 <tr>
 <td><code>duration</code></td>
-<td>Expected number of hours in the daily burning window. Calculated as the number of hours (possibly discontinuous) where <code>isi_smooth</code> is greater than 5</td>
+<td>Expected number of hours in the daily burning window. Calculated as the number of hours between and including the first and last instances when <code>isi_smooth</code> reaches 5</td>
 </tr>
 <tr>
 <td><code>ffmc</code></td>
