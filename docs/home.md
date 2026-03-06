@@ -94,4 +94,4 @@ If you know your weather data was collected in Local Standard Time (LST), the `t
 
 The other common practise for weather data is to collect it in UTC. In this case, `timezone` should be set to 0. If you know a dataset was collected in Local Daylight Time (LDT), this should be one hour ahead of LST, so add 1 to the UTC offset of the LST.  
 
-If you do not know the UTC offset used for a dataset, the only thing you can do is guess what it is based on the diurnal fluctuations of the weather variables. Feel free to <a href="../Contact" target = "_self">contact us</a> for more information or guidance.
+If you do not know the UTC offset used for a dataset, the only thing you can do is guess what it is based on the diurnal fluctuations of the weather variables. Feel free to <a href="../contact" target = "_self">contact us</a> for more information or guidance.
