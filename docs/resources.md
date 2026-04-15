@@ -39,6 +39,22 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 
 <br>
 
+#### FWI2025 Excel Calculators Quick Start (April 2026)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MYF_ybbVdKg?rel=0&cc_load_policy=1" title="FWI2025 Excel Calculators Quick Start" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br>
+
+---
+
+## Excel Calculators
+The FWI2025 Excel calculators are Microsoft Excel workbooks designed to give individual users a simple and interactive way to explore FWI2025. Check out the manual for detailed information on how to use them. A Quick Start Guide is available in the manual in text form or in the explainers section above in video form.
+
+- [FWI2025 Excel Calculator Manual](../documents/FWI2025_calculator_manual.pdf)📥
+- [FWI2025 Standard Excel calculator](../documents/FWI2025_calculator.xlsx)📥
+- [FWI2025 SpotWx Excel calculator](../documents/FWI2025_calculator_spotwx.xlsx)📥
+
+
 ---
 
 ## Reports
@@ -46,7 +62,7 @@ NG-CFFDRS
 
 - [NG-CFFDRS Overview (GLC-X-26)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 - [FWI2025 Structure, Changes, and Interpretation (GLC-X-42)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/347500)
-- [CFFDRS2025 Solar Radiation Input (Draft)](../documents/CFFDRS2025_Draft-Solar-Radiation-as-Input.pdf)📥
+- [*Draft*: Solar Radiation as an Input to FWI2025](../documents/CFFDRS2025_DraftSolarRadiation_v2.pdf)📥
 
 Field Guides
 
