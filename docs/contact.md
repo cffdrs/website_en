@@ -22,10 +22,6 @@ Wildland Fire Research Scientist
 <a href="../contact/Jonathan_Boucher" target="_self">Bio</a>  
 [jonathan.boucher@nrcan-rncan.gc.ca](mailto:jonathan.boucher@NRCan-RNCan.gc.ca)  
 
-**Luke Collins**  
-Research Scientist  
-[luke.collins@nrcan-rncan.gc.ca](mailto:Luke.Collins@NRCan-RNCan.gc.ca)  
-
 **Anne Cotton-Gagnon** (elle, elle | she, her)  
 Forest Fire Research Officer  
 <a href="../contact/Anne_Cotton-Gagnon" target="_self">Bio</a>  
