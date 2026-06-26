@@ -48,12 +48,13 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 ---
 
 ## Excel Calculators
-The FWI2025 Excel calculators are Microsoft Excel workbooks designed to give individual users a simple and interactive way to explore FWI2025. Check out the manual for detailed information on how to use them. A Quick Start Guide is available in the manual in text form or in the explainers section above in video form.
+The FWI2025 Excel calculators are Microsoft Excel workbooks designed to give individual users a simple and interactive way to explore FWI2025. Check out the manual for detailed information on how to use them. A Quick Start Guide is available in the manual in text form or in the <a href="#explainers" target="_self">Explainers</a> section above in video form.
 
-- [FWI2025 Excel Calculator Manual](../documents/FWI2025_calculator_manual.pdf)📥
-- [FWI2025 Standard Excel calculator](../documents/FWI2025_calculator.xlsx)📥
-- [FWI2025 SpotWx Excel calculator](../documents/FWI2025_calculator_spotwx.xlsx)📥
+*Last updated: June 24th, 2026*
 
+- [Excel calculator manual](../documents/FWI2025_calculator_manual.pdf)📥
+- [Standard version](../documents/FWI2025_calculator.xlsx)📥
+- [SpotWx version](../documents/FWI2025_calculator_spotwx.xlsx)📥
 
 ---
 
@@ -87,10 +88,10 @@ More current and historical CFFDRS documentation can be found on the
 CFFDRS
 
 - [Government of Canada](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/canadian-forest-fire-danger-rating-system/14470)  
-- [Natural Resources Canada](https://cwfis.cfs.nrcan.gc.ca/background/summary/fdr)
+- [Natural Resources Canada](https://cwfis.cfs.nrcan.gc.ca/en/background)
 
 Hubs
 
-- [Canadian Wildland Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/home)
+- [Canadian Wildland Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/en)
 - [Wildland fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/17598)  
 - [Wildfires: Federal Response](https://www.canada.ca/en/public-safety-canada/campaigns/wildfires.html)

@@ -1,13 +1,15 @@
 <a href="https://cffdrs.github.io/website_fr/contact/" target="_self" style="float: right;"> Français </a>
 
 # Contact
-NG-CFFDRS is being updated by the [Canadian Forest Service](https://natural-resources.canada.ca/corporate/corporate-overview/canadian-forest-service) Fire Danger Group. For code feedback and bug reports refer to the [**CONTRIBUTING.md** file on the GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CONTRIBUTING.md).  
+NG-CFFDRS is being updated by the [Canadian Forest Service's](https://natural-resources.canada.ca/corporate/corporate-overview/canadian-forest-service) Fire Danger Group. Any feedback to help make this a better resource is greatly appreciated!
 
-For all other inquiries, scientific or general, or website feedback, please send an email to: 
+- For code feedback and bug reports refer to the [**CONTRIBUTING.md** file on the GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CONTRIBUTING.md).  
 
-[firedanger-dangerincendie@nrcan-rncan.gc.ca](mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca)
+- For all other inquiries (scientific, website, etc.) please send an email to: 
 
-Any feedback to help make this a better resource is greatly appreciated!
+<p class="text-center">
+    <button class="btn btn-dark" onclick="location.href='mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca'" style="text-transform: lowercase;font-size: 110%; padding: 14px;">firedanger-dangerincendie@nrcan-rncan.gc.ca</button>
+</p>
 
 ---
 
