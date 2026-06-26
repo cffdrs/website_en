@@ -39,7 +39,7 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 
 ## Documentation
 ### FWI2025
-The [Canadian Forest Fire Weather Index (FWI)](https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi) is a major system of the CFFDRS. FWI2025 is the next generation FWI system found in CFFDRS2025. Select a programming language below to see a description of the required code files and input data along with documentation of the main functions.
+The [Canadian Forest Fire Weather Index (FWI)](https://natural-resources.canada.ca/forests-forestry/wildland-fires/canada-fire-weather-index-system) is a major system of the CFFDRS. FWI2025 is the next generation FWI system found in CFFDRS2025. Select a programming language below to see a description of the required code files and input data along with documentation of the main functions.
 
 <div class="text-center">
 	<button class="btn btn-dark" onclick="location.href='../code/FWI2025_C'">FWI2025 <br> C</button>

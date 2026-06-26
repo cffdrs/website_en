@@ -3,7 +3,7 @@
 # Tutorials
 
 ## Hourly FWI
-This tutorial is a simple example of how to produce hourly [Fire Weather Index (FWI)](https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi) moisture codes and fire behaviour indices. A sample hourly weather dataset is provided that is complete and sequential with all the required variables. You can follow along with the steps on this website in a corresponding terminal, or download and run the tutorial script provided. Select a programming language to begin:
+This tutorial is a simple example of how to produce hourly [Fire Weather Index (FWI)](https://natural-resources.canada.ca/forests-forestry/wildland-fires/canada-fire-weather-index-system) moisture codes and fire behaviour indices. A sample hourly weather dataset is provided that is complete and sequential with all the required variables. You can follow along with the steps on this website in a corresponding terminal, or download and run the tutorial script provided. Select a programming language to begin:
 
 <div class="text-center">
 	<button class="btn btn-dark" onclick="location.href='../tutorials/Hourly_FWI_C'">HOURLY FWI <br> Tutorial <br> C</button>
