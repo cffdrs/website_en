@@ -63,6 +63,7 @@ NG-CFFDRS
 
 - [NG-CFFDRS Overview (GLC-X-26)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/245411)
 - [FWI2025 Structure, Changes, and Interpretation (GLC-X-42)](https://ostrnrcan-dostrncan.canada.ca/handle/1845/347500)
+- [Fire Behaviour Prediction (FBP) Forest Fuel Type Mapping](https://ostrnrcan-dostrncan.canada.ca/handle/1845/350409)
 - [*Draft*: Solar Radiation as an Input to FWI2025](../documents/CFFDRS2025_DraftSolarRadiation_v2.pdf)📥
 
 Field Guides
