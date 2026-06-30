@@ -50,7 +50,7 @@ In these Fire Danger Group seminars, we are looking to connect directly with fir
 ## Excel Calculators
 The FWI2025 Excel calculators are Microsoft Excel workbooks designed to give individual users a simple and interactive way to explore FWI2025. Check out the manual for detailed information on how to use them. A Quick Start Guide is available in the manual in text form or in the <a href="#explainers" target="_self">Explainers</a> section above in video form.
 
-*Last updated: June 24th, 2026*
+*Last updated: June 30th, 2026*
 
 - [Excel calculator manual](../documents/FWI2025_calculator_manual.pdf)📥
 - [Standard version](../documents/FWI2025_calculator.xlsx)📥

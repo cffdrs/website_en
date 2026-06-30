@@ -1,4 +1,4 @@
-<a href="../../home#announcements" target="_self" style="float: left;"> back to Home </a>
+<a href="../../home#announcements" target="_self"> back to Home </a>
 <a href="https://cffdrs.github.io/website_fr/accueil/annonces_2025" target="_self" style="float: right;"> Français </a>
 
 # 2025 Announcements
