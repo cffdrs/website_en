@@ -53,3 +53,5 @@ The [Canadian Forest Fire Weather Index (FWI)](https://natural-resources.canada.
 
 ## License
 The [NG-CFFDRS scripts](https://github.com/nrcan-cfs-fire/cffdrs-ng) are licensed under the GNU General Public License version 2. A copy of the license is available on the [GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng?tab=GPL-2.0-1-ov-file#readme).
+
+In the next update, the license will change to [Mozilla Public License 2.0](https://mozilla.org/MPL/2.0/).

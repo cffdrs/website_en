@@ -17,6 +17,7 @@ theme:
     nav_style: dark
     user_color_mode_toggle: false
     navigation_depth: 3
+copyright: <a href="https://www.canada.ca/en/transparency/terms.html">Terms and Conditions</a>
 # markdown_extensions:
 #   - pymdownx.arithmatex:
 #       generic: true

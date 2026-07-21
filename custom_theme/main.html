@@ -59,3 +59,13 @@
     <div class="col-md-3">{% include "toc_self.html" %}</div>
     <div class="col-md-9" role="main">{% include "content.html" %}</div>
 {%- endblock %}
+
+{%- block footer %}
+    <hr>
+    <ul>
+    {%- if config.copyright %}
+        <li>{{ config.copyright }}</li>
+    {%- endif %}
+    <li>{% trans mkdocs_link='<a href="https://www.mkdocs.org/">MkDocs</a>' %}Documentation built with {{ mkdocs_link }}{% endtrans %}</li>
+    </ul>
+{%- endblock %}
