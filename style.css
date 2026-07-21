@@ -25,7 +25,7 @@ body.homepage>div.container>div.row>div.col-md-9 {
 
 /* Theming */
 
-div {
+div, footer {
     font-family: "Roboto Mono", monospace;
 }
 
