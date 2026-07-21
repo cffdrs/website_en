@@ -214,3 +214,14 @@ blockquote {
     border-radius: 7px;
     padding: 0 0 0 20px;
 }
+
+/* Footer List */
+footer ul li {
+    display: inline-block;
+    margin-inline-end: 10px;
+}
+
+footer ul li:not(:first-child)::before {
+    content: "•";
+    margin-inline-end: 14px;
+}
