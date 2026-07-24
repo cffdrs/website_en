@@ -24,16 +24,18 @@ The previous CFFDRS1992 code can still be found on the [CFFDRS GitHub](https://g
 ---
 
 ## Capabilities
-| Programming Language                                  | C   | Python | R   |
-| ----------------------------------------------------- | :-: | :----: | :-: |
-| Calculate hourly FWI codes and indices                | ✔️ | ✔️     | ✔️ |
-| Calculate sunrise, sunset, and solar radiation        | ✔️ | ✔️     | ✔️ |
-| Calculate grassland code and indices                  | ✔️ | ✔️     | ✔️ |
-| Calculate daily summaries and a peak burn time        | ✔️ | ✔️     | ✔️ |
-| Convert daily noon to daily min/max weather data      | ✔️ | ✔️     | ✔️ |
-| Convert daily min/max to hourly weather data          | ✔️ | ✔️     | ✔️ |
-| Input multiple stations at a time                     | ❌ | ✔️     | ✔️ |
-| Splitting for inputs with multiple years at a time    | ❌ | ✔️     | ✔️ |
+| Programming Language                                 | C   | Python | R   |
+| ---------------------------------------------------- | :-: | :----: | :-: |
+| Calculate hourly FWI codes and indices               | ✔️ | ✔️     | ✔️ |
+| Calculate sunrise, sunset, and solar radiation       | ✔️ | ✔️     | ✔️ |
+| Calculate grassland code and indices                 | ✔️ | ✔️     | ✔️ |
+| Calculate daily summaries and a peak burn time       | ✔️ | ✔️     | ✔️ |
+| Convert daily noon to daily min/max weather data     | ✔️ | ✔️     | ✔️ |
+| Convert daily min/max to hourly weather data         | ✔️ | ✔️     | ✔️ |
+| Input multiple stations at a time                    | ❌ | ✔️     | ✔️ |
+| Splitting inputs with multiple years (fires seasons) | ❌ | ✔️     | ✔️ |
+| Handles extra input columns and out of order columns | ❌ | ✔️     | ✔️ |
+| Relative computational speeds                        | 🐇 | 🐇     | 🐢 |
 
 ---
 
