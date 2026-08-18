@@ -88,11 +88,11 @@ More current and historical CFFDRS documentation can be found on the
 
 CFFDRS
 
-- [Government of Canada](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/canadian-forest-fire-danger-rating-system/14470)  
-- [Natural Resources Canada](https://cwfis.cfs.nrcan.gc.ca/en/background)
+- [CFFDRS2025](https://natural-resources.canada.ca/forests-forestry/wildland-fires/canadian-forest-fire-danger-rating-system-generation)
+- [Background Information](https://cwfis.cfs.nrcan.gc.ca/en/background)
 
 Hubs
 
 - [Canadian Wildland Information System (CWFIS)](https://cwfis.cfs.nrcan.gc.ca/en)
-- [Wildland fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/17598)  
+- [Wildland fires](https://natural-resources.canada.ca/our-natural-resources/forests/wildland-fires-insects-disturbances/17598)
 - [Wildfires: Federal Response](https://www.canada.ca/en/public-safety-canada/campaigns/wildfires.html)
