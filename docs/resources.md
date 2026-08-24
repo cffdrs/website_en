@@ -84,6 +84,26 @@ More current and historical CFFDRS documentation can be found on the
 
 ---
 
+## Recent Publications
+Thompson, D. K., Fusina, G., & Jackson, P. (2026). Evaluation of Ground-Based Smoke Sensors for Wildfire Detection and Monitoring in Canada. *Fire*, *9*(4), 141. [https://doi.org/10.3390/fire9040141](https://doi.org/10.3390/fire9040141)
+
+- A Canadian study found that networks of ground-based smoke sensors can effectively detect and track larger wildfires and provide unique information on lingering smoke production, particularly during low-intensity smouldering phases that are often missed by satellite detection systems.
+
+Liu, M., Greene, G., Perrakis, D. D. B., Roeser, D. (2026). Modelling fire behaviour in the lodgepole pine forests of interior British Columbia: An evaluation of models against field evidence. *Ecological Informatics*, *95*, Article 103789. [https://doi.org/10.1016/j.ecoinf.2026.103789](https://doi.org/10.1016/j.ecoinf.2026.103789)
+<!-- 103789, ISSN 1574-9541, -->
+
+- An evaluation of fire behaviour models in lodgepole pine forests of interior British Columbia found that the Canadian Conifer Pyrometrics (ConPyro) model most closely matched fire intensity reconstructed from field observations, while all models had difficulty accurately predicting fire behaviour in treated stands with more complex forest structures.
+
+Hanes, C. C., Swystun, T., Brookes, A., Jurko, N. & Thompson, D. (2026). Organic Layer Thickness and Organic Layer Fuel Load of Canadian Forest Regions. Natural Resources Canada. [https://ostrnrcan-dostrncan.canada.ca/handle/1845/350672](https://ostrnrcan-dostrncan.canada.ca/handle/1845/350672)
+
+- This publication compiles estimates of organic layer thickness and organic layer fuel load across Canada's forest regions, providing important baseline information for improving predictions of wildfire behaviour, fuel consumption, emissions, and ecological effects. Organic layers are a critical component of forest fuels and carbon storage, yet their characteristics vary substantially across forest types and environmental conditions.
+
+Perrakis, D. D. B., Hebda, N. J. R., & Taylor, S. W. (2026). Simple Spread Models for Understory Surface Fires. *Fire*, *9*(7), 302. [https://doi.org/10.3390/fire9070302](https://doi.org/10.3390/fire9070302)
+
+- A new study developed and tested simple models for predicting understory surface fire spread in North American forests, finding that wind speed and fuel moisture are the primary drivers of spread rates and that the new models generally outperformed existing approaches while maintaining practical accuracy for operational use.
+
+---
+
 ## Links
 
 CFFDRS
