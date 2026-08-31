@@ -87,7 +87,7 @@ More current and historical CFFDRS documentation can be found on the
 ## Recent Publications
 Thompson, D. K., Fusina, G., & Jackson, P. (2026). Evaluation of Ground-Based Smoke Sensors for Wildfire Detection and Monitoring in Canada. *Fire*, *9*(4), 141. [https://doi.org/10.3390/fire9040141](https://doi.org/10.3390/fire9040141)
 
-- A Canadian study found that networks of ground-based smoke sensors can effectively detect and track larger wildfires and provide unique information on lingering smoke production, particularly during low-intensity smouldering phases that are often missed by satellite detection systems.
+- This examination of prescribed fire and wildfires in the grasslands of Alberta, Quebec, and British Columbia shows examples of FWI grassland components (i.e. GFMC, GSI, GFWI) during ignition events.
 
 Liu, M., Greene, G., Perrakis, D. D. B., Roeser, D. (2026). Modelling fire behaviour in the lodgepole pine forests of interior British Columbia: An evaluation of models against field evidence. *Ecological Informatics*, *95*, Article 103789. [https://doi.org/10.1016/j.ecoinf.2026.103789](https://doi.org/10.1016/j.ecoinf.2026.103789)
 <!-- 103789, ISSN 1574-9541, -->
