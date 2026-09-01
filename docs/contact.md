@@ -5,7 +5,13 @@ NG-CFFDRS is being updated by the [Canadian Forest Service's](https://natural-re
 
 - For code feedback and bug reports refer to the [**CONTRIBUTING.md** file on the GitHub repository](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CONTRIBUTING.md).  
 
-- For all other inquiries (scientific, website, etc.) please send an email to: 
+- For newsletter and website feedback we have a short, anonymous survey:
+
+<iframe width="560px" height="360px" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=M1vJBcqQ1Um2RCiLkwuRK7SAfN5eDHROvyOeQI2KmgFUNFJLVVFIM1FCTFBaOFEzV0lFWU5YNjk4QiQlQCN0PWcu&embed=true" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+<br>
+
+- For all other inquiries (scientific, help, etc.) please send an email to: 
 
 <p class="text-center">
     <button class="btn btn-dark" onclick="location.href='mailto:firedanger-dangerincendie@nrcan-rncan.gc.ca'" style="text-transform: lowercase;font-size: 110%; padding: 14px;">firedanger-dangerincendie@nrcan-rncan.gc.ca</button>
