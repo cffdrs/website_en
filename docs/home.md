@@ -22,6 +22,11 @@ For those unfamiliar with the CFFDRS, or for official information regarding wild
 
 ## Announcements
 
+### September 2026
+A minor code update has been released that includes changes to the FWI2025 license, various function name changes, and various bug fixes. See the [changelog](https://github.com/nrcan-cfs-fire/cffdrs-ng/blob/main/CHANGELOG.md#2026-08-13) for more details.
+ 
+A new article has been released by [*Simply Science*](https://natural-resources.canada.ca/stories/simply-science/simply-science-seconds-updating-canada-s-wildfire-danger-rating-system) that explains the ongoing and future updates to the CFFDRS. It includes a brief description of the new features in FWI2025 for a general audience.
+
 ### June 2026
 
 Excel calculators are now available to calculate FWI2025 as an alternative to running the C, Python, or R code. They have a simple, visual interface to input weather data, but can only calculate FWI2025 for one station at a time. Find them on the <a href="../resources/#excel-calculators" target="_self">Resources</a> page along with a user manual and quick start video.
