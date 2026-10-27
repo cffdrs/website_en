@@ -247,7 +247,7 @@ Predicting daily min/max weather
 <pre><code class="language-r">write.csv(minmax, &quot;../../PRF2007_calculated_minmax_wx.csv&quot;, row.names = FALSE)
 </code></pre>
 <h3 id="convert-minmax-to-hourly">Convert minmax to hourly</h3>
-<p>Finally, convert the daily minmax weather data to hourly weather data that can be used to calculate <a href="../../tutorials#hourly-fwi"; target="_self">hourly FWI</a>. Run <code>args()</code> for details about the <code>minmax_to_hourly()</code> function arguments.</p>
+<p>Finally, convert the daily minmax weather data to hourly weather data that can be used to calculate &lt;a href="../../tutorials#hourly-fwi"; target="_self"&gt;hourly FWI</a>. Run <code>args()</code> for details about the <code>minmax_to_hourly()</code> function arguments.</p>
 <pre><code class="language-r">args(minmax_to_hourly)
 </code></pre>
 <pre><code class="language-r">function (w, timezone = NA, prec_hr = &quot;sunrise&quot;, skip_invalid = FALSE,
